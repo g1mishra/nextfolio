@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    @apply w-full h-full min-h-screen relative !bg-[#010C15] p-6 text-primaryText;
+}

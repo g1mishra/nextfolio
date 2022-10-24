@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "rules": {
+    "camelcase": "off",
+    "no-unused-vars": "error",
+    "spaced-comment": "error",
+    "no-unused-expressions": "warn",
+    "no-duplicate-imports": "error",
+    "react/react-in-jsx-scope": "off"
+  }
+}
