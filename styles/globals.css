@@ -7,5 +7,11 @@
 }
 
 body {
-    @apply w-full h-full min-h-screen relative !bg-[#010C15] p-6 text-primaryText;
+    @apply w-full h-full min-h-screen relative bg-[#010C15] p-4 sm:p-6 text-primaryText;
+}
+
+.header-transition {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .2s;
 }

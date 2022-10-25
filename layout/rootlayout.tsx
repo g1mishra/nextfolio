@@ -1,6 +1,5 @@
 import Footer from '@components/footer/footer';
-import HighlightBox from '@components/highlight-box';
-import Navbar from '@components/navbar/navbar';
+import Header from '@components/header';
 import { GTM_ID } from '@lib/gtm';
 import Script from 'next/script';
 import React from 'react';
@@ -11,9 +10,8 @@ type Props = {
 
 const RootLayout = (props: Props) => {
   return (
-    <div className="h-[calc(100vh-3rem)] border-light border rounded-lg bg-secondaryBG flex flex-col">
-      <Navbar />
-      <HighlightBox />
+    <div className="flex flex-col min-h-[calc(100vh-3rem)] relative border-light border rounded-lg bg-secondaryBG overflow-hidden">
+      <Header />
       {props.children}
       <Footer />
       <Script id="google-tag-manager" strategy="afterInteractive">

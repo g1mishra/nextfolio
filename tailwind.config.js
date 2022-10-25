@@ -13,6 +13,13 @@ module.exports = {
         primaryText: '#607B96',
         light: '#1E2D3D',
       },
+      backgroundImage: {
+        gameBox:
+          'linear-gradient(150.26deg, rgba(23, 85, 83, 0.7) 1.7%, rgba(67, 217, 173, 0.091) 81.82%)',
+      },
+      boxShadow: {
+        gameBox: 'inset 0px 2px 0px rgba(255, 255, 255, 0.3)',
+      },
     },
   },
   plugins: [],

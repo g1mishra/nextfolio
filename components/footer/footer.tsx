@@ -2,15 +2,15 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full bottom-0 inset-x-0 overflow-hidden border-light border-t sm:flex hidden justify-between items-center">
-      <div className="flex items-center gap-4">
-        <p className="py-2 pl-4 ">find me on: </p>
-        <div className="flex items-center">
+    <footer className="z-[20] w-full bottom-0 inset-x-0 overflow-hidden border-light border-t flex justify-between items-center">
+      <div className="flex w-full sm:max-w-max sm:items-center gap-4">
+        <p className="py-2 pl-4 whitespace-nowrap">find me on: </p>
+        <div className="flex items-center flex-1">
           <a
             href="https://linkedin.com/in/g1mishra"
             rel="noreferrer"
             target="_blank"
-            className="opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
+            className="flex-1 sm:flex-none opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
           >
             <svg
               width="24"
@@ -29,7 +29,7 @@ const Footer = () => {
             href="https://twitter.com/g1mishra"
             rel="noreferrer"
             target="_blank"
-            className="opacity-60 hover:opacity-100 p-2 border-light border-l flex items-center justify-center"
+            className="flex-1 sm:flex-none opacity-60 hover:opacity-100 p-2 border-light border-l flex items-center justify-center"
           >
             <svg
               width="24"
@@ -48,7 +48,7 @@ const Footer = () => {
             href="https://instagram.com/g1_mishra"
             rel="noreferrer"
             target="_blank"
-            className="opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
+            className="flex-1 sm:flex-none opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const Footer = () => {
             href="https://youtube.com/checktolearn"
             rel="noreferrer"
             target="_blank"
-            className="opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
+            className="flex-1 sm:flex-none opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="flex items-center border-light border-l pr-4">
+      <div className="hidden sm:flex items-center border-light border-l pr-4">
         <a
           target="_blank"
           href="https://github.com/g1mishra"

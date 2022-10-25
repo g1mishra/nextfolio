@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { NavLink } from './navlink';
 
-export const scrollIntoId = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-};
+const navlinks = [
+  { link: '/', text: ' _hello' },
+  { link: '/about-me', text: '_about-me' },
+  { link: '/projects', text: '_projects' },
+  // { link: '/contact-me', text: '_contact-me' },
+];
 
 const Navbar = () => {
   return (
@@ -14,30 +14,19 @@ const Navbar = () => {
       <div className="flex items-center w-full">
         <div className="h-full flex items-center py-2 border-light border-r flex-[0.2] w-full min-w-[12rem]">
           <Link href="/">
-            <a className="text-[#607b96]"> jeevan-kumar</a>
+            <a className="text-primaryText"> jeevan-kumar</a>
           </Link>
         </div>
-        <NavLink
-          exact
-          href="/"
-          className="px-4 h-full py-2 border-light border-r text-center min-w-[120px]"
-        >
-          _hello
-        </NavLink>
-        <NavLink
-          exact
-          href="/about-me"
-          className="px-4 h-full py-2 border-light border-r text-center min-w-[120px]"
-        >
-          _about-me
-        </NavLink>
-        <NavLink
-          exact
-          href="/projects"
-          className="px-4 h-full py-2 border-light border-r text-center min-w-[120px]"
-        >
-          _projects
-        </NavLink>
+        {navlinks.map((linkItem) => (
+          <NavLink
+            exact
+            href={linkItem.link}
+            key={linkItem.text}
+            className="px-4 h-full py-2 border-light border-r text-center min-w-[120px]"
+          >
+            {linkItem.text}
+          </NavLink>
+        ))}
       </div>
       <NavLink
         exact
