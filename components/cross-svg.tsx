@@ -31,9 +31,9 @@ const CrossSvg = ({ className }: Props) => (
         width="21"
         height="21"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -85,8 +85,8 @@ const CrossSvg = ({ className }: Props) => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(9.23047 6.27106) rotate(90) scale(9.5)"
       >
-        <stop offset="0.151042" stop-color="#196C6A" />
-        <stop offset="1" stop-color="#114B4A" />
+        <stop offset="0.151042" stopColor="#196C6A" />
+        <stop offset="1" stopColor="#114B4A" />
       </radialGradient>
     </defs>
   </svg>

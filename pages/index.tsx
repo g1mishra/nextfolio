@@ -1,4 +1,5 @@
 import CrossSvg from '@components/cross-svg';
+import MemoryGame from '@components/game/memory-game';
 import { HighlightBoxBG1 } from '@components/highlight-box';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -8,9 +9,7 @@ const Home: NextPage = () => {
     <main className="flex flex-1 items-center p-4 h-full sm:min-h-[500px]">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>
-          Jeevan Kumar - Full stack web Developer, youtuber & mentor
-        </title>
+        <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
         <meta
           name="description"
           content="I'm an enthusiastic, self-taught full-stack web developer from India."
@@ -48,43 +47,31 @@ const Home: NextPage = () => {
         <div className="flex flex-col h-full grow sm:grow-0 justify-between sm:h-max sm:self-center gap-14 sm:gap-16">
           <div className="self-center w-full flex flex-col">
             <p className="text-white">Hi all. I am</p>
-            <p className="text-white text-[58px] leading-[100%] mt-2 -ml-0.5">
-              Jeevan Kumar
-            </p>
+            <p className="text-white text-[58px] leading-[100%] mt-2 -ml-0.5">Jeevan Kumar</p>
             <p className="text-[#4D5BCE] text-xl sm:text-3xl flex mt-0.5">
               &gt; Full-stack developer
             </p>
           </div>
           <div className="">
-            <p className="hidden sm:block mt-0.5">
-              {'// complete the game to continue'}
-            </p>
-            <p className="hidden sm:block mt-0.5">
-              {'// you can also see it on my Github page'}
-            </p>
-            <p className="block sm:hidden mt-0.5">
-              {'// find my profile on Github:'}
-            </p>
+            <p className="mt-0.5">{'// have fun with the game 😍'}</p>
+            <p className="mt-0.5">{'// find it on my Github page.'}</p>
             <p className="mt-2 break-all">
               <span className="text-[#4D5BCE]">const </span>{' '}
               <span className="text-[#43D9AD]">githubLink </span>
               <span className="text-white"> = </span>
-              <a
-                className="text-[#E99287]"
-                href="https://github.com/example/url"
-              >
-                “https://github.com/example/url”
+              <a className="text-[#E99287]" href="https://github.com/g1mishra/g1mishra.dev">
+                “https://github.com/g1mishra.dev”
               </a>
             </p>
           </div>
-          {/* <button>Try game</button> */}
         </div>
-        <div className="w-full h-[300px] mb-2 sm:w-[500px] sm:h-[475px] p-1 bg-gameBox border border-[#0C1616] backdrop-blur-[32px] rounded-lg">
+        <div className="w-full min-h-[375px] mb-2 sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox border border-[#0C1616] backdrop-blur-[32px] rounded-lg">
           <HighlightBoxBG1 className="-z-[1] flex absolute w-full h-full sm:scale-110" />
           <CrossSvg className="top-2 left-2" />
           <CrossSvg className="bottom-2 left-2" />
           <CrossSvg className="top-2 right-2" />
           <CrossSvg className="bottom-2 right-2" />
+          <MemoryGame />
         </div>
       </div>
     </main>

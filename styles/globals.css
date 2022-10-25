@@ -3,15 +3,30 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 body {
-    @apply w-full h-full min-h-screen relative bg-[#010C15] p-4 sm:p-6 text-primaryText;
+  @apply w-full h-full min-h-screen relative bg-[#010C15] p-4 sm:p-6 text-primaryText;
 }
 
 .header-transition {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: .2s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
+}
+
+/* ℹ️ Base selector: .front-card, .back-card */
+/* ✨ TailwindCSS: "rounded h-full absolute w-full" */
+/* ⚠️ Some properties could not be matched with Tailwind classes. Use @apply to extend a CSS rule: */
+.front-card,
+.back-card {
+  @apply rounded h-full absolute w-full border border-light bg-[#011627D6];
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-card {
+  @apply select-none text-3xl flex justify-center items-center;
+  transform: rotateY(180deg);
+  background-color: rgba(253, 248, 230, 1);
 }
