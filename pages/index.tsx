@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
         <meta
           name="description"
-          content="I'm an enthusiastic, self-taught full-stack web developer from India."
+          content="I am an enthusiastic, self-taught full-stack web developer from India."
         />
         <meta property="og:url" content="https://g1mishra.dev/" />
         <meta property="og:type" content="website" />
@@ -48,24 +48,24 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:description"
-          content="I'm an enthusiastic, self-taught full-stack web developer from India."
+          content="I am an enthusiastic, self-taught full-stack web developer from India."
         />
+        <meta property="og:image" content="https://g1mishra.dev/og.png" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="400" />
-        <meta property="og:image:height" content="300" />
-        <meta property="og:image" content="/og_small.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="g1mishra.dev" />
         <meta property="twitter:url" content="https://g1mishra.dev/" />
+        <meta name="twitter:image" content="https://g1mishra.dev/og-small.png" />
         <meta
           name="twitter:title"
           content="Jeevan Kumar - Full stack web Developer, youtuber & mentor"
         />
         <meta
           name="twitter:description"
-          content="I'm an enthusiastic, self-taught full-stack web developer from India."
+          content="I am an enthusiastic, self-taught full-stack web developer from India."
         />
-        <meta name="twitter:image" content="/og.png" />
       </Head>
       <div
         ref={divRef}
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
             <a className="text-[#E99287]" href="https://github.com/g1mishra/g1mishra.dev">
               `https://github.com/g1mishra.dev`
             </a>
-            <span className='block h-10 w-10' />
+            <span className="block h-10 w-10" />
           </p>
         </div>
       </div>
