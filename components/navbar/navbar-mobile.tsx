@@ -19,7 +19,7 @@ const NavbarMobile = () => {
   }, [router.pathname]);
 
   return (
-    <header className="sm:hidden z-20 w-full flex flex-col">
+    <header className="md:hidden z-20 w-full flex flex-col">
       <div className="z-[21] border-b border-light p-4 flex justify-between">
         <Link href="/">
           <a className="text-primaryText"> jeevan-kumar</a>

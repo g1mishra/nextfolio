@@ -4,10 +4,12 @@
 
 * {
   font-family: 'Fira Code', monospace;
+  scroll-behavior: smooth;
 }
 
 body {
   @apply w-full h-[calc(100vh-2rem)] sm:h-[calc(100vh-3rem)] overflow-hidden relative bg-[#010C15] p-4 sm:p-6 text-primaryText;
+  
 }
 
 .header-transition {

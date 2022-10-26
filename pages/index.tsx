@@ -1,19 +1,37 @@
 import CrossSvg from '@components/cross-svg';
 import MemoryGame from '@components/game/memory-game';
 import { HighlightBoxBG1 } from '@components/highlight-box';
+import ScrollIcon from '@components/scroll-icon';
+import { isElementInViewport, scrollIntoviewByRef, scrollToId } from '@lib/common';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-
-export const scrollIntoId = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-};
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const Home: NextPage = () => {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+  const divRef = useRef<any>(null);
+
+  const scrollCB = useCallback(() => {
+    const elem = document.getElementById('gameBoard');
+    if (elem && isElementInViewport(elem)) {
+      setShowTopBtn(true);
+    } else {
+      setShowTopBtn(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.getElementById('main')?.addEventListener('scroll', scrollCB);
+    return () => {
+      document.getElementById('main')?.removeEventListener('scroll', scrollCB);
+    };
+  }, [scrollCB]);
+
   return (
-    <main className="flex w-full h-[calc(100vh-8rem)] flex-col sm:flex-row sm:justify-center sm:items-center gap-8 sm:gap-28 p-4 pb-8 overflow-y-auto">
+    <main
+      id="main"
+      className="flex w-full h-[calc(100vh-8rem)] relative flex-col sm:flex-row sm:justify-center sm:items-center gap-y-[5vh] gap-x-[5vw] p-4 pb-8 sm:pt-12 overflow-y-auto sm:flex-wrap"
+    >
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
@@ -49,15 +67,17 @@ const Home: NextPage = () => {
         />
         <meta name="twitter:image" content="/og.png" />
       </Head>
-
-      <div className="flex flex-col min-h-[calc(100vh-14rem)] sm:min-h-max justify-around gap-20 relative">
-        <div className="flex flex-[2] justify-center flex-col">
+      <div
+        ref={divRef}
+        className="flex flex-col min-h-[calc(100vh-11rem)] sm:min-h-max justify-around gap-20 relative"
+      >
+        <div className="flex flex-col justify-center min-h-max h-[60%]">
           <p className="text-white">Hi there 👋 I am</p>
           <p className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</p>
           <p className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</p>
           <p className="text-[#92b9b1] text-xl sm:text-2xl mt-2">&gt; Youtuber & mentor</p>
         </div>
-        <div className="flex-[1] flex flex-col justify-center">
+        <div className="flex flex-col justify-center min-h-max h-[40%]">
           <p className="mt-0.5">{'// play the game below 😍'}</p>
           <p className="mt-0.5">{'// find it on my github page.'}</p>
           <p className="mt-2 break-all">
@@ -70,24 +90,16 @@ const Home: NextPage = () => {
           </p>
         </div>
       </div>
-      <div>
-        <button
-          className="sm:hidden animate-bounce bg-secondaryBG mx-auto w-10 h-10 mb-2 flex justify-center items-center rounded-full border border-light"
-          onClick={() => scrollIntoId('gameBoard')}
-        >
-          <svg
-            className="w-5 h-5 text-[#43D9AD]"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </button>
-      </div>
+      <ScrollIcon
+        showTopArrow={showTopBtn}
+        handleScroll={() => {
+          if (showTopBtn) {
+            if (divRef.current !== null) scrollIntoviewByRef(divRef.current);
+          } else {
+            scrollToId('gameBoard');
+          }
+        }}
+      />
       <div
         id="gameBoard"
         className="w-full min-h-[375px] mb-2 relative overflow-hidden sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox backdrop-blur-[32px] rounded-lg"

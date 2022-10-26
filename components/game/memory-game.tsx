@@ -94,6 +94,7 @@ const MemoryGame = () => {
             className="w-[50px] h-[50px] sm:w-[80px] sm:h-[80px] cursor-pointer relative"
             onClick={() => {
               if (state.matchedCards.indexOf(index) > -1) return;
+              if (state.flippedCards.indexOf(index) > -1) return;
               flipCard(index, state, dispatch, shuffleEmojis);
             }}
           >

@@ -5,6 +5,9 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="theme-color" content="#011627" />
         <link
           href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
