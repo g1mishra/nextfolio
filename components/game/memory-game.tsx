@@ -58,7 +58,7 @@ const reducer = (state: GameData, action: { type: string; payload?: any }) => {
   }
 };
 
-const EMOJIS = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍'];
+const EMOJIS = ['🌽', '🍑', '🍇', '🍉', '🍌', '🥭', '🍎', '🥥', '🍒', '🥑'];
 const NO_OF_CELLS = 16;
 let interval: string | number | NodeJS.Timeout | null | undefined = null;
 
@@ -67,64 +67,34 @@ const MemoryGame = () => {
   const [won, setWon] = useState(false);
   const [shuffleEmojis, setShuffleEmojis] = useState(Array(NO_OF_CELLS).fill(''));
 
+  // to avoid server & client html mismatch
   useEffect(() => {
+    if (won === true) return;
     setShuffleEmojis(randomShuffleArray(EMOJIS, NO_OF_CELLS / 2));
-  }, []);
+  }, [won]);
 
   useEffect(() => {
-    if (state.matchedCards.length === shuffleEmojis.length) {
-      dispatch({ type: ACTIONS.START_GAME });
-      setWon(true);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.matchedCards]);
-
-  const flipCard = (index: number) => {
-    let tempFlippedCards = [...state.flippedCards, index];
-
-    dispatch({ type: ACTIONS.UPDATE_FLIPCARDS, payload: index });
-    dispatch({ type: ACTIONS.UPDATE_TOTALFLIPS });
-
-    if (!state.gameStarted) {
-      dispatch({ type: ACTIONS.START_GAME });
-    }
-
-    if (tempFlippedCards.length === 2) {
-      if (shuffleEmojis[tempFlippedCards[0]] === shuffleEmojis[index]) {
-        dispatch({
-          type: ACTIONS.UPDATE_MATCHCARD,
-          payload: [...tempFlippedCards],
-        });
-        dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [] });
-      } else {
-        interval = setTimeout(() => {
-          dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [] });
-        }, 1000);
-      }
-    }
-    if (tempFlippedCards.length === 3) {
-      if (interval != null) {
-        clearTimeout(interval);
-      }
-      dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [index] });
-    }
-  };
+    if (state.matchedCards.length !== shuffleEmojis.length) return;
+    dispatch({ type: ACTIONS.START_GAME });
+    setWon(true);
+  }, [shuffleEmojis.length, state.matchedCards]);
 
   return (
-    <div className="w-full rounded-md relative">
+    <div className="flex flex-col items-center w-full rounded-md gap-6">
       <GameStatus
+        won={won}
         gameStarted={state.gameStarted}
         totalFlips={state.totalFlips}
         setTimer={(time) => dispatch({ type: ACTIONS.UPDATE_TIMER, payload: time })}
       />
-      <div className={`grid grid-cols-4 gap-4 sm:gap-6 m-4 mt-6 mb-2 ${won ? 'blur-md' : ''}`}>
+      <div className={`grid grid-cols-4 gap-4 sm:gap-6 mb-2 ${won ? 'blur-md' : ''}`}>
         {shuffleEmojis.map((item, index) => (
           <div
             key={index}
-            className="w-[50px] h-[50px] sm:w-[80px] sm:h-[70px] cursor-pointer relative"
+            className="w-[50px] h-[50px] sm:w-[80px] sm:h-[80px] cursor-pointer relative"
             onClick={() => {
               if (state.matchedCards.indexOf(index) > -1) return;
-              flipCard(index);
+              flipCard(index, state, dispatch, shuffleEmojis);
             }}
           >
             <div className={`front-card`}></div>
@@ -158,17 +128,17 @@ const MemoryGame = () => {
             </button>
           </>
         </AbsoluteDiv>
-      ) : !state.gameStarted && (
-        <AbsoluteDiv className="flex-col">
-          <>
+      ) : (
+        !state.gameStarted && (
+          <AbsoluteDiv className="flex-col">
             <button
               className="px-4 py-1 rounded bg-light text-white"
               onClick={() => dispatch({ type: ACTIONS.START_GAME })}
             >
-              {state.gameStarted ? 'Stop' : 'Start'}
+              Start
             </button>
-          </>
-        </AbsoluteDiv>
+          </AbsoluteDiv>
+        )
       )}
     </div>
   );
@@ -176,13 +146,40 @@ const MemoryGame = () => {
 
 export default MemoryGame;
 
+function flipCard(index: number, state: GameData, dispatch: any, shuffleEmojis: string[]) {
+  let tempFlippedCards = [...state.flippedCards, index];
+
+  dispatch({ type: ACTIONS.UPDATE_FLIPCARDS, payload: index });
+  dispatch({ type: ACTIONS.UPDATE_TOTALFLIPS });
+
+  if (!state.gameStarted) {
+    dispatch({ type: ACTIONS.START_GAME });
+  }
+  if (tempFlippedCards.length === 2) {
+    if (shuffleEmojis[tempFlippedCards[0]] === shuffleEmojis[index]) {
+      dispatch({
+        type: ACTIONS.UPDATE_MATCHCARD,
+        payload: [...tempFlippedCards],
+      });
+      dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [] });
+    } else {
+      interval = setTimeout(() => {
+        dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [] });
+      }, 1000);
+    }
+  }
+  if (tempFlippedCards.length === 3) {
+    if (interval != null) {
+      clearTimeout(interval);
+    }
+    dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [index] });
+  }
+}
+
 const AbsoluteDiv = ({ children, className }: { children: ReactElement; className: string }) => (
-  <div className="inset-0 p-2 rounded-md absolute z-50 bg-opacity-10">
+  <div className="absolute inset-0 top-[5vh] flex justify-center items-center p-2 rounded-md z-50 bg-opacity-10">
     <div
-      className={
-        'absolute top-1/2 left-1/2 bg-white bg-opacity-50 rounded-md w-10/12 py-4 -translate-x-1/2 flex justify-center items-center ' +
-        className
-      }
+      className={`flex justify-center items-center bg-white bg-opacity-50 rounded-md w-10/12 py-4 ${className}`}
     >
       {children}
     </div>

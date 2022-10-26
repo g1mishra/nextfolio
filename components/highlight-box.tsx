@@ -2,7 +2,7 @@ import React from 'react';
 
 const HighlightBoxBG2 = () => {
   return (
-    <div className="sm:hidden absolute inset-x-0">
+    <div className="sm:hidden absolute inset-x-0 -top-5">
       <svg viewBox="0 0 375 720" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.4" filter="url(#filter0_f_56_2416)">
           <path

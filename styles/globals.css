@@ -7,7 +7,7 @@
 }
 
 body {
-  @apply w-full h-full min-h-screen relative bg-[#010C15] p-4 sm:p-6 text-primaryText;
+  @apply w-full h-[calc(100vh-2rem)] sm:h-[calc(100vh-3rem)] overflow-hidden relative bg-[#010C15] p-4 sm:p-6 text-primaryText;
 }
 
 .header-transition {
@@ -29,4 +29,17 @@ body {
   @apply select-none text-3xl flex justify-center items-center;
   transform: rotateY(180deg);
   background-color: rgba(253, 248, 230, 1);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
