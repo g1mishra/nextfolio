@@ -22,6 +22,7 @@ const Navbar = () => {
             exact
             href={linkItem.link}
             key={linkItem.text}
+            activeClassName="border-b-[#FEA55F]"
             className="px-4 h-full py-2 border-light border-r text-center min-w-[120px]"
           >
             {linkItem.text}

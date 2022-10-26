@@ -19,15 +19,12 @@ const NavbarMobile = () => {
   }, [router.pathname]);
 
   return (
-    <header className="md:hidden z-20 w-full flex flex-col">
+    <header className="z-20 w-full flex flex-col">
       <div className="z-[21] border-b border-light p-4 flex justify-between">
         <Link href="/">
           <a className="text-primaryText"> jeevan-kumar</a>
         </Link>
-        <button
-          className="btn text-[24px] w-6 h-6 "
-          onClick={() => setOpen((prev) => !prev)}
-        >
+        <button className="btn text-[24px] w-6 h-6 " onClick={() => setOpen((prev) => !prev)}>
           {open ? (
             <svg
               width="24"
@@ -49,10 +46,7 @@ const NavbarMobile = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"
-                fill="#607B96"
-              ></path>
+              <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z" fill="#607B96"></path>
             </svg>
           )}
         </button>

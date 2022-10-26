@@ -7,6 +7,7 @@ export { NavLink };
 type Props = {
   href: string;
   exact?: boolean;
+  activeClassName?: string;
   children: string | ReactElement;
 } & JSX.IntrinsicElements['a'];
 
@@ -15,6 +16,7 @@ function NavLink({
   exact = false,
   children,
   className = '',
+  activeClassName = '',
   ...props
 }: Props) {
   const { pathname } = useRouter();
@@ -22,7 +24,12 @@ function NavLink({
 
   return (
     <Link href={href}>
-      <a className={`${className} ${isActive ? 'text-white' : ''}`} {...props}>
+      <a
+        className={`${className} border-y-2 border-y-transparent  ${
+          isActive ? 'text-white ' + activeClassName : ''
+        } `}
+        {...props}
+      >
         {children}
       </a>
     </Link>

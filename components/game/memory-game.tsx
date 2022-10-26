@@ -58,7 +58,7 @@ const reducer = (state: GameData, action: { type: string; payload?: any }) => {
   }
 };
 
-const EMOJIS = ['🌽', '🍑', '🍇', '🍉', '🍌', '🥭', '🍎', '🥥', '🍒', '🥑'];
+const EMOJIS = ['🏆', '🤟', '💻', '🕯️', '🍄', '🥭', '🎧', '🐢', '🍓', '🍺'];
 const NO_OF_CELLS = 16;
 let interval: string | number | NodeJS.Timeout | null | undefined = null;
 

@@ -6,9 +6,7 @@ const Home: NextPage = () => {
     <main className="h-full flex flex-1 items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>
-          About Jeevan Kumar - Full stack web Developer, youtuber & mentor
-        </title>
+        <title>About Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
         <meta
           name="description"
           content="I'm an enthusiastic, self-taught full-stack web developer from India."
@@ -27,7 +25,7 @@ const Home: NextPage = () => {
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
         <meta property="og:image:height" content="300" />
-        <meta property="og:image" content="/about-og_s.png" />
+        <meta property="og:image" content="/og_small.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="g1mishra.dev" />
         <meta property="twitter:url" content="https://g1mishra.dev/" />
@@ -39,7 +37,7 @@ const Home: NextPage = () => {
           name="twitter:description"
           content="I'm an enthusiastic, self-taught full-stack web developer from India."
         />
-        <meta name="twitter:image" content="/about-og.png" />
+        <meta name="twitter:image" content="/og.png" />
       </Head>
       <div className="w-full flex justify-center">Work in progress</div>
     </main>

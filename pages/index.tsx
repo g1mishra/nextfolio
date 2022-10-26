@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
         <meta property="og:image:height" content="300" />
-        <meta property="og:image" content="/og_s.png" />
+        <meta property="og:image" content="/og_small.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="g1mishra.dev" />
         <meta property="twitter:url" content="https://g1mishra.dev/" />
@@ -87,6 +87,7 @@ const Home: NextPage = () => {
             <a className="text-[#E99287]" href="https://github.com/g1mishra/g1mishra.dev">
               `https://github.com/g1mishra.dev`
             </a>
+            <span className='block h-10 w-10' />
           </p>
         </div>
       </div>
