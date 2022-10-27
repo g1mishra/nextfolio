@@ -24,12 +24,7 @@ function NavLink({
 
   return (
     <Link href={href}>
-      <a
-        className={`${className} border-y-2 border-y-transparent  ${
-          isActive ? 'text-white ' + activeClassName : ''
-        } `}
-        {...props}
-      >
+      <a className={`${className} ${isActive ? 'text-white ' + activeClassName : ''} `} {...props}>
         {children}
       </a>
     </Link>

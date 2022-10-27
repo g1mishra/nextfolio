@@ -37,18 +37,18 @@ const Home: NextPage = () => {
         <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
         <meta
           name="description"
-          content="I am an enthusiastic, self-taught full-stack web developer from India."
+          content="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
         />
         <meta property="og:url" content="https://g1mishra.dev/" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Jeevan Kumar" />
+        <meta property="og:site_name" content="Full-Stack Developer, India - Jeevan Kumar" />
         <meta
           property="og:title"
           content="Jeevan Kumar - Full stack web Developer, youtuber & mentor"
         />
         <meta
           property="og:description"
-          content="I am an enthusiastic, self-taught full-stack web developer from India."
+          content="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
         />
         <meta property="og:image" content="https://g1mishra.dev/og.png" />
         <meta property="og:image:type" content="image/png" />
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
         />
         <meta
           name="twitter:description"
-          content="I am an enthusiastic, self-taught full-stack web developer from India."
+          content="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
         />
       </Head>
       <div

@@ -24,7 +24,7 @@ const NavbarMobile = () => {
         <Link href="/">
           <a className="text-primaryText"> jeevan-kumar</a>
         </Link>
-        <button className="btn text-[24px] w-6 h-6 " onClick={() => setOpen((prev) => !prev)}>
+        <button className="text-[24px] w-6 h-6 " onClick={() => setOpen((prev) => !prev)}>
           {open ? (
             <svg
               width="24"

@@ -6,18 +6,18 @@ const Home: NextPage = () => {
     <main className="h-full flex flex-1 items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>Jeevan | Contact</title>
+        <title>Get in touch with Full-Stack Developer - Jeevan Kumar</title>
         <meta
           name="description"
-          content="Connect with Jeevan (g1mishra) on different socail platforms."
+          content="I reply to all inquiries within a few hours. So, if you need development assistance for your product, simply fill out the form and I'll take care of the rest."
         />
         <meta property="og:url" content="https://g1mishra.dev/" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Jeevan Kumar" />
-        <meta property="og:title" content="Jeevan | Contact" />
+        <meta property="og:site_name" content="Full-Stack Developer, India - Jeevan Kumar" />
+        <meta property="og:title" content="Get in touch with Full-Stack Developer - Jeevan Kumar" />
         <meta
           property="og:description"
-          content="Connect with Jeevan (g1mishra) on different socail platforms."
+          content="I reply to all inquiries within a few hours. So, if you need development assistance for your product, simply fill out the form and I'll take care of the rest."
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
@@ -26,10 +26,10 @@ const Home: NextPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="g1mishra.dev" />
         <meta property="twitter:url" content="https://g1mishra.dev/" />
-        <meta name="twitter:title" content="Jeevan | Contact" />
+        <meta name="twitter:title" content="Get in touch with Full-Stack Developer - Jeevan Kumar" />
         <meta
           name="twitter:description"
-          content="Connect with Jeevan (g1mishra) on different socail platforms."
+          content="I reply to all inquiries within a few hours. So, if you need development assistance for your product, simply fill out the form and I'll take care of the rest."
         />
         <meta name="twitter:image" content="/og.png" />
       </Head>

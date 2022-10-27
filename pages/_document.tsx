@@ -1,12 +1,17 @@
 import { GTM_ID } from '@lib/gtm';
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="author" content="Jeevan Kumar" />
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, React, Next.js, express.js, python, developer, portfolio, g1mishra, checktolearn"
+        />
         <meta name="theme-color" content="#011627" />
         <link
           href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"

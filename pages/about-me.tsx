@@ -1,26 +1,25 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-
 const Home: NextPage = () => {
   return (
     <main className="h-full flex flex-1 items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>About Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
+        <title>About Jeevan Kumar - Past Development Experience, Interrests, Bio etc</title>
         <meta
           name="description"
-          content="I am an enthusiastic, self-taught full-stack web developer from India."
+          content="In a nutshell, over the last 2.5 years, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow."
         />
         <meta property="og:url" content="https://g1mishra.dev/" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Jeevan Kumar" />
+        <meta property="og:site_name" content="Full-Stack Developer, India - Jeevan Kumar" />
         <meta
           property="og:title"
-          content="About Jeevan Kumar - Full stack web Developer, youtuber & mentor"
+          content="About Jeevan Kumar - Past Development Experience, Interrests, Bio etc"
         />
         <meta
           property="og:description"
-          content="I am an enthusiastic, self-taught full-stack web developer from India."
+          content="In a nutshell, over the last 2.5 years, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow."
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="400" />
@@ -31,11 +30,11 @@ const Home: NextPage = () => {
         <meta property="twitter:url" content="https://g1mishra.dev/" />
         <meta
           name="twitter:title"
-          content="About Jeevan Kumar - Full stack web Developer, youtuber & mentor"
+          content="About Jeevan Kumar - Past Development Experience, Interrests, Bio etc"
         />
         <meta
           name="twitter:description"
-          content="I am an enthusiastic, self-taught full-stack web developer from India."
+          content="In a nutshell, over the last 2.5 years, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow."
         />
         <meta name="twitter:image" content="/og.png" />
       </Head>
