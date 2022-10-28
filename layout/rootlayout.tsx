@@ -10,7 +10,7 @@ type Props = {
 
 const RootLayout = (props: Props) => {
   return (
-    <div className="flex flex-col min-h-[calc(100vh-3rem)] relative border-light border rounded-lg bg-secondaryBG overflow-hidden">
+    <div className="flex flex-col h-[calc(100vh-2rem)] sm:h-[calc(100vh-3rem)] border border-light rounded-lg bg-secondaryBG relative overflow-hidden">
       <Header />
       {props.children}
       <Footer />

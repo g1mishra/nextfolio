@@ -21,17 +21,14 @@ const Home: NextPage = () => {
   }, []);
 
   useEffect(() => {
-    document.getElementById('main')?.addEventListener('scroll', scrollCB);
+    document.getElementsByTagName('main')[0]?.addEventListener('scroll', scrollCB);
     return () => {
-      document.getElementById('main')?.removeEventListener('scroll', scrollCB);
+      document.getElementsByTagName('main')[0]?.removeEventListener('scroll', scrollCB);
     };
   }, [scrollCB]);
 
   return (
-    <main
-      id="main"
-      className="flex w-full h-[calc(100vh-8rem)] relative flex-col sm:flex-row sm:justify-center sm:items-center gap-y-[5vh] gap-x-[5vw] p-4 pb-8 sm:pt-12 overflow-y-auto sm:flex-wrap"
-    >
+    <main className="flex flex-col sm:flex-row sm:justify-center sm:items-center h-[calc(100vh-8rem)] relative gap-y-[5vh] gap-x-[5vw] p-4 pb-8 sm:pt-12 overflow-y-auto sm:flex-wrap">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
