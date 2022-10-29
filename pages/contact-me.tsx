@@ -26,7 +26,10 @@ const Home: NextPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="g1mishra.dev" />
         <meta property="twitter:url" content="https://g1mishra.dev/" />
-        <meta name="twitter:title" content="Get in touch with Full-Stack Developer - Jeevan Kumar" />
+        <meta
+          name="twitter:title"
+          content="Get in touch with Full-Stack Developer - Jeevan Kumar"
+        />
         <meta
           name="twitter:description"
           content="I reply to all inquiries within a few hours. So, if you need development assistance for your product, simply fill out the form and I'll take care of the rest."
