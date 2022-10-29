@@ -2,9 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
-  //
   return (
-    <main className="h-full flex flex-1 items-center">
+    <main className="flex flex-1 items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Portfolio of full-stack web developer - Jeevan Kumar</title>

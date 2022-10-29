@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
-    <main className="h-full flex flex-1 items-center">
+    <main className="flex flex-1 items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Get in touch with Full-Stack Developer - Jeevan Kumar</title>

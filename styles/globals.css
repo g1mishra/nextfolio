@@ -2,13 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* fallback */
+  --device-h: 100vh;
+}
+
 * {
   font-family: 'Fira Code', monospace;
   scroll-behavior: smooth;
 }
 
 body {
-  @apply w-full relative overflow-hidden p-4 sm:p-6 bg-[#010C15] text-primaryText;
+  @apply w-full h-[var(--device-h)] relative overflow-hidden p-4 sm:p-6 bg-[#010C15] text-primaryText;
+}
+
+main {
+  @apply relative h-[calc(var(--device-h)_-_100px_-_2rem)] overflow-y-auto;
+}
+
+.display-h {
+  @apply min-h-[calc(var(--device-h)_-_11rem)];
 }
 
 .header-transition {

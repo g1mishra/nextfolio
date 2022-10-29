@@ -2,15 +2,22 @@ import Footer from '@components/footer/footer';
 import Header from '@components/header';
 import { GTM_ID } from '@lib/gtm';
 import Script from 'next/script';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useWindowSize } from 'usehooks-ts';
 
 type Props = {
   children: React.ReactElement;
 };
 
 const RootLayout = (props: Props) => {
+  const { height } = useWindowSize();
+
+  useEffect(() => {
+    document.body.style.setProperty('--device-h', `${window.innerHeight}px`);
+  }, [height]);
+
   return (
-    <div className="flex flex-col h-[calc(100vh-2rem)] sm:h-[calc(100vh-3rem)] border border-light rounded-lg bg-secondaryBG relative overflow-hidden">
+    <div className="border border-light rounded-lg bg-secondaryBG absolute inset-4 sm:inset-6 overflow-hidden">
       <Header />
       {props.children}
       <Footer />

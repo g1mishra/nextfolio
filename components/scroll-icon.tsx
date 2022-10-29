@@ -5,7 +5,7 @@ interface Props {
 
 const ScrollIcon = ({ handleScroll, showTopArrow }: Props) => {
   return (
-    <div className="absolute inset-x-0 bottom-[2.5vh] z-[1]">
+    <div className="absolute inset-x-0 bottom-[calc(var(--device-h)_*0.025)] z-[1]">
       <button
         className="sm:hidden animate-bounce bg-secondaryBG mx-auto w-10 h-10 flex justify-center items-center rounded-full border border-light"
         onClick={handleScroll}

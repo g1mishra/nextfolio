@@ -5,7 +5,7 @@ import ScrollIcon from '@components/scroll-icon';
 import { isElementInViewport, scrollIntoviewByRef, scrollToId } from '@lib/common';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 const Home: NextPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -20,15 +20,11 @@ const Home: NextPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.getElementsByTagName('main')[0]?.addEventListener('scroll', scrollCB);
-    return () => {
-      document.getElementsByTagName('main')[0]?.removeEventListener('scroll', scrollCB);
-    };
-  }, [scrollCB]);
-
   return (
-    <main className="flex flex-col sm:flex-row sm:justify-center sm:items-center h-[calc(100vh-8rem)] relative gap-y-[5vh] gap-x-[5vw] p-4 pb-8 sm:pt-12 overflow-y-auto sm:flex-wrap">
+    <main
+      onScroll={scrollCB}
+      className="flex flex-col sm:flex-row sm:justify-center sm:items-center sm:flex-wrap gap-y-[5vh] gap-x-[5vw] p-4 sm:pt-12"
+    >
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
@@ -66,7 +62,7 @@ const Home: NextPage = () => {
       </Head>
       <div
         ref={divRef}
-        className="flex flex-col min-h-[calc(100vh-11rem)] sm:min-h-max justify-around gap-20 relative"
+        className="flex flex-col display-h sm:min-h-max justify-around gap-20 relative"
       >
         <div className="flex flex-col justify-center min-h-max h-[60%]">
           <p className="text-white">Hi there 👋 I am</p>

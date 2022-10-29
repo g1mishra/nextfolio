@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="absolute z-50 bottom-0 inset-x-0 flex justify-between items-center h-10 overflow-hidden bg-secondaryBG border-t border-light">
+    <footer className="absolute z-50 bottom-0 inset-x-0 flex justify-between items-center overflow-hidden bg-secondaryBG border-t border-light">
       <div className="flex w-full sm:max-w-max sm:items-center gap-4">
         <p className="py-2 pl-4 whitespace-nowrap">find me on: </p>
         <div className="flex items-center flex-1">

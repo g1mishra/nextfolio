@@ -32,7 +32,8 @@ const Navbar = () => {
       <NavLink
         exact
         href="/contact-me"
-        className="px-4 h-full py-2 border-l border-light min-w-max "
+        activeClassName="border-b-[#FEA55F]"
+        className="px-4 pr-6 -mr-4 h-full py-2 border-l border-y-2 border-y-transparent border-light min-w-max "
       >
         _contact-me
       </NavLink>
