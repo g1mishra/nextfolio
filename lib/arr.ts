@@ -13,16 +13,14 @@ export const randomShuffleArray = (array: string[], size = 0) => {
 export function shuffleArray(array: string[]) {
   const cloneArr = [...array];
 
-  let currentIndex = cloneArr.length,
-    randomIndex;
+  let currentIndex = cloneArr.length;
+  let randomIndex;
 
-  // While there remain elements to shuffle.
   while (currentIndex != 0) {
-    // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    // And swap it with the current element.
+    // swap random with the current element.
     [cloneArr[currentIndex], cloneArr[randomIndex]] = [
       cloneArr[randomIndex],
       cloneArr[currentIndex],

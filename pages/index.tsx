@@ -1,10 +1,10 @@
 import CrossSvg from '@components/cross-svg';
 import MemoryGame from '@components/game/memory-game';
 import { HighlightBoxBG1 } from '@components/highlight-box';
+import NextHead from '@components/next-head';
 import ScrollIcon from '@components/scroll-icon';
 import { isElementInViewport, scrollIntoviewByRef, scrollToId } from '@lib/common';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { useCallback, useRef, useState } from 'react';
 
 const Home: NextPage = () => {
@@ -25,59 +25,28 @@ const Home: NextPage = () => {
       onScroll={scrollCB}
       className="flex flex-col sm:flex-row sm:justify-center sm:items-center sm:flex-wrap gap-y-[5vh] gap-x-[5vw] p-4 sm:pt-12"
     >
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <title>Jeevan Kumar - Full stack web Developer, youtuber & mentor</title>
-        <meta
-          name="description"
-          content="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
-        />
-        <meta property="og:url" content="https://g1mishra.dev/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Full-Stack Developer, India - Jeevan Kumar" />
-        <meta
-          property="og:title"
-          content="Jeevan Kumar - Full stack web Developer, youtuber & mentor"
-        />
-        <meta
-          property="og:description"
-          content="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
-        />
-        <meta property="og:image" content="https://g1mishra.dev/og.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="g1mishra.dev" />
-        <meta property="twitter:url" content="https://g1mishra.dev/" />
-        <meta name="twitter:image" content="https://g1mishra.dev/og-small.png" />
-        <meta
-          name="twitter:title"
-          content="Jeevan Kumar - Full stack web Developer, youtuber & mentor"
-        />
-        <meta
-          name="twitter:description"
-          content="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
-        />
-      </Head>
+      <NextHead
+        title="Jeevan Kumar - Full stack web Developer, youtuber & mentor"
+        desc="Full-Stack Web Developer based in India with 2.5+ years experience. I talk about technology, coding, and development on my YouTube channel."
+      />
       <div
         ref={divRef}
         className="flex flex-col display-h sm:min-h-max justify-around gap-20 relative"
       >
         <div className="flex flex-col justify-center min-h-max h-[60%]">
           <p className="text-white">Hi there 👋 I am</p>
-          <p className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</p>
-          <p className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</p>
-          <p className="text-[#92b9b1] text-xl sm:text-2xl mt-2">&gt; Youtuber & mentor</p>
+          <h1 className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</h1>
+          <h2 className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</h2>
+          <h3 className="text-[#92b9b1] text-xl sm:text-2xl mt-2">&gt; Youtuber & mentor</h3>
         </div>
         <div className="flex flex-col justify-center min-h-max h-[40%]">
           <p className="mt-0.5">{'// play the game below 😍'}</p>
           <p className="mt-0.5">{'// find it on my github page.'}</p>
           <p className="mt-2 break-all">
-            <span className="text-[#4D5BCE]">const </span>{' '}
-            <span className="text-[#229977]">githubLink </span>
+            <span className="text-keyword">const </span>{' '}
+            <span className="text-var">githubLink </span>
             <span className="text-white"> = </span>
-            <a className="text-[#E99287]" href="https://github.com/g1mishra/g1mishra.dev">
+            <a className="text-string" href="https://github.com/g1mishra/g1mishra.dev">
               `https://github.com/g1mishra.dev`
             </a>
             <span className="block h-10 w-10" />

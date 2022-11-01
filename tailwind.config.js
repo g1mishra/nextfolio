@@ -12,6 +12,9 @@ module.exports = {
         secondaryBG: '#011627',
         primaryText: '#607B96',
         light: '#1E2D3D',
+        keyword: '#4D5BCE',
+        var: '#229977',
+        string: '#E99287',
       },
       backgroundImage: {
         gameBox:
