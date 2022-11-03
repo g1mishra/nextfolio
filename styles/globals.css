@@ -13,7 +13,7 @@
 }
 
 body {
-  @apply w-full h-[var(--device-h)] relative overflow-hidden p-4 sm:p-6 bg-[#010C15] text-primaryText;
+  @apply w-full h-[var(--device-h)] relative overflow-hidden p-4 sm:p-6 !bg-[#010C15] !text-primaryText;
 }
 
 main {
