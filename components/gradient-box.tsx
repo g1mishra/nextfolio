@@ -27,16 +27,8 @@ const HighlightBoxBG2 = () => {
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feGaussianBlur
-              stdDeviation="87"
-              result="effect1_foregroundBlur_56_2416"
-            />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="87" result="effect1_foregroundBlur_56_2416" />
           </filter>
           <filter
             id="filter1_f_56_2416"
@@ -48,16 +40,8 @@ const HighlightBoxBG2 = () => {
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feGaussianBlur
-              stdDeviation="87"
-              result="effect1_foregroundBlur_56_2416"
-            />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="87" result="effect1_foregroundBlur_56_2416" />
           </filter>
         </defs>
       </svg>
@@ -68,11 +52,7 @@ const HighlightBoxBG2 = () => {
 const HighlightBoxBG1 = ({ className }: { className: string }) => {
   return (
     <div className={className}>
-      <svg
-        viewBox="0 0 1114 1030"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 1114 1030" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.4" filter="url(#filter0_f_64_2564)">
           <path
             d="M723.947 855.519L510.032 804.132L420.664 739.469L447.227 568.957L622.649 549.391L621.041 427.647L823.309 373.392L953.603 404.691L871.166 670.797L743.893 703.987L723.947 855.519Z"
@@ -96,16 +76,8 @@ const HighlightBoxBG1 = ({ className }: { className: string }) => {
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feGaussianBlur
-              stdDeviation="87"
-              result="effect1_foregroundBlur_64_2564"
-            />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="87" result="effect1_foregroundBlur_64_2564" />
           </filter>
           <filter
             id="filter1_f_64_2564"
@@ -117,16 +89,8 @@ const HighlightBoxBG1 = ({ className }: { className: string }) => {
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="BackgroundImageFix"
-              result="shape"
-            />
-            <feGaussianBlur
-              stdDeviation="87"
-              result="effect1_foregroundBlur_64_2564"
-            />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="87" result="effect1_foregroundBlur_64_2564" />
           </filter>
         </defs>
       </svg>

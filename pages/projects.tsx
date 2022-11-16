@@ -5,6 +5,7 @@ const Projects: NextPage = () => {
   return (
     <main className="flex flex-1 items-center">
       <NextHead
+        canonical="https://g1mishra.dev/projects"
         title="Portfolio of full-stack web developer - Jeevan Kumar"
         desc="I'm a Full-stack developer based in India with 2.5+ years of experience. Check out some of the latest projects I've worked on."
       />

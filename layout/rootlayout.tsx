@@ -20,7 +20,7 @@ const RootLayout = (props: Props) => {
   return (
     <div className="border border-light rounded-lg bg-secondaryBG absolute inset-4 sm:inset-6 overflow-hidden">
       <Head>
-        <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </Head>
       <Header />
       {props.children}

@@ -10,20 +10,20 @@ const navlinks = [
 
 const Navbar = () => {
   return (
-    <header className="hidden sm:flex w-full items-center justify-between px-4 border-light border-b">
-      <div className="flex items-center w-full">
-        <div className="h-full flex items-center py-2 border-light border-r flex-[0.2] w-full min-w-[12rem]">
-          <Link href="/">
-            <a className="text-primaryText"> jeevan-kumar</a>
-          </Link>
-        </div>
+    <header className="hidden sm:flex w-full items-center justify-between border-light border-b">
+      <div className="h-full px-4 flex items-center py-2.5 border-light border-r w-[calc(18rem_+_4rem)]">
+        <Link href="/">
+          <a className="text-primaryText"> jeevan-kumar</a>
+        </Link>
+      </div>
+      <div className="flex flex-1 justify-start w-full items-cente">
         {navlinks.map((linkItem) => (
           <NavLink
             exact
             href={linkItem.link}
             key={linkItem.text}
             activeClassName="border-b-[#FEA55F]"
-            className="px-4 h-full py-2 border-light border-r border-y-2 border-y-transparent text-center min-w-[120px]"
+            className="px-6 h-full py-2.5 border-light border-r border-y-2 border-y-transparent text-center min-w-[120px]"
           >
             {linkItem.text}
           </NavLink>
@@ -33,7 +33,7 @@ const Navbar = () => {
         exact
         href="/contact-me"
         activeClassName="border-b-[#FEA55F]"
-        className="px-4 pr-6 -mr-4 h-full py-2 border-l border-y-2 border-y-transparent border-light min-w-max "
+        className="px-4 h-full py-2.5 border flex items-center border-y-2 border-transparent border-l-light min-w-max "
       >
         _contact-me
       </NavLink>

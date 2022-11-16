@@ -5,9 +5,11 @@
 :root {
   /* fallback */
   --device-h: 100vh;
+  --scrollbarBG: theme(colors.secondaryBG);
+  --thumbBG: theme(colors.light);
 }
 
-* {
+*:not(.code-snippet *) {
   font-family: 'Fira Code', monospace;
   scroll-behavior: smooth;
 }
@@ -17,11 +19,7 @@ body {
 }
 
 main {
-  @apply relative h-[calc(var(--device-h)_-_100px_-_2rem)] overflow-y-auto;
-}
-
-.display-h {
-  @apply min-h-[calc(var(--device-h)_-_11rem)];
+  @apply relative h-[calc(var(--device-h)_-_98px_-_2rem)] sm:h-[calc(var(--device-h)_-_91px_-_3rem)] overflow-y-auto;
 }
 
 .header-transition {
@@ -45,15 +43,40 @@ main {
   background-color: rgba(253, 248, 230, 1);
 }
 
+pre,
+code {
+  font-family: 'Source Code Pro', monospace !important;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
-*::-webkit-scrollbar {
+*:not(.code-snippet *)::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-* {
+*:not(.code-snippet *) {
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+}
+
+/* Scrollbar Styling */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.228);
+  /* -webkit-border-radius: 10px;
+  border-radius: 10px; */
+  border-top: 5px var(--scrollbarBG) solid;
+  border-bottom: 1px var(--scrollbarBG) solid;
 }

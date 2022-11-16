@@ -15,6 +15,7 @@ module.exports = {
         keyword: '#4D5BCE',
         var: '#229977',
         string: '#E99287',
+        blueToken: '#5565E8',
       },
       backgroundImage: {
         gameBox:

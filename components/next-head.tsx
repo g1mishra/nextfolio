@@ -1,20 +1,19 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 type Props = {
   title: string;
   desc: string;
+  canonical: `https://g1mishra.dev${string}`;
 };
 
-const NextHead = ({ title, desc }: Props) => {
-  const router = useRouter();
+const NextHead = ({ title, desc, canonical = 'https://g1mishra.dev' }: Props) => {
   return (
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
-      <link href={`https://g1mishra.dev` + router.pathname} rel="canonical" />
+      <link rel="canonical" href={canonical} />
       <meta name="description" content={desc} />
-      <meta property="og:url" content="https://g1mishra.dev/" />
+      <meta property="og:url" content="https://g1mishra.dev" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Full-Stack Developer, India - Jeevan Kumar" />
       <meta property="og:title" content={title} />
@@ -25,7 +24,7 @@ const NextHead = ({ title, desc }: Props) => {
       <meta property="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="g1mishra.dev" />
-      <meta property="twitter:url" content="https://g1mishra.dev/" />
+      <meta property="twitter:url" content="https://g1mishra.dev" />
       <meta name="twitter:image" content="https://g1mishra.dev/og-small.png" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={desc} />

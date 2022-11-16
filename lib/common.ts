@@ -24,3 +24,22 @@ export function isElementInViewport(el: HTMLElement) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+export function getLineHeight(el: HTMLElement) {
+  const temp = document.createElement(el.nodeName);
+  let ret;
+  temp.setAttribute(
+    'style',
+    'margin:0; padding:0; ' +
+      'font-family:' +
+      (el.style.fontFamily || 'inherit') +
+      '; ' +
+      'font-size:' +
+      (el.style.fontSize || 'inherit')
+  );
+  temp.innerHTML = 'A';
+  el.parentNode?.appendChild(temp);
+  ret = temp.clientHeight;
+  temp.parentNode?.removeChild(temp);
+  return ret;
+}
