@@ -23,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <main
       onScroll={scrollCB}
-      className="flex flex-col sm:flex-row sm:justify-center sm:items-center sm:flex-wrap gap-y-[5vh] gap-x-[5vw] p-4 sm:pt-12"
+      className="flex flex-col sm:flex-row sm:justify-center sm:items-center sm:flex-wrap gap-y-[4vh] gap-x-[5vw] p-4"
     >
       <NextHead
         canonical="https://g1mishra.dev"
@@ -32,15 +32,15 @@ const Home: NextPage = () => {
       />
       <div
         ref={divRef}
-        className="flex flex-col min-h-[calc(var(--device-h)_-_11rem)] sm:min-h-max justify-around gap-20 relative"
+        className="flex flex-col min-h-[calc(var(--main-h)_-_7rem)] sm:min-h-max justify-between"
       >
-        <div className="flex flex-col justify-center min-h-max h-[60%]">
+        <div className="flex flex-col justify-center min-h-max mt-[5vh] sm:mt-0">
           <p className="text-white">Hi there 👋 I am</p>
           <h1 className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</h1>
           <h2 className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</h2>
           <h3 className="text-[#92b9b1] text-xl sm:text-2xl mt-2">&gt; Youtuber & mentor</h3>
         </div>
-        <div className="flex flex-col justify-center min-h-max h-[40%]">
+        <div className="flex flex-col justify-center min-h-max sm:mt-[5vh]">
           <p className="mt-0.5 hidden sm:block">{'// have fun with the game 😍'}</p>
           <p className="mt-0.5 sm:hidden">{'// play the game below 😍'}</p>
           <p className="mt-0.5">{'// find it on my github page.'}</p>
@@ -51,7 +51,6 @@ const Home: NextPage = () => {
             <a className="text-string" href="https://github.com/g1mishra/g1mishra.dev">
               `https://github.com/g1mishra.dev`
             </a>
-            <span className="block h-10 w-10" />
           </p>
         </div>
       </div>
@@ -67,9 +66,12 @@ const Home: NextPage = () => {
       />
       <div
         id="gameBoard"
-        className="w-full min-h-[375px] mb-2 relative overflow-hidden sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox backdrop-blur-[32px] rounded-lg"
+        className="w-full min-h-[375px] mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox backdrop-blur-[32px] rounded-lg"
       >
-        <HighlightBoxBG1 className="-z-[1] flex absolute inset-0 scale-125" />
+        <div className="overflow-hidden absolute inset-0 -z-[1]">
+          <HighlightBoxBG1 className="scale-125" />
+        </div>
+
         <CrossSvg className="top-2 left-2" />
         <CrossSvg className="bottom-2 left-2" />
         <CrossSvg className="top-2 right-2" />
