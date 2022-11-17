@@ -1,15 +1,32 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
-  register: true,
-  skipWaiting: true,
-});
 
-module.exports = withPWA({
+const headers = async () => {
+  return [
+    {
+      source: '/(.*)',
+      headers: [
+        {
+          key: 'X-Content-Type-Options',
+          value: 'nosniff',
+        },
+        {
+          key: 'X-Frame-Options',
+          value: 'SAMEORIGIN',
+        },
+        {
+          key: 'X-XSS-Protection',
+          value: '1; mode=block',
+        },
+      ],
+    },
+  ];
+};
+
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
     domains: ['avatars.githubusercontent.com'],
   },
-});
+  headers,
+};

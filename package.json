@@ -12,10 +12,10 @@
   "dependencies": {
     "jotai": "^1.9.2",
     "next": "12.3.1",
-    "next-pwa": "^5.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-syntax-highlighter": "^15.5.0",
+    "sharp": "^0.31.2",
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {

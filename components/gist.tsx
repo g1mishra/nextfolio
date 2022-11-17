@@ -39,7 +39,7 @@ const Gist: React.FC<IGistProps> = ({ lang, code }) => {
         PreTag={({ children }) => <CustomScrollbar>{children}</CustomScrollbar>}
         CodeTag={({ className, style, children }) => {
           return (
-            <code className={`${className} !text-[15px]`} style={style}>
+            <code className={`${className} sm:!text-[15px]`} style={style}>
               {children}
             </code>
           );
