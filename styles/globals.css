@@ -28,6 +28,35 @@ main {
   @apply relative h-[calc(var(--device-h)_-_98px_-_2rem)] sm:h-[calc(var(--device-h)_-_91px_-_3rem)] overflow-y-auto;
 }
 
+input,
+optgroup,
+select,
+textarea {
+  min-height: 41px;
+  background: #011221;
+  border: 1px solid #1e2d3d;
+  border-radius: 8px;
+  padding: 0 15px;
+  color: #465e77;
+  outline: none !important;
+}
+
+input:focus,
+optgroup:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #607b96;
+  box-shadow: 0px 0px 0px 2px rgba(96, 123, 150, 0.3);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #465e77 !important;
+}
+
 .header-transition {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

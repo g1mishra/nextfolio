@@ -16,6 +16,10 @@ module.exports = {
         var: '#229977',
         string: '#E99287',
         blueToken: '#5565E8',
+        token1: '#C98BDF',
+        token2: '#5565E8',
+        token3: '#FEA55F',
+        token4: '#607B96',
       },
       backgroundImage: {
         gameBox:
