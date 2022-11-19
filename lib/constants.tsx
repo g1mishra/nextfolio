@@ -9,10 +9,10 @@ export const experience = [
     jobTitle: 'Frontend Developer',
     companyName: 'Intellemo',
     period: 'Mar 2022 - Sep 2022 (7 months)',
-    description: `Worked as next.js developer at Intellemo and implemented various features such as enabled SSR (for
-      better SEO), One-Click Launch - "an advanced feature for the companyName's product," built the web-from
-      builder from scratch, and much more stuff.
-      I got the "Hero of the Month" award :)`,
+    description: `At Intellemo, I worked as a next.js developer, where I implemented various features 
+    such as enabling SSR (for better SEO), One-Click Launch ("an advanced feature for the company's product"), 
+    building the web-form builder from the ground up, and much more. 
+    I received the "Hero of the Month" award.`,
   },
 
   {
