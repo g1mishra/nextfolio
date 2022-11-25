@@ -94,8 +94,8 @@ export const getStaticProps: GetStaticProps = async () => {
     const projects: IProject[] = JSON.parse(JSON.stringify(response));
     let tags = projects.map((item) => item.tags);
     tags = Array.from(new Set(tags.join(';').split(';')));
-    return { props: { projects: projects.reverse(), tags } };
+    return { props: { projects: projects.reverse(), tags }, revalidate: 60 * 60 * 24 };
   } catch (e) {
-    return { props: { projects: null } };
+    return { props: { projects: null }, revalidate: 60 * 60 * 1 };
   }
 };
