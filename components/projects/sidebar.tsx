@@ -1,7 +1,13 @@
 import { ArrowIcon } from '@components/icons';
-import React from 'react';
+import { selectedTagAtom } from 'atoms/projectsAtom';
+import { useAtom } from 'jotai';
+import { ChangeEvent } from 'react';
 
-const ProjectsSidebar = () => {
+const ProjectsSidebar = ({ tags }: { tags: string[] }) => {
+  const [selectedTags, setSelectedTags] = useAtom(selectedTagAtom);
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSelectedTags((prev) => ({ ...prev, [event.target.name]: event.target.checked }));
+  };
   return (
     <div className="flex flex-col min-w-[22rem] max-w-full sm:max-w-max bg-secondaryBG sm:border-r border-light sm:overflow-y-auto ">
       <details
@@ -14,7 +20,21 @@ const ProjectsSidebar = () => {
             <p className="text-white font-normal ml-2.5">projects</p>
           </div>
         </summary>
-        {/* <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" /> */}
+        <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
+        <div className="px-4 py-2">
+          {tags.map((tag) => (
+            <label key={tag} className="flex items-center pb-2">
+              <input
+                name={tag}
+                type="checkbox"
+                checked={selectedTags[tag] ?? false}
+                className="w-4 h-4 bg-white"
+                onChange={handleChange}
+              />
+              <span className="ml-2">{tag}</span>
+            </label>
+          ))}
+        </div>
       </details>
     </div>
   );

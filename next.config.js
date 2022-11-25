@@ -26,7 +26,7 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: ['avatars.githubusercontent.com', 'drive.google.com', 'g1mishra.dev'],
   },
   headers,
 };

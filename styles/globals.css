@@ -41,6 +41,11 @@ textarea:focus {
   border: 1px solid #607b96;
   box-shadow: 0px 0px 0px 2px rgba(96, 123, 150, 0.3);
 }
+input[type='checkbox'],
+input[type='checkbox']:focus {
+  box-shadow: none;
+  min-height: auto;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
