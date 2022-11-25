@@ -1,3 +1,4 @@
+import { BIO_TEXT } from '@components/about-me/bio';
 import CrossSvg from '@components/cross-svg';
 import MemoryGame from '@components/game/memory-game';
 import { HighlightBoxBG1 } from '@components/gradient-box';
@@ -27,18 +28,19 @@ const Home: NextPage = () => {
     >
       <NextHead
         canonical="https://g1mishra.dev"
-        title="Jeevan Kumar - Full stack web Developer, youtuber & mentor"
-        desc={`Full-Stack Web Developer based in India with 2.5+ years of experience and worked for 3+ early-stage companies. I like to talk about technology, coding, and development on YouTube in my spare time.`}
+        title="Jeevan Kumar - Full stack web developer, youtuber & mentor"
+        desc={`Full-Stack Web Developer based in India with 2.5+ years of experience and worked for 3+ early-stage companies.`}
       />
       <div
         ref={divRef}
-        className="flex flex-col min-h-[calc(var(--main-h)_-_7rem)] sm:min-h-max justify-between"
+        className="flex flex-col min-h-[calc(var(--device-h)_-_14rem)] sm:min-h-max justify-between"
       >
         <div className="flex flex-col justify-center min-h-max mt-[5vh] sm:mt-0">
+          <h1 className="sr-only"> {BIO_TEXT} </h1>
           <p className="text-white">Hi there 👋 I am</p>
-          <h1 className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</h1>
-          <h2 className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</h2>
-          <h3 className="text-[#92b9b1] text-xl sm:text-2xl mt-2">&gt; Youtuber & mentor</h3>
+          <p className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</p>
+          <p className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</p>
+          <p className="text-[#92b9b1] text-xl sm:text-2xl mt-2">&gt; Youtuber & mentor</p>
         </div>
         <div className="flex flex-col justify-center min-h-max sm:mt-[5vh]">
           <p className="mt-0.5 hidden sm:block">{'// have fun with the game 😍'}</p>
@@ -66,7 +68,7 @@ const Home: NextPage = () => {
       />
       <div
         id="gameBoard"
-        className="w-full min-h-[375px] mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox backdrop-blur-[32px] rounded-lg"
+        className="w-full min-h-[375px] mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox rounded-lg"
       >
         <div className="overflow-hidden absolute inset-0 -z-[1]">
           <HighlightBoxBG1 className="scale-125" />

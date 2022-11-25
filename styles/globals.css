@@ -6,13 +6,6 @@
   /* fallback */
   --device-h: 100vh;
   --scrollbarBG: theme(colors.secondaryBG);
-  --main-h: calc(var(--device-h) - 91px - 3rem);
-}
-
-@media (max-width: 640px) {
-  :root {
-    --main-h: calc(var(--device-h) - 98px - 2rem);
-  }
 }
 
 *:not(.code-snippet *) {
