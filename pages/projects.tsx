@@ -57,18 +57,26 @@ const Projects: NextPage<IProjectPageProps> = ({ projects, tags }) => {
                   </p>
                   <div className="flex flex-col rounded-[15px] overflow-clip bg-[#011221] border border-light">
                     <div className="w-full flex relative aspect-[6/3] h-full overflow-clip">
-                      <Image
-                        src={project.imgSrc ?? ''}
-                        alt={project.name}
-                        layout="fill"
-                        objectFit="cover"
-                      />
+                      {project.imgSrc ? (
+                        <Image
+                          src={project.imgSrc ?? ''}
+                          alt={project.name}
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex justify-center items-center font-semibold  bg-secondaryBG">
+                          <p className="bg-white p-6 bg-opacity-5 rounded-md text-xl capitalize text-primaryText">{project.name}</p>
+                        </div>
+                      )}
                     </div>
-                    <div className="w-full flex flex-col flex-[1] h-full p-4 gap-4">
-                      <p className="line-clamp-3">{project.description}</p>
+                    <div className="w-full flex flex-col flex-[1] h-full p-4 gap-4 border-t border-light">
+                      <p className="line-clamp-3 min-h-[75px]">{project.description}</p>
                       <a
                         href={project.liveURL ?? project.repoURL ?? ''}
+                        target="_blank"
                         className="bg-[#1C2B3A] rounded-lg max-w-max px-4 py-2 text-white"
+                        rel="noreferrer"
                       >
                         view-project
                       </a>
@@ -94,7 +102,8 @@ export const getStaticProps: GetStaticProps = async () => {
     const projects: IProject[] = JSON.parse(JSON.stringify(response));
     let tags = projects.map((item) => item.tags);
     tags = Array.from(new Set(tags.join(';').split(';')));
-    return { props: { projects: projects.reverse(), tags }, revalidate: 60 * 60 * 24 };
+    projects.sort((a, b) => a.sno - b.sno);
+    return { props: { projects, tags }, revalidate: 60 * 60 * 24 };
   } catch (e) {
     return { props: { projects: null }, revalidate: 60 * 60 * 1 };
   }

@@ -28,7 +28,7 @@ const ProjectsSidebar = ({ tags }: { tags: string[] }) => {
                 name={tag}
                 type="checkbox"
                 checked={selectedTags[tag] ?? false}
-                className="w-4 h-4 bg-white"
+                className="accent-primaryText"
                 onChange={handleChange}
               />
               <span className="ml-2">{tag}</span>
