@@ -1,12 +1,12 @@
 import { BIO_TEXT } from '@components/about-me/bio';
-import CrossSvg from '@components/cross-svg';
-import MemoryGame from '@components/game/memory-game';
-import { HighlightBoxBG1 } from '@components/gradient-box';
 import NextHead from '@components/next-head';
 import ScrollIcon from '@components/scroll-icon';
 import { isElementInViewport, scrollIntoviewByRef, scrollToId } from '@lib/common';
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import { useCallback, useRef, useState } from 'react';
+
+const GameBoardDynamic = dynamic(() => import('@components/game/game-board'), { ssr: false });
 
 const Home: NextPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -21,6 +21,14 @@ const Home: NextPage = () => {
     }
   }, []);
 
+  function handleScroll(): void {
+    if (showTopBtn) {
+      if (divRef.current !== null) scrollIntoviewByRef(divRef.current);
+    } else {
+      scrollToId('gameBoard');
+    }
+  }
+
   return (
     <main
       onScroll={scrollCB}
@@ -31,12 +39,12 @@ const Home: NextPage = () => {
         title="Jeevan Kumar - Full stack web developer, youtuber & mentor"
         desc={`Full-Stack Web Developer based in India with 2.5+ years of experience and worked for 3+ early-stage companies.`}
       />
+      <h1 className="sr-only"> {BIO_TEXT} </h1>
       <div
         ref={divRef}
         className="flex flex-col min-h-[calc(var(--device-h)_-_14rem)] sm:min-h-max justify-between"
       >
         <div className="flex flex-col justify-center min-h-max mt-[5vh] sm:mt-0">
-          <h1 className="sr-only"> {BIO_TEXT} </h1>
           <p className="text-white">Hi there 👋 I am</p>
           <p className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</p>
           <p className="text-[#43D9AD] text-xl sm:text-2xl mt-2">&gt; Full-stack developer</p>
@@ -56,29 +64,12 @@ const Home: NextPage = () => {
           </p>
         </div>
       </div>
-      <ScrollIcon
-        showTopArrow={showTopBtn}
-        handleScroll={() => {
-          if (showTopBtn) {
-            if (divRef.current !== null) scrollIntoviewByRef(divRef.current);
-          } else {
-            scrollToId('gameBoard');
-          }
-        }}
-      />
+      <ScrollIcon showTopArrow={showTopBtn} handleScroll={handleScroll} />
       <div
         id="gameBoard"
         className="w-full min-h-[375px] mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox rounded-lg"
       >
-        <div className="overflow-hidden absolute inset-0 -z-[1]">
-          <HighlightBoxBG1 className="scale-125" />
-        </div>
-
-        <CrossSvg className="top-2 left-2" />
-        <CrossSvg className="bottom-2 left-2" />
-        <CrossSvg className="top-2 right-2" />
-        <CrossSvg className="bottom-2 right-2" />
-        <MemoryGame />
+        <GameBoardDynamic />
       </div>
     </main>
   );
