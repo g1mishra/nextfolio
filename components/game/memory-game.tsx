@@ -1,6 +1,9 @@
 import { randomShuffleArray } from '@lib/arr';
-import { ReactElement, useEffect, useReducer, useState } from 'react';
-import GameStatus from './game-status';
+import dynamic from 'next/dynamic';
+import { useEffect, useReducer, useState } from 'react';
+
+const AbsoluteDiv = dynamic(() => import('./absolute-div'), { ssr: false });
+const GameStatus = dynamic(() => import('./game-status'), { ssr: false });
 
 interface GameData {
   gameStarted: boolean;
@@ -81,12 +84,14 @@ const MemoryGame = () => {
 
   return (
     <div className="flex flex-col items-center w-full rounded-md gap-6">
-      <GameStatus
-        won={won}
-        gameStarted={state.gameStarted}
-        totalFlips={state.totalFlips}
-        setTimer={(time) => dispatch({ type: ACTIONS.UPDATE_TIMER, payload: time })}
-      />
+      <div className="min-h-[40px] w-full flex justify-center">
+        <GameStatus
+          won={won}
+          gameStarted={state.gameStarted}
+          totalFlips={state.totalFlips}
+          setTimer={(time) => dispatch({ type: ACTIONS.UPDATE_TIMER, payload: time })}
+        />
+      </div>
       <div className={`grid grid-cols-4 gap-4 sm:gap-6 mb-2 ${won ? 'blur-md' : ''}`}>
         {shuffleEmojis.map((item, index) => (
           <div
@@ -176,13 +181,3 @@ function flipCard(index: number, state: GameData, dispatch: any, shuffleEmojis: 
     dispatch({ type: ACTIONS.RESET_FLIPCARDS, payload: [index] });
   }
 }
-
-const AbsoluteDiv = ({ children, className }: { children: ReactElement; className: string }) => (
-  <div className="absolute inset-0 top-[5vh] flex justify-center items-center p-2 rounded-md z-50 bg-opacity-10">
-    <div
-      className={`flex justify-center items-center bg-white bg-opacity-50 rounded-md w-10/12 py-4 ${className}`}
-    >
-      {children}
-    </div>
-  </div>
-);

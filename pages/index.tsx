@@ -1,12 +1,10 @@
 import { BIO_TEXT } from '@components/about-me/bio';
+import GameBoard from '@components/game/game-board';
 import NextHead from '@components/next-head';
 import ScrollIcon from '@components/scroll-icon';
 import { isElementInViewport, scrollIntoviewByRef, scrollToId } from '@lib/common';
 import type { NextPage } from 'next';
-import dynamic from 'next/dynamic';
 import { useCallback, useRef, useState } from 'react';
-
-const GameBoardDynamic = dynamic(() => import('@components/game/game-board'), { ssr: false });
 
 const Home: NextPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -65,12 +63,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <ScrollIcon showTopArrow={showTopBtn} handleScroll={handleScroll} />
-      <div
-        id="gameBoard"
-        className="w-full min-h-[375px] mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox rounded-lg"
-      >
-        <GameBoardDynamic />
-      </div>
+      <GameBoard />
     </main>
   );
 };
