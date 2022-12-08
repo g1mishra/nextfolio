@@ -12,7 +12,7 @@ const links = [
   { name: 'YouTube channel', href: 'https://youtube.com/checktolearn' },
   { name: 'Github profile', href: 'https://github.com/g1mishra' },
   { name: 'Linkedin profile', href: 'https://linkedin.com/in/g1mishra' },
-  { name: 'Instagram account', href: 'https://instagram.com/g1_mishra' },
+  { name: 'Instagram account', href: 'https://instagram.com/g1mishra' },
   { name: 'Twitter account', href: 'https://twitter.com/g1mishra' },
 ];
 

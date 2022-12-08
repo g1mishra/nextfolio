@@ -45,7 +45,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://instagram.com/g1_mishra"
+            href="https://instagram.com/g1mishra"
             rel="noreferrer"
             target="_blank"
             className="flex-1 sm:flex-none opacity-60 hover:opacity-100 p-2 border-light border-x flex items-center justify-center"
