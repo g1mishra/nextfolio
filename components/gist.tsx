@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PrismAsyncLight } from 'react-syntax-highlighter';
 import darkStyle from 'react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus';
 import CustomScrollbar from './custom-scrollbar';
+import CopyToClipboard from './copy-to-clipboard';
 
 interface IGistProps {
   lang: string;
@@ -30,7 +31,8 @@ const Gist: React.FC<IGistProps> = ({ lang, code }) => {
   if (isReady === false) return null;
 
   return (
-    <div className="w-full mb-4 code-snippet">
+    <div className="w-full mb-4 code-snippet relative group">
+      <CopyToClipboard textData={code} />
       <PrismAsyncLight
         language={lang === '' ? 'text' : lang}
         wrapLines
