@@ -3,21 +3,22 @@ import { CROSS_ICON } from '@components/icons';
 import NextHead from '@components/next-head';
 import AboutLayout, { AboutLayoutType } from '@layout/about-layout';
 import { fetchGist, IGistData } from '@lib/gist';
-import { aboutAtomPage } from 'atoms/aboutAtom';
-import { useAtom } from 'jotai';
+import { AboutSubRoutes, AboutSubRoutesT } from '@lib/constants';
 import type { GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 
 export interface IAboutProps {
   data: IGistData | null;
 }
 
 const About: NextPage<IAboutProps> & { getLayout: AboutLayoutType } = () => {
-  const [currentPage] = useAtom(aboutAtomPage);
+  const router = useRouter();
+  const currentPage = router.query.page as AboutSubRoutesT;
 
   return (
     <>
       <NextHead
-        canonical="https://g1mishra.dev/about-me"
+        canonical={`https://g1mishra.dev/about-me/${currentPage}`}
         title="About Jeevan Kumar - Past Development Experience, Interrests, Bio etc."
         desc="In a nutshell, over the last 2.5 years, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow."
       />
@@ -29,7 +30,7 @@ const About: NextPage<IAboutProps> & { getLayout: AboutLayoutType } = () => {
       </div>
       <div className="flex h-full">
         <div className="px-4 flex-1 sm:h-[calc(100%-30px)] sm:p-6 relative font-[450] text-base sm:text-lg overflow-y-auto">
-          <AboutContent />
+          <AboutContent currentPage={currentPage} />
         </div>
         <div className="w-6 border-light border-l hidden sm:flex p-1">
           <div className="sticky top-1 w-full h-4 bg-[#607B96]"></div>
@@ -47,6 +48,15 @@ export const getStaticProps: GetStaticProps = async () => {
   } catch (e) {
     return { props: { data: null } };
   }
+};
+
+export const getStaticPaths = async () => {
+  return {
+    paths: AboutSubRoutes.filter((page) => page !== 'bio').map((page) => ({
+      params: { page },
+    })),
+    fallback: false,
+  };
 };
 
 About.getLayout = AboutLayout;

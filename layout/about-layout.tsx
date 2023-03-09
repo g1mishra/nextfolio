@@ -13,7 +13,9 @@ const AboutLayout: FC<IAboutLayoutProps> = ({ children }) => {
       <p className="sm:hidden px-4 py-6 text-[15px] text-white">_about-me</p>
       <AboutSidebar />
       <div className="flex w-full flex-col sm:flex-row">
-        <div className="flex-1 flex flex-col sm:border-r border-light overflow-hidden">{children}</div>
+        <div className="flex-1 flex flex-col sm:border-r border-light overflow-hidden">
+          {children}
+        </div>
         <GistView data={data} />
       </div>
     </main>

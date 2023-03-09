@@ -33,7 +33,7 @@ const LeftSidebar = ({ currentPage }: { currentPage: string }) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <g
-          opacity={['bio', 'high-school', 'diploma'].includes(currentPage) ? '1' : '0.4'}
+          opacity={['bio', 'high-school', 'education'].includes(currentPage) ? '1' : '0.4'}
           clipPath="url(#clip0_64_1620)"
         >
           <path

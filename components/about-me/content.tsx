@@ -1,19 +1,21 @@
-import { experience, getAbsolutePath, skills } from '@lib/constants';
-import { aboutAtomPage, aboutAtomPageT } from 'atoms/aboutAtom';
-import { useAtom } from 'jotai';
+import { getAbsolutePath, AboutSubRoutesT } from '@lib/constants';
 import dynamic from 'next/dynamic';
 import { Fragment, useMemo, useRef } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import Bio from './bio';
+import Experience from './experience';
+import Skills from './skills';
+import Education from './education';
 
 type Props = {
   className?: string;
+  currentPage: AboutSubRoutesT;
 };
 
 // eslint-disable-next-line no-unused-vars
-const lineHeightObj: { [K in aboutAtomPageT]: string } = {
+const lineHeightObj: { [K in AboutSubRoutesT]: string } = {
   bio: '2rem',
-  diploma: '2rem',
+  education: '2rem',
   experience: '2rem',
   skills: '2.25rem',
 };
@@ -21,8 +23,7 @@ const lineHeightObj: { [K in aboutAtomPageT]: string } = {
 const RenderStar = dynamic(() => import('./render-asterisk'), { ssr: false });
 
 // Note : inline style added to 'p' to calc number of line
-const AboutContent = ({ className = '' }: Props) => {
-  const [currentPage] = useAtom(aboutAtomPage);
+const AboutContent = ({ currentPage, className = '' }: Props) => {
   const rightDivRef = useRef<HTMLDivElement>(null);
   const matches = useMediaQuery('(min-width: 640px)');
   const paths = useMemo(() => getAbsolutePath(currentPage), [currentPage]);
@@ -52,57 +53,7 @@ const AboutContent = ({ className = '' }: Props) => {
         style={{ lineHeight: lineHeightObj[currentPage] }}
       >
         <br />
-        {currentPage === 'bio' ? (
-          <Bio />
-        ) : currentPage === 'diploma' ? (
-          <>
-            <p className="text-lg font-bold inline">Mehr Chand Polytechnic College Jalandhar</p>
-            <br />
-            <p className="inline">Diploma, Computer Engineering</p>
-            <br />
-            <p className="font-light inline">Jan 2017 - Jan 2020</p>
-            <br />
-            <p className="inline">Grade: A+</p>
-            <br />
-          </>
-        ) : currentPage === 'experience' ? (
-          <>
-            {experience.map((exp) => (
-              <div key={exp.companyName}>
-                <p className="text-lg font-bold inline">{exp.jobTitle}</p>
-                <br />
-                <p className="capitalize inline">@ {exp.companyName}</p>
-                <br />
-                <p className="inline">{exp.period}</p>
-                <br />
-
-                {exp.description.length > 0 ? (
-                  <>
-                    <p className="inline">{exp.description}</p> <br />
-                  </>
-                ) : null}
-                <br />
-              </div>
-            ))}
-          </>
-        ) : currentPage === 'skills' ? (
-          <>
-            {skills.map((skill) => (
-              <div key={skill.name} className="flex items-center space-x-4">
-                {skill.icon ? (
-                  <span>{skill.icon}</span>
-                ) : (
-                  <span className={skill.iconClassName}></span>
-                )}
-                <p className="capitalize inline">{skill.name}</p>
-              </div>
-            ))}
-          </>
-        ) : (
-          <>
-            <p>Work In Progress</p>
-          </>
-        )}
+        {renderCurrentPage(currentPage)}
         <br />
       </div>
     </>
@@ -110,3 +61,18 @@ const AboutContent = ({ className = '' }: Props) => {
 };
 
 export default AboutContent;
+
+const renderCurrentPage = (currentPage: AboutSubRoutesT) => {
+  switch (currentPage) {
+    case 'bio':
+      return <Bio />;
+    case 'education':
+      return <Education />;
+    case 'experience':
+      return <Experience />;
+    case 'skills':
+      return <Skills />;
+    default:
+      return <p>404 Not Found</p>;
+  }
+};
