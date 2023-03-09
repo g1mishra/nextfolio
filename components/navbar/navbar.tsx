@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="flex flex-1 justify-start w-full items-cente">
         {navlinks.map((linkItem) => (
           <NavLink
-            exact
+            exact={linkItem.link !== '/about-me'}
             href={linkItem.link}
             key={linkItem.text}
             activeClassName="border-b-[#FEA55F]"

@@ -43,3 +43,6 @@ export function getLineHeight(el: HTMLElement) {
   temp.parentNode?.removeChild(temp);
   return ret;
 }
+
+export const diffInMonths = (diffInMs: number) =>
+  Math.round(diffInMs / (1000 * 60 * 60 * 24 * 30.44));

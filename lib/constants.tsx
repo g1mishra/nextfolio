@@ -1,8 +1,18 @@
+import { diffInMonths } from './common';
+
+let PresentWorkMonth = null;
+try {
+  PresentWorkMonth = new Date().getTime() - new Date('2022-09-01').getTime();
+  PresentWorkMonth = diffInMonths(PresentWorkMonth);
+} catch (error) {
+  console.log('error', error);
+}
+
 export const experience = [
   {
     jobTitle: 'Next.js developer',
     companyName: 'EXPIA',
-    period: 'Sep 2022 - Present (3 months +)',
+    period: `Sep 2022 - Present ${PresentWorkMonth ? `(${PresentWorkMonth} months)` : ''}`,
     description: '',
   },
   {
@@ -58,10 +68,13 @@ export const skills = [
 
 const absolutePath: { [index: string]: any } = {
   bio: ['personal-info', 'bio'],
-  diploma: ['personal-info', 'education', 'diploma'],
+  education: ['personal-info', 'education'],
   experience: ['professional-info', 'experience'],
   skills: ['professional-info', 'skills'],
 };
+
+export const AboutSubRoutes = ['bio', 'education', 'experience', 'skills'] as const;
+export type AboutSubRoutesT = typeof AboutSubRoutes[number];
 
 export const getAbsolutePath = (page: string) => {
   let returnString = [];

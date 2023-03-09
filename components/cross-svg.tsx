@@ -12,17 +12,9 @@ const CrossSvg = ({ className }: Props) => (
     className={`absolute ${className}`}
   >
     <g filter="url(#filter0_di_64_2154)">
-      <circle
-        cx="9.23047"
-        cy="9.27106"
-        r="6.5"
-        fill="url(#paint0_radial_64_2154)"
-      />
+      <circle cx="9.23047" cy="9.27106" r="6.5" fill="url(#paint0_radial_64_2154)" />
     </g>
-    <path
-      d="M6.46094 11.5657L11.9995 6.97635M6.46094 6.97635L11.9995 11.5657"
-      stroke="#114944"
-    />
+    <path d="M6.46094 11.5657L11.9995 6.97635M6.46094 6.97635L11.9995 11.5657" stroke="#114944" />
     <defs>
       <filter
         id="filter0_di_64_2154"
@@ -47,17 +39,8 @@ const CrossSvg = ({ className }: Props) => (
           type="matrix"
           values="0 0 0 0 0.0525 0 0 0 0 0.2625 0 0 0 0 0.255726 0 0 0 1 0"
         />
-        <feBlend
-          mode="normal"
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_64_2154"
-        />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect1_dropShadow_64_2154"
-          result="shape"
-        />
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_64_2154" />
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_64_2154" result="shape" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -71,11 +54,7 @@ const CrossSvg = ({ className }: Props) => (
           type="matrix"
           values="0 0 0 0 0.101667 0 0 0 0 0.508333 0 0 0 0 0.466409 0 0 0 1 0"
         />
-        <feBlend
-          mode="normal"
-          in2="shape"
-          result="effect2_innerShadow_64_2154"
-        />
+        <feBlend mode="normal" in2="shape" result="effect2_innerShadow_64_2154" />
       </filter>
       <radialGradient
         id="paint0_radial_64_2154"

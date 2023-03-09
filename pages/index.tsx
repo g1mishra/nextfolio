@@ -56,8 +56,8 @@ const Home: NextPage = () => {
             <span className="text-keyword">const </span>{' '}
             <span className="text-var">githubLink </span>
             <span className="text-white"> = </span>
-            <a className="text-string" href="https://github.com/g1mishra/g1mishra.dev">
-              `https://github.com/g1mishra.dev`
+            <a className="text-string" href="https://github.com/g1mishra/nextfolio">
+              `https://github.com/g1mishra/nextfolio`
             </a>
           </p>
         </div>

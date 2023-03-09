@@ -1,30 +1,24 @@
-import {
-  ArrowIcon,
-  ArrowIcon1,
-  BIO_ICON,
-  EMAIL_ICON,
-  FILE_ICON,
-  FOLDER_ICON,
-} from '@components/icons';
-import { aboutAtomPage, aboutAtomPageT } from 'atoms/aboutAtom';
-import { useAtom } from 'jotai';
+import { ArrowIcon, BIO_ICON, EMAIL_ICON, FILE_ICON } from '@components/icons';
+import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 import LeftSidebar from './left-sidebar';
+import { AboutSubRoutesT } from '@lib/constants';
 
 interface IFileLink {
-  text: aboutAtomPageT;
+  text: AboutSubRoutesT;
+  link: string;
   icon: ReactElement;
   className?: string;
   isActive?: boolean;
   // eslint-disable-next-line no-unused-vars
-  callBack: (arg0: aboutAtomPageT) => void;
 }
 
-const FileLink = ({ text, callBack, icon, className, isActive }: IFileLink) => {
+const FileLink = ({ text, link, icon, className, isActive }: IFileLink) => {
+  const router = useRouter();
   return (
     <div
       className={`flex items-center py-2 cursor-pointer ${className} `}
-      onClick={() => callBack(text)}
+      onClick={() => router.push(link)}
     >
       {icon}
       <p className={`text-white font-normal ml-2.5  ${isActive ? 'opacity-90' : 'opacity-50'}`}>
@@ -43,7 +37,9 @@ const handleOpenAndClose = (e: any) => {
 };
 
 export default function AboutSidebar() {
-  const [currentPage, setCurrentPage] = useAtom(aboutAtomPage);
+  const router = useRouter();
+  const currentPage = (router.query.page as AboutSubRoutesT) ?? 'bio';
+
   return (
     <>
       <LeftSidebar currentPage={currentPage} />
@@ -67,27 +63,16 @@ export default function AboutSidebar() {
               icon={BIO_ICON}
               isActive={currentPage === 'bio'}
               text="bio"
+              link="/about-me"
               className="px-4"
-              callBack={setCurrentPage}
             />
-            <details className="group/education marker:content-[''] flex flex-col whitespace-nowrap px-4 py-2 ">
-              <summary className="w-full cursor-pointer select-none [&::-webkit-details-marker]:hidden">
-                <div className="flex items-center " onClick={handleOpenAndClose}>
-                  <ArrowIcon1 className="-ml-[calc(1.125rem)] rotate-0 group-open/education:rotate-90" />
-                  <span className="ml-2.5">{FOLDER_ICON}</span>
-                  <p className="text-white font-normal ml-2.5 flex items-center opacity-50">
-                    education
-                  </p>
-                </div>
-              </summary>
-              <div className="-mx-4 mb-2 " />
-              <FileLink
-                icon={FILE_ICON}
-                isActive={currentPage === 'diploma'}
-                text="diploma"
-                callBack={setCurrentPage}
-              />
-            </details>
+            <FileLink
+              className="px-4"
+              icon={FILE_ICON}
+              isActive={currentPage === 'education'}
+              text="education"
+              link="/about-me/education"
+            />
           </div>
         </details>
         <details className="group/professional-info marker:content-[''] flex flex-col whitespace-nowrap border-b border-secondaryBG sm:border-light">
@@ -107,14 +92,14 @@ export default function AboutSidebar() {
               className="px-4"
               isActive={currentPage === 'experience'}
               text="experience"
-              callBack={setCurrentPage}
+              link="/about-me/experience"
             />
             <FileLink
               icon={FILE_ICON}
               className="px-4"
               isActive={currentPage === 'skills'}
               text="skills"
-              callBack={setCurrentPage}
+              link="/about-me/skills"
             />
           </div>
         </details>
@@ -130,7 +115,7 @@ const ContactSection = () => (
       <ArrowIcon />
       <p className="text-white font-normal ml-2.5">contact</p>
     </div>
-    <div className="-mx-4 mb-2 border-t border-light" />
+    <div className="mb-2 border-t border-light" />
     <div className="px-4">
       <a
         className="flex items-center mt-2"
