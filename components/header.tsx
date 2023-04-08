@@ -5,12 +5,12 @@ import Navbar from './navbar/navbar';
 import NavbarMobile from './navbar/navbar-mobile';
 
 const Header = () => {
-  const matches = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const router = useRouter();
 
   return (
     <>
-      {matches ? <NavbarMobile /> : <Navbar />}
+      {isMobile ? <NavbarMobile /> : <Navbar />}
       {router.asPath === '/' ? <HighlightBoxBG2 /> : null}
     </>
   );

@@ -17,16 +17,19 @@ interface IProjectPageProps {
 const Projects: NextPage<IProjectPageProps> = ({ projects, tags }) => {
   const [selectedTags] = useAtom(selectedTagAtom);
 
-  const tagsArr = useMemo(
-    () => Object.keys(selectedTags).filter((tag) => selectedTags[tag]),
-    [selectedTags]
-  );
+  const tagsArr = useMemo(() => {
+    return Object.entries(selectedTags)
+      .filter(([, selected]) => selected)
+      .map(([tag]) => tag);
+  }, [selectedTags]);
 
   const filteredProjects = useMemo(() => {
-    if (tagsArr && tagsArr.length) {
-      return projects.filter((p) => tagsArr.some((tag) => p.tags.includes(tag)));
+    if (tagsArr.length === 0) {
+      return projects;
     }
-    return projects;
+    return projects.filter((project) =>
+      tagsArr.every((tag) => project.tags.split(';').includes(tag))
+    );
   }, [projects, tagsArr]);
 
   return (
@@ -66,7 +69,9 @@ const Projects: NextPage<IProjectPageProps> = ({ projects, tags }) => {
                         />
                       ) : (
                         <div className="absolute inset-0 flex justify-center items-center font-semibold  bg-secondaryBG">
-                          <p className="bg-white p-6 bg-opacity-5 rounded-md text-xl capitalize text-primaryText">{project.name}</p>
+                          <p className="bg-white p-6 bg-opacity-5 rounded-md text-xl capitalize text-primaryText">
+                            {project.name}
+                          </p>
                         </div>
                       )}
                     </div>

@@ -51,25 +51,21 @@ const NavbarMobile = () => {
           )}
         </button>
       </div>
-      <div
-        className={`${
-          open ? '' : 'hidden'
-        } z-[19] w-full absolute h-full bg-secondaryBG overflow-hidden inset-x-0 header-transition`}
-      >
-        <div className="invisible border-b border-light p-4 flex justify-between">
-          <p className="">jeevan-kumar</p>
+      {open ? (
+        <div className="z-20 w-full absolute h-full bg-secondaryBG overflow-hidden inset-x-0 header-transition">
+          <div className='h-[57px]'/>
+          {navlinks.map((linkItem) => (
+            <NavLink
+              exact
+              href={linkItem.link}
+              key={linkItem.text}
+              className="w-full p-4 border-b border-light flex items-center"
+            >
+              {linkItem.text}
+            </NavLink>
+          ))}
         </div>
-        {navlinks.map((linkItem) => (
-          <NavLink
-            exact
-            href={linkItem.link}
-            key={linkItem.text}
-            className="w-full p-4 border-b border-light flex items-center"
-          >
-            {linkItem.text}
-          </NavLink>
-        ))}
-      </div>
+      ) : null}
     </header>
   );
 };
