@@ -1,6 +1,28 @@
-const LeftSidebar = ({ currentPage }: { currentPage: string }) => {
+import { Dispatch, SetStateAction } from 'react';
+
+interface ILeftSidebarProps {
+  currentPage: string;
+  setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const LeftSidebar = ({ currentPage, setIsSidebarOpen }: ILeftSidebarProps) => {
   return (
-    <div className="hidden sm:flex flex-col items-center py-2.5 min-w-[4rem] border-r border-light">
+    <div className="hidden sm:flex flex-col items-center py-2.5 min-w-[4rem] border-r border-light sm:sticky left-0 top-0 bottom-0">
+      <svg
+        viewBox="0 0 32 32"
+        width="24"
+        height="24"
+        className="my-2.5"
+        fill="currentColor"
+        onClick={() => {
+          setIsSidebarOpen((prev) => !prev);
+        }}
+        xmlSpace="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M4 10h24a2 2 0 0 0 0-4H4a2 2 0 0 0 0 4zm24 4H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4zm0 8H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4z" />
+      </svg>
+
       <svg
         className="my-2.5"
         width="24"

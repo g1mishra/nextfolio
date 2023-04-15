@@ -2,10 +2,11 @@ import AboutContent from '@components/about-me/content';
 import { CROSS_ICON } from '@components/icons';
 import NextHead from '@components/next-head';
 import AboutLayout, { AboutLayoutType } from '@layout/about-layout';
+import { AboutSubRoutes } from '@lib/common';
 import { fetchGist, IGistData } from '@lib/gist';
-import { AboutSubRoutes, AboutSubRoutesT } from '@lib/constants';
 import type { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { AboutSubRoutesT } from 'types/common';
 
 export interface IAboutProps {
   data: IGistData | null;
@@ -29,10 +30,10 @@ const About: NextPage<IAboutProps> & { getLayout: AboutLayoutType } = () => {
         </p>
       </div>
       <div className="flex h-full">
-        <div className="px-4 flex-1 sm:h-[calc(100%-30px)] sm:p-6 relative font-[450] text-base sm:text-lg overflow-y-auto">
+        <div className="px-4 flex-1 lg:h-[calc(100%-30px)] lg:p-6 relative font-[450] text-base lg:text-lg lg:overflow-y-auto">
           <AboutContent currentPage={currentPage} />
         </div>
-        <div className="w-6 border-light border-l hidden sm:flex p-1">
+        <div className="w-6 border-light border-l hidden lg:flex p-1">
           <div className="sticky top-1 w-full h-4 bg-[#607B96]"></div>
         </div>
       </div>

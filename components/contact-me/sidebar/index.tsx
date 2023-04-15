@@ -1,4 +1,5 @@
 import { ArrowIcon, EMAIL_ICON } from '@components/icons';
+import { siteLinks } from '@lib/constants';
 
 const handleOpenAndClose = (e: any) => {
   document.querySelectorAll('details').forEach((d) => {
@@ -8,13 +9,7 @@ const handleOpenAndClose = (e: any) => {
   });
 };
 
-const links = [
-  { name: 'YouTube channel', href: 'https://youtube.com/checktolearn' },
-  { name: 'Github profile', href: 'https://github.com/g1mishra' },
-  { name: 'Linkedin profile', href: 'https://linkedin.com/in/g1mishra' },
-  { name: 'Instagram account', href: 'https://instagram.com/g1mishra' },
-  { name: 'Twitter account', href: 'https://twitter.com/g1mishra' },
-];
+const links = siteLinks();
 
 export default function ContactMeSidebar() {
   return (
@@ -60,7 +55,7 @@ export default function ContactMeSidebar() {
         </summary>
         <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
         <div className="px-4 py-2">
-          {links.map((link) => (
+          {Object.values(links).map((link) => (
             <a
               key={link.name}
               className="flex items-center pb-2"

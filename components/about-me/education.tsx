@@ -1,16 +1,21 @@
-import React from 'react';
+import { education } from '@lib/constants';
+import { Fragment } from 'react';
 
 const Education = () => {
   return (
     <>
-      <p className="text-lg font-bold inline">Mehr Chand Polytechnic College Jalandhar</p>
-      <br />
-      <p className="inline">Diploma, Computer Engineering</p>
-      <br />
-      <p className="font-light inline">Jan 2017 - Jan 2020</p>
-      <br />
-      <p className="inline">Grade: A+</p>
-      <br />
+      {education.map((edu, index) => (
+        <Fragment key={index}>
+          <p className="text-lg font-bold inline">{edu.university}</p>
+          <br />
+          <p className="inline">{edu.degree}</p>
+          <br />
+          <p className="font-light inline">{edu.period}</p>
+          <br />
+          <p className="inline font-light">{edu.description}</p>
+          <br />
+        </Fragment>
+      ))}
     </>
   );
 };

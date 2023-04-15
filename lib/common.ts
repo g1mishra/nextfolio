@@ -46,3 +46,19 @@ export function getLineHeight(el: HTMLElement) {
 
 export const diffInMonths = (diffInMs: number) =>
   Math.round(diffInMs / (1000 * 60 * 60 * 24 * 30.44));
+
+export const AboutSubRoutes = ['bio', 'education', 'experience', 'skills'] as const;
+
+export const getAbsolutePath = (page: string) => {
+  let returnString = [];
+  if (absolutePath[page]) returnString.push(...absolutePath[page]);
+  else returnString.push(page);
+  return returnString;
+};
+
+const absolutePath: { [index: string]: any } = {
+  bio: ['personal-info', 'bio'],
+  education: ['personal-info', 'education'],
+  experience: ['professional-info', 'experience'],
+  skills: ['professional-info', 'skills'],
+};

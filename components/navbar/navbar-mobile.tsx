@@ -53,7 +53,7 @@ const NavbarMobile = () => {
       </div>
       {open ? (
         <div className="z-20 w-full absolute h-full bg-secondaryBG overflow-hidden inset-x-0 header-transition">
-          <div className='h-[57px]'/>
+          <div className="h-[57px]" />
           {navlinks.map((linkItem) => (
             <NavLink
               exact

@@ -1,8 +1,8 @@
-import { BIO_TEXT } from '@components/about-me/bio';
 import GameBoard from '@components/game/game-board';
 import NextHead from '@components/next-head';
 import ScrollIcon from '@components/scroll-icon';
 import { isElementInViewport, scrollIntoviewByRef, scrollToId } from '@lib/common';
+import { BIO_TEXT } from '@lib/constants';
 import type { NextPage } from 'next';
 import { useCallback, useRef, useState } from 'react';
 

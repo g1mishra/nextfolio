@@ -1,11 +1,12 @@
-import { getAbsolutePath, AboutSubRoutesT } from '@lib/constants';
+import { getAbsolutePath } from '@lib/common';
 import dynamic from 'next/dynamic';
 import { Fragment, useMemo, useRef } from 'react';
+import { AboutSubRoutesT } from 'types/common';
 import { useMediaQuery } from 'usehooks-ts';
 import Bio from './bio';
+import Education from './education';
 import Experience from './experience';
 import Skills from './skills';
-import Education from './education';
 
 type Props = {
   className?: string;
@@ -22,7 +23,7 @@ const lineHeightObj: { [K in AboutSubRoutesT]: string } = {
 
 const RenderStar = dynamic(() => import('./render-asterisk'), { ssr: false });
 
-// Note : inline style added to 'p' to calc number of line
+// Note : inline style added to 'p' tags to calc number of line
 const AboutContent = ({ currentPage, className = '' }: Props) => {
   const rightDivRef = useRef<HTMLDivElement>(null);
   const matches = useMediaQuery('(min-width: 640px)');

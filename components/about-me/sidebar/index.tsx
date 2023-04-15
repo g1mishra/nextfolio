@@ -1,8 +1,8 @@
 import { ArrowIcon, BIO_ICON, EMAIL_ICON, FILE_ICON } from '@components/icons';
 import { useRouter } from 'next/router';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import LeftSidebar from './left-sidebar';
-import { AboutSubRoutesT } from '@lib/constants';
+import { AboutSubRoutesT } from 'types/common';
 
 interface IFileLink {
   text: AboutSubRoutesT;
@@ -37,77 +37,84 @@ const handleOpenAndClose = (e: any) => {
 };
 
 export default function AboutSidebar() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const router = useRouter();
   const currentPage = (router.query.page as AboutSubRoutesT) ?? 'bio';
 
   return (
     <>
-      <LeftSidebar currentPage={currentPage} />
-      <div className="flex flex-col min-w-[18rem] max-w-full sm:max-w-max bg-secondaryBG sm:border-r border-light sm:overflow-y-auto ">
-        <details
-          open
-          className="group/personal-info marker:content-[''] flex flex-col whitespace-nowrap border-b border-secondaryBG sm:border-light"
-        >
-          <summary className="w-full cursor-pointer select-none [&::-webkit-details-marker]:hidden">
-            <div
-              className="flex items-center px-4 py-2 bg-light sm:bg-secondaryBG"
-              onClick={handleOpenAndClose}
-            >
-              <ArrowIcon className="-rotate-90 group-open/personal-info:rotate-0" />
-              <p className="text-white font-normal ml-2.5 flex items-center ">personal-info</p>
-            </div>
-          </summary>
-          <div className="px-4 pb-2">
-            <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
-            <FileLink
-              icon={BIO_ICON}
-              isActive={currentPage === 'bio'}
-              text="bio"
-              link="/about-me"
-              className="px-4"
-            />
-            <FileLink
-              className="px-4"
-              icon={FILE_ICON}
-              isActive={currentPage === 'education'}
-              text="education"
-              link="/about-me/education"
-            />
-          </div>
-        </details>
-        <details className="group/professional-info marker:content-[''] flex flex-col whitespace-nowrap border-b border-secondaryBG sm:border-light">
-          <summary className="w-full cursor-pointer select-none [&::-webkit-details-marker]:hidden">
-            <div
-              className="flex items-center px-4 py-2 bg-light sm:bg-secondaryBG"
-              onClick={handleOpenAndClose}
-            >
-              <ArrowIcon className="-rotate-90 group-open/professional-info:rotate-0" />
-              <p className="text-white font-normal ml-2.5 flex items-center ">professional-info</p>
-            </div>
-          </summary>
-          <div className="px-4">
-            <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
-            <FileLink
-              icon={FILE_ICON}
-              className="px-4"
-              isActive={currentPage === 'experience'}
-              text="experience"
-              link="/about-me/experience"
-            />
-            <FileLink
-              icon={FILE_ICON}
-              className="px-4"
-              isActive={currentPage === 'skills'}
-              text="skills"
-              link="/about-me/skills"
-            />
-          </div>
-        </details>
-        <ContactSection />
-      </div>
+      <LeftSidebar currentPage={currentPage} setIsSidebarOpen={setIsSidebarOpen} />
+      {isSidebarOpen ? <LeftSidebarFileLinks currentPage={currentPage} /> : null}
     </>
   );
 }
+
+const LeftSidebarFileLinks = ({ currentPage }: { currentPage: string }) => {
+  return (
+    <div className="flex flex-col min-w-[18rem] max-w-full sm:max-w-max bg-secondaryBG sm:border-r border-light sm:overflow-y-auto sm:sticky left-0 top-0 bottom-0">
+      <details
+        open
+        className="group/personal-info marker:content-[''] flex flex-col whitespace-nowrap border-b border-secondaryBG sm:border-light"
+      >
+        <summary className="w-full cursor-pointer select-none [&::-webkit-details-marker]:hidden">
+          <div
+            className="flex items-center px-4 py-2 bg-light sm:bg-secondaryBG"
+            onClick={handleOpenAndClose}
+          >
+            <ArrowIcon className="-rotate-90 group-open/personal-info:rotate-0" />
+            <p className="text-white font-normal ml-2.5 flex items-center ">personal-info</p>
+          </div>
+        </summary>
+        <div className="px-4 pb-2">
+          <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
+          <FileLink
+            icon={BIO_ICON}
+            isActive={currentPage === 'bio'}
+            text="bio"
+            link="/about-me"
+            className="px-4"
+          />
+          <FileLink
+            className="px-4"
+            icon={FILE_ICON}
+            isActive={currentPage === 'education'}
+            text="education"
+            link="/about-me/education"
+          />
+        </div>
+      </details>
+      <details className="group/professional-info marker:content-[''] flex flex-col whitespace-nowrap border-b border-secondaryBG sm:border-light">
+        <summary className="w-full cursor-pointer select-none [&::-webkit-details-marker]:hidden">
+          <div
+            className="flex items-center px-4 py-2 bg-light sm:bg-secondaryBG"
+            onClick={handleOpenAndClose}
+          >
+            <ArrowIcon className="-rotate-90 group-open/professional-info:rotate-0" />
+            <p className="text-white font-normal ml-2.5 flex items-center ">professional-info</p>
+          </div>
+        </summary>
+        <div className="px-4">
+          <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
+          <FileLink
+            icon={FILE_ICON}
+            className="px-4"
+            isActive={currentPage === 'experience'}
+            text="experience"
+            link="/about-me/experience"
+          />
+          <FileLink
+            icon={FILE_ICON}
+            className="px-4"
+            isActive={currentPage === 'skills'}
+            text="skills"
+            link="/about-me/skills"
+          />
+        </div>
+      </details>
+      <ContactSection />
+    </div>
+  );
+};
 
 const ContactSection = () => (
   <div className="hidden sm:flex flex-col whitespace-nowrap ">

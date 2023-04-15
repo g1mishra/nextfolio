@@ -25,7 +25,7 @@ const GistView = function GistComponent({ data }: Props) {
         <div className="relative flex-1 w-full">
           <div
             onScroll={handleScroll}
-            className="sm:absolute p-4 sm:p-0 sm:inset-4 flex flex-col sm:overflow-y-auto"
+            className="sm:absolute p-4 sm:p-0 sm:inset-4 flex flex-col lg:overflow-y-auto"
           >
             <p className="mb-4 text-white sm:text-inherit">{'// Code snippet showcase:'}</p>
 
@@ -58,7 +58,7 @@ const GistView = function GistComponent({ data }: Props) {
             ))}
           </div>
         </div>
-        <div className="w-6 border-light border-l hidden sm:flex flex-col p-1">
+        <div className="w-6 border-light border-l hidden lg:flex flex-col p-1">
           <div ref={progressDivRef} className="sticky top-1 w-full h-4 bg-[#607B96]"></div>
         </div>
       </div>
