@@ -50,7 +50,7 @@ const Projects: NextPage<IProjectPageProps> = ({ projects, tags }) => {
             </p>
           </div>
           <div className="flex-1 w-full p-4 sm:py-12 flex justify-center overflow-y-auto">
-            <div className="flex flex-col h-max sm:grid grid-cols-3 gap-12">
+            <div className="flex flex-col h-max sm:grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
               {filteredProjects.map((project, index) => (
                 <div className="flex flex-col gap-3 max-w-full sm:max-w-sm" key={project._id}>
                   <p className=" text-primaryText flex items-center">
@@ -58,14 +58,15 @@ const Projects: NextPage<IProjectPageProps> = ({ projects, tags }) => {
                     <span className="mx-3">{'//'}</span>
                     <span>_{project.name.toLowerCase().split(' ').join('-')}</span>
                   </p>
-                  <div className="flex flex-col rounded-[15px] overflow-clip bg-[#011221] border border-light">
-                    <div className="w-full flex relative aspect-[6/3] h-full overflow-clip">
+                  <div className="flex relative group flex-col rounded-[15px] overflow-clip bg-[#011221] border border-light">
+                    <div className="w-full flex relative aspect-[6/3] h-full overflow-clip ">
                       {project.imgSrc ? (
                         <Image
+                          priority
                           src={project.imgSrc ?? ''}
                           alt={project.name}
                           layout="fill"
-                          objectFit="cover"
+                          objectFit="contain"
                         />
                       ) : (
                         <div className="absolute inset-0 flex justify-center items-center font-semibold  bg-secondaryBG">
@@ -77,14 +78,28 @@ const Projects: NextPage<IProjectPageProps> = ({ projects, tags }) => {
                     </div>
                     <div className="w-full flex flex-col flex-[1] h-full p-4 gap-4 border-t border-light">
                       <p className="line-clamp-3 min-h-[75px]">{project.description}</p>
-                      <a
-                        href={project.liveURL ?? project.repoURL ?? ''}
-                        target="_blank"
-                        className="bg-[#1C2B3A] rounded-lg max-w-max px-4 py-2 text-white"
-                        rel="noreferrer"
-                      >
-                        view-project
-                      </a>
+                    </div>
+                    <div className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center backdrop-blur-sm bg-primaryBG/25">
+                      {project.liveURL && (
+                        <a
+                          href={project.liveURL ?? ''}
+                          target="_blank"
+                          className="bg-[#1C2B3A] rounded-lg w-full px-4 py-2 text-white max-w-[150px] text-center my-2"
+                          rel="noreferrer"
+                        >
+                          view-project
+                        </a>
+                      )}
+                      {project.repoURL && (
+                        <a
+                          href={project.repoURL ?? ''}
+                          target="_blank"
+                          className="bg-[#1C2B3A] rounded-lg w-full px-4 py-2 text-white max-w-[150px] text-center my-2"
+                          rel="noreferrer"
+                        >
+                          view-source
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
