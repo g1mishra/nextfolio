@@ -1,3 +1,5 @@
+'use client';
+
 import Gist from '@components/gist';
 import Star from '@components/star';
 import { IGistData } from '@lib/gist';

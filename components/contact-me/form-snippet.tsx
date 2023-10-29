@@ -1,3 +1,5 @@
+'use client';
+
 import { formatDate } from '@lib/date';
 import { ContatcFormData } from 'pages/contact-me';
 import { useFormContext } from 'react-hook-form';
@@ -6,7 +8,7 @@ const FormSnippet = () => {
   const { watch } = useFormContext<ContatcFormData>();
   return (
     <div className="flex flex-1">
-      <div className="p-4 flex-1 flex flex-col sm:mt-[10vh] items-center text-lg break-all">
+      <div className="p-4 flex-1 flex flex-col justify-center items-center my-6 xl:my-0 break-all">
         <div>
           <div className="flex">
             <span className="w-5 min-w-max inline-flex justify-end mr-10 text-token4">1</span>
@@ -94,9 +96,6 @@ const FormSnippet = () => {
             <span>{`})`}</span>
           </div>
         </div>
-      </div>
-      <div className="w-6 border-light border-l hidden sm:flex flex-col p-1">
-        <div className="sticky top-1 w-full h-2.5 bg-[#607B96]"></div>
       </div>
     </div>
   );

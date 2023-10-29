@@ -1,3 +1,4 @@
+import useMediaQuery from 'hooks/useMediaQuery';
 import { FC, RefObject, useEffect, useState } from 'react';
 
 interface IRenderStarProps {
@@ -7,6 +8,7 @@ interface IRenderStarProps {
 
 const RenderStar: FC<IRenderStarProps> = ({ rightDivRef, lineHeight }) => {
   const [numOfLines, setNumOfLines] = useState(0);
+  const matches = useMediaQuery('(min-width: 640px)');
 
   useEffect(() => {
     if (!rightDivRef.current) return;
@@ -22,6 +24,8 @@ const RenderStar: FC<IRenderStarProps> = ({ rightDivRef, lineHeight }) => {
     resizeObserver.observe(rightDivRef.current);
     return () => resizeObserver.disconnect();
   }, [rightDivRef]);
+
+  if (!matches) return null;
 
   return (
     <div className={`absolute left-4 top-6 `}>

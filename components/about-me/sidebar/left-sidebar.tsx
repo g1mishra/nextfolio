@@ -12,7 +12,7 @@ const LeftSidebar = ({ currentPage, setIsSidebarOpen }: ILeftSidebarProps) => {
         viewBox="0 0 32 32"
         width="24"
         height="24"
-        className="my-2.5"
+        className=" cursor-pointer my-2.5 opacity-[0.4]"
         fill="currentColor"
         onClick={() => {
           setIsSidebarOpen((prev) => !prev);
@@ -24,7 +24,7 @@ const LeftSidebar = ({ currentPage, setIsSidebarOpen }: ILeftSidebarProps) => {
       </svg>
 
       <svg
-        className="my-2.5"
+        className=" cursor-none my-2.5"
         width="24"
         height="25"
         viewBox="0 0 24 25"
@@ -47,7 +47,7 @@ const LeftSidebar = ({ currentPage, setIsSidebarOpen }: ILeftSidebarProps) => {
         </defs>
       </svg>
       <svg
-        className="my-2.5"
+        className=" cursor-none my-2.5"
         width="24"
         height="25"
         viewBox="0 0 24 25"

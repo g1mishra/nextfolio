@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { ReactElement } from 'react';
+import { usePathname } from 'next/navigation';
+import { ReactElement, forwardRef } from 'react';
 
 export { NavLink };
 
@@ -11,22 +11,22 @@ type Props = {
   children: string | ReactElement;
 } & JSX.IntrinsicElements['a'];
 
-function NavLink({
-  href,
-  exact = false,
-  children,
-  className = '',
-  activeClassName = '',
-  ...props
-}: Props) {
-  const { pathname } = useRouter();
-  const isActive = exact ? pathname === href : pathname.startsWith(href);
+const NavLink = forwardRef<HTMLAnchorElement, Props>(
+  ({ href, exact = false, children, activeClassName = '', ...props }, ref) => {
+    const pathname = usePathname();
+    const isActive = exact ? pathname === href : pathname.startsWith(href);
 
-  return (
-    <Link href={href}>
-      <a className={`${className} ${isActive ? 'text-white ' + activeClassName : ''} `} {...props}>
+    return (
+      <Link
+        href={href}
+        className={`${isActive ? 'text-white ' + activeClassName : ''} `}
+        {...props}
+        ref={ref}
+      >
         {children}
-      </a>
-    </Link>
-  );
-}
+      </Link>
+    );
+  }
+);
+
+NavLink.displayName = 'NavLink';

@@ -1,4 +1,9 @@
-import Head from 'next/head';
+
+import { Metadata } from 'next';
+
+// export const metadata: Metadata = {
+//   title: 'Next.js',
+// }
 
 type Props = {
   title: string;
@@ -6,30 +11,35 @@ type Props = {
   canonical: `https://g1mishra.dev${string}`;
 };
 
-const NextHead = ({ title, desc, canonical = 'https://g1mishra.dev' }: Props) => {
-  return (
-    <Head>
-      <title>{title}</title>
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="canonical" href={canonical} />
-      <meta name="description" content={desc} />
-      <meta property="og:url" content="https://g1mishra.dev" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Full-Stack Developer, India - Jeevan Kumar" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={desc} />
-      <meta property="og:image" content="https://g1mishra.dev/og.png" />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:domain" content="g1mishra.dev" />
-      <meta property="twitter:url" content="https://g1mishra.dev" />
-      <meta name="twitter:image" content="https://g1mishra.dev/og-small.png" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={desc} />
-    </Head>
-  );
+export const generateMetadata = ({ title, desc, canonical = 'https://g1mishra.dev' }: Props): Metadata => {
+  return {
+    title,
+    description: desc,
+    alternates: {
+      canonical: canonical,
+    },
+    openGraph: {
+      type: 'website',
+      url: 'https://g1mishra.dev',
+      siteName: 'Full-Stack Developer, India - Jeevan Kumar',
+      title,
+      description: desc,
+      images: [
+        {
+          url: 'https://g1mishra.dev/og.png',
+          type: 'image/png',
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: 'https://g1mishra.dev',
+      creator: 'g1mishra',
+      images: ['https://g1mishra.dev/og-small.png'],
+      title,
+      description: desc,
+    },
+  };
 };
-
-export default NextHead;

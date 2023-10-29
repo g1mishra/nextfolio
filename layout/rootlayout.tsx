@@ -1,13 +1,14 @@
+"use client"
+
 import Footer from '@components/footer/footer';
 import Header from '@components/header';
 import { GTM_ID } from '@lib/gtm';
-import Head from 'next/head';
 import Script from 'next/script';
 import React, { useEffect } from 'react';
 import { useWindowSize } from 'usehooks-ts';
 
 type Props = {
-  children: React.ReactElement;
+  children: React.ReactNode;
 };
 
 const RootLayout = (props: Props) => {
@@ -19,9 +20,6 @@ const RootLayout = (props: Props) => {
 
   return (
     <div className="border border-light rounded-lg bg-secondaryBG absolute inset-4 sm:inset-6 overflow-hidden">
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      </Head>
       <Header />
       {props.children}
       <Footer />
