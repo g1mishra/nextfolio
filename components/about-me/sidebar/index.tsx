@@ -1,8 +1,10 @@
+'use client';
+
 import { ArrowIcon, BIO_ICON, EMAIL_ICON, FILE_ICON } from '@components/icons';
-import { useRouter } from 'next/router';
+import { useParams, useRouter } from 'next/navigation';
 import { ReactElement, useState } from 'react';
-import LeftSidebar from './left-sidebar';
 import { AboutSubRoutesT } from 'types/common';
+import LeftSidebar from './left-sidebar';
 
 interface IFileLink {
   text: AboutSubRoutesT;
@@ -38,8 +40,8 @@ const handleOpenAndClose = (e: any) => {
 
 export default function AboutSidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const router = useRouter();
-  const currentPage = (router.query.page as AboutSubRoutesT) ?? 'bio';
+  const params = useParams();
+  const currentPage = (params.slug as AboutSubRoutesT) ?? 'bio';
 
   return (
     <>

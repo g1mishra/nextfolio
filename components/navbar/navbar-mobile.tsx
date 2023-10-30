@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { NavLink } from './navlink';
 
@@ -12,17 +12,17 @@ const navlinks = [
 
 const NavbarMobile = () => {
   const [open, setOpen] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     setOpen(false);
-  }, [router.pathname]);
+  }, [pathname]);
 
   return (
     <header className="z-20 w-full flex flex-col">
       <div className="z-[21] border-b border-light p-4 flex justify-between">
-        <Link href="/">
-          <a className="text-primaryText"> jeevan-kumar</a>
+        <Link href="/" className="text-primaryText">
+          jeevan-kumar
         </Link>
         <button className="text-[24px] w-6 h-6 " onClick={() => setOpen((prev) => !prev)}>
           {open ? (

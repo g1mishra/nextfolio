@@ -23,7 +23,7 @@ const ProjectsSidebar = ({ tags }: { tags: string[] }) => {
         <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
         <div className="px-4 py-2">
           {tags.map((tag) => (
-            <label key={tag} className="flex items-center pb-2">
+            <label key={tag} className="flex items-center max-w-max pr-1 pb-2 cursor-pointer">
               <input
                 name={tag}
                 type="checkbox"

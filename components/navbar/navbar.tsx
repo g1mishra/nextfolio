@@ -12,8 +12,8 @@ const Navbar = () => {
   return (
     <header className="hidden sm:flex w-full items-center justify-between border-light border-b">
       <div className="h-full px-4 flex items-center py-2.5 border-light border-r w-[calc(18rem_+_4rem)]">
-        <Link href="/">
-          <a className="text-primaryText"> jeevan-kumar</a>
+        <Link href="/" className="text-primaryText">
+          jeevan-kumar
         </Link>
       </div>
       <div className="flex flex-1 justify-start w-full items-cente">

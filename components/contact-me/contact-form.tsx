@@ -1,5 +1,7 @@
+'use client';
+
+import { ContatcFormData } from 'app/contact-me/page';
 import axios from 'axios';
-import { ContatcFormData } from 'pages/contact-me';
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -42,11 +44,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div
-      className={`p-4 flex flex-1 justify-center my-[2.5vh] sm:mb-0 ${
-        emailSent ? '' : 'sm:mt-[10vh]'
-      }`}
-    >
+    <div className={`p-4 flex flex-1 justify-center items-center sm:mb-0  my-6 xl:my-0 `}>
       {emailSent ? (
         <div className="flex flex-col items-center text-center justify-center max-w-sm min-h-[200px] gap-4">
           <h1> Thank you! 🤘</h1>

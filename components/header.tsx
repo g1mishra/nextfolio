@@ -1,17 +1,20 @@
+'use client';
+
 import useMediaQuery from 'hooks/useMediaQuery';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 import { HighlightBoxBG2 } from './gradient-box';
 import Navbar from './navbar/navbar';
 import NavbarMobile from './navbar/navbar-mobile';
 
-const Header = () => {
+const Header: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <>
       {isMobile ? <NavbarMobile /> : <Navbar />}
-      {router.asPath === '/' ? <HighlightBoxBG2 /> : null}
+      {pathname === '/' ? <HighlightBoxBG2 /> : null}
     </>
   );
 };

@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowIcon, EMAIL_ICON } from '@components/icons';
 import { siteLinks } from '@lib/constants';
 
