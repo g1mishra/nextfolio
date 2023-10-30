@@ -12,14 +12,17 @@ type Props = {
 } & JSX.IntrinsicElements['a'];
 
 const NavLink = forwardRef<HTMLAnchorElement, Props>(
-  ({ href, exact = false, children, activeClassName = '', ...props }, ref) => {
+  ({ href, exact = false, children, className, activeClassName = '', ...props }, ref) => {
     const pathname = usePathname();
+
     const isActive = exact ? pathname === href : pathname.startsWith(href);
+
+    console.log('isActive', isActive, pathname, href);
 
     return (
       <Link
         href={href}
-        className={`${isActive ? 'text-white ' + activeClassName : ''} `}
+        className={`${className} ${isActive ? `text-white ${activeClassName}` : ''}`}
         {...props}
         ref={ref}
       >
