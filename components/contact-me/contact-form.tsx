@@ -1,7 +1,7 @@
 'use client';
 
+import { ContatcFormData } from 'app/contact-me/page';
 import axios from 'axios';
-import { ContatcFormData } from 'pages/contact-me';
 import { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 

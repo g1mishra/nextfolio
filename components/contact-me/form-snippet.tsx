@@ -1,7 +1,7 @@
 'use client';
 
 import { formatDate } from '@lib/date';
-import { ContatcFormData } from 'pages/contact-me';
+import { ContatcFormData } from 'app/contact-me/page';
 import { useFormContext } from 'react-hook-form';
 
 const FormSnippet = () => {
