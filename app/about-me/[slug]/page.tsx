@@ -1,6 +1,7 @@
 import AboutContent from '@components/about-me/content';
 import { CROSS_ICON } from '@components/icons';
 import { generateMetadata } from '@components/next-head';
+import { AboutSubRoutes } from '@lib/common';
 import { IGistData } from '@lib/gist';
 import { Metadata } from 'next';
 import { AboutSubRoutesT } from 'types/common';
@@ -35,4 +36,10 @@ export default function Page({ params }: { params: { slug: AboutSubRoutesT } }) 
       </div>
     </>
   );
+}
+
+export async function generateStaticParams() {
+  return AboutSubRoutes.filter((page) => page !== 'bio').map((slug) => ({
+    slug,
+  }));
 }
