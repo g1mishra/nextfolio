@@ -72,7 +72,7 @@ export function siteLinks() {
   return {
     youtube: {
       name: 'YouTube channel',
-      href: 'https://youtube.com/checktolearn',
+      href: 'https://www.youtube.com/@codingwithjeevan',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

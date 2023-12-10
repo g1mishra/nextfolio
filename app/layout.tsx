@@ -30,7 +30,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <meta name="author" content="Jeevan Kumar" />
         <meta
           name="keywords"
-          content="HTML, CSS, JavaScript, React, Next.js, express.js, python, developer, portfolio, g1mishra, checktolearn"
+          content="HTML, CSS, JavaScript, React, Next.js, express.js, python, developer, portfolio, g1mishra, CodeWithJeevan"
         />
         <meta name="theme-color" content="#011627" />
 
