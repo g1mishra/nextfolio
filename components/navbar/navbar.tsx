@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="flex flex-1 justify-start w-full items-center">
         {navlinks.map((linkItem) => (
           <NavLink
-            exact={isBlogDomain ? false : linkItem.link === '/'}
+            exact={isBlogDomain ? linkItem.text !== '_blog' : linkItem.link === '/'}
             isBlogDomain={isBlogDomain}
             href={linkItem.link}
             key={linkItem.text}
@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
       <NavLink
         isBlogDomain={isBlogDomain}
-        exact
+        exact={isBlogDomain ? false : true}
         href="/contact-me"
         activeClassName="border-b-[#FEA55F]"
         className="px-4 h-full py-2.5 border flex items-center border-y-2 border-transparent border-l-light min-w-max "

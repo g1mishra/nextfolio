@@ -59,7 +59,7 @@ const NavbarMobile = () => {
           {__navlinks.map((linkItem) => (
             <NavLink
               isBlogDomain={isBlogDomain}
-              exact={isBlogDomain ? false : linkItem.link === '/'}
+              exact={isBlogDomain ? linkItem.text !== '_blog' : linkItem.link === '/'}
               href={linkItem.link}
               key={linkItem.text}
               className="w-full p-4 border-b border-light flex items-center"
