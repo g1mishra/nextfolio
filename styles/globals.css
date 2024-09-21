@@ -14,7 +14,7 @@
 }
 
 body {
-  @apply w-full h-[var(--device-h)] relative overflow-hidden p-4 sm:p-6 !bg-[#010C15] !text-primaryText;
+  @apply bg-secondaryBG text-primaryText;
 }
 
 main {
@@ -112,4 +112,102 @@ code {
   border-radius: 10px; */
   border-top: 5px var(--scrollbarBG) solid;
   border-bottom: 1px var(--scrollbarBG) solid;
+}
+
+.prose {
+  @apply text-primaryText text-lg leading-relaxed;
+  color: #607B96;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-[#E5E9F0] mt-8 mb-4;
+  color: #E5E9F0;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.prose p {
+  @apply mb-6;
+  margin-bottom: 1.25em;
+}
+
+.prose a {
+  @apply text-[#FEA55F] underline;
+  color: #FEA55F;
+  text-decoration: underline;
+}
+
+.prose code {
+  @apply bg-[#1C2B3A] text-[#E5E9F0] px-1 py-0.5 rounded text-sm;
+  background-color: #1C2B3A;
+  color: #E5E9F0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+.prose pre {
+  @apply bg-[#011221] border border-[#1E2D3D] p-4 rounded-md overflow-x-auto my-6;
+  background-color: #011221 !important;
+  border: 1px solid #1E2D3D;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.prose img {
+  @apply max-w-full h-auto rounded-md my-6;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-[#1E2D3D] pl-4 italic text-[#8195A7] my-6;
+  border-left: 4px solid #1E2D3D;
+  padding-left: 1em;
+  color: #8195A7;
+}
+
+.prose ul, .prose ol {
+  @apply pl-6 my-6;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  @apply mb-2 list-disc;
+  margin-bottom: 0.5em;
+}
+
+/* Override highlight.js styles to match your theme */
+.hljs {
+  background: #011221 !important;
+  color: #E5E9F0 !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-name,
+.hljs-strong {
+  color: #569CD6 !important;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-addition,
+.hljs-tag,
+.hljs-quote,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #CE9178 !important;
 }

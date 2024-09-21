@@ -1,6 +1,5 @@
 'use client';
 
-import { CROSS_ICON } from '@components/icons';
 import ProjectsSidebar from '@components/projects/sidebar';
 import { selectedTagAtom } from 'atoms/projectsAtom';
 import { useAtom } from 'jotai';
@@ -27,70 +26,65 @@ const ProjectsPage = ({ projects, tags }: IProjectPageProps) => {
   }, [projects, tagsArr]);
 
   return (
-    <div className="flex w-full flex-col sm:flex-row">
+    <div className="flex w-full flex-col sm:flex-row bg-[#011627] text-[#d6deeb]">
       <ProjectsSidebar tags={tags} />
-      <div className="flex-1 shrink-0 flex flex-col sm:border-r border-light">
-        <div className="hidden sm:block border-b border-light">
-          <p className="flex justify-between items-center pl-8 pr-4 py-2 max-w-max space-x-12 border-r border-light">
-            <span>{tagsArr?.length > 0 ? tagsArr.join(';') : 'all'}</span>
-            {CROSS_ICON}
-          </p>
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex items-center px-4 py-2 border-b border-[#1e2d3d]">
+          <span className="text-[#5f7e97]">projects /</span>
+          <span className="ml-2">{tagsArr?.length > 0 ? tagsArr.join(', ') : 'all'}</span>
         </div>
-        <div className="flex-1 w-full p-4 sm:py-12 flex justify-center overflow-y-auto">
-          <div className="flex flex-col h-max sm:grid xl:grid-cols-2 2xl:grid-cols-3 gap-12">
-            {filteredProjects.map((project, index) => (
-              <div className="flex flex-col gap-3 max-w-full sm:max-w-sm" key={project._id}>
-                <p className=" text-primaryText flex items-center whitespace-nowrap">
-                  <span className="text-blueToken font-bold">Project {index + 1}</span>
-                  <span className="mx-3">{'//'}</span>
-                  <span>_{project.name.toLowerCase().split(' ').join('-')}</span>
-                </p>
-                <div className="flex relative group flex-col rounded-[15px] overflow-clip bg-[#011221] border border-light">
-                  <div className="w-full flex relative aspect-[6/3] h-full overflow-clip ">
+        <div className="flex-1 overflow-y-auto p-6">
+          <div className="@container">
+            <div className="grid grid-cols-1 @md:grid-cols-2 @xl:grid-cols-3 gap-6">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project._id}
+                  className="bg-[#01111d] rounded-lg overflow-hidden border border-[#1e2d3d] hover:border-[#607B96] transition-all duration-300"
+                >
+                  <div className="relative aspect-video">
                     {project.imgSrc ? (
                       <Image
-                        priority
-                        src={project.imgSrc ?? ''}
+                        src={project.imgSrc}
                         alt={project.name}
                         layout="fill"
                         objectFit="contain"
+                        className="bg-[#011627] p-2"
                       />
                     ) : (
-                      <div className="absolute inset-0 flex justify-center items-center font-semibold  bg-secondaryBG">
-                        <p className="bg-white p-6 bg-opacity-5 rounded-md text-xl capitalize text-primaryText">
-                          {project.name}
-                        </p>
+                      <div className="absolute inset-0 flex justify-center items-center bg-[#011627]">
+                        <p className="text-xl font-semibold">{project.name}</p>
                       </div>
                     )}
                   </div>
-                  <div className="w-full flex flex-col flex-[1] h-full p-4 gap-4 border-t border-light">
-                    <p className="line-clamp-3 min-h-[75px]">{project.description}</p>
-                  </div>
-                  <div className="absolute inset-0 hidden group-hover:flex flex-col items-center justify-center backdrop-blur-sm bg-primaryBG/25">
-                    {project.liveURL && (
-                      <a
-                        href={project.liveURL ?? ''}
-                        target="_blank"
-                        className="bg-[#1C2B3A] rounded-lg w-full px-4 py-2 text-white max-w-[150px] text-center my-2"
-                        rel="noreferrer"
-                      >
-                        view-project
-                      </a>
-                    )}
-                    {project.repoURL && (
-                      <a
-                        href={project.repoURL ?? ''}
-                        target="_blank"
-                        className="bg-[#1C2B3A] rounded-lg w-full px-4 py-2 text-white max-w-[150px] text-center my-2"
-                        rel="noreferrer"
-                      >
-                        view-source
-                      </a>
-                    )}
+                  <div className="p-4 border-t flex flex-col justify-between border-[#1e2d3d]">
+                    <h3 className="text-primaryText text-lg font-semibold mb-2">{project.name}</h3>
+                    <p className="text-sm mb-4 line-clamp-3 flex-1 grow">{project.description}</p>
+                    <div className="flex space-x-2 whitespace-nowrap">
+                      {project.liveURL && (
+                        <a
+                          href={project.liveURL}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-3 py-1 bg-[#1c2b3a] text-[#ffa7c4] rounded text-sm hover:bg-[#263b50] transition-colors"
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                      {project.repoURL && (
+                        <a
+                          href={project.repoURL}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-3 py-1 bg-[#1c2b3a] text-[#ffa7c4] rounded text-sm hover:bg-[#263b50] transition-colors"
+                        >
+                          Source Code
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
