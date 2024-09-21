@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { NavLink } from './navlink';
 
 export const navlinks = [
@@ -13,12 +12,6 @@ export const navlinks = [
 ];
 
 const Navbar = () => {
-  const [isBlogDomain, setIsBlogDomain] = useState(false);
-
-  useEffect(() => {
-    setIsBlogDomain(window.location.hostname === 'blog.g1mishra.dev');
-  }, []);
-
   return (
     <header className="hidden sm:flex w-full items-center justify-between border-light border-b">
       <div className="h-full px-4 flex items-center py-2.5 border-light border-r w-[calc(18rem_+_4rem)]">
@@ -29,8 +22,7 @@ const Navbar = () => {
       <div className="flex flex-1 justify-start w-full items-center">
         {navlinks.map((linkItem) => (
           <NavLink
-            exact={isBlogDomain ? linkItem.text !== '_blog' : linkItem.link === '/'}
-            isBlogDomain={isBlogDomain}
+            exact={linkItem.link === '/'}
             href={linkItem.link}
             key={linkItem.text}
             activeClassName="border-b-[#FEA55F]"
@@ -41,8 +33,7 @@ const Navbar = () => {
         ))}
       </div>
       <NavLink
-        isBlogDomain={isBlogDomain}
-        exact={isBlogDomain ? false : true}
+        exact
         href="/contact-me"
         activeClassName="border-b-[#FEA55F]"
         className="px-4 h-full py-2.5 border flex items-center border-y-2 border-transparent border-l-light min-w-max "

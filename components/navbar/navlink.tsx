@@ -1,25 +1,31 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ReactElement, forwardRef } from 'react';
+import { ReactElement, forwardRef, useEffect, useState } from 'react';
 
 type Props = {
   href: string;
   exact?: boolean;
   activeClassName?: string;
   children: string | ReactElement;
-  isBlogDomain: boolean;
 } & JSX.IntrinsicElements['a'];
 
 const NavLink = forwardRef<HTMLAnchorElement, Props>(
-  (
-    { href, exact = false, children, className, activeClassName = '', isBlogDomain, ...props },
-    ref
-  ) => {
+  ({ href, exact = false, children, className, activeClassName = '', ...props }, ref) => {
     const pathname = usePathname();
 
-    const isActive = exact
+    const [isBlogDomain, setIsBlogDomain] = useState(false);
+
+    useEffect(() => {
+      setIsBlogDomain(window.location.hostname === 'blog.g1mishra.dev');
+    }, []);
+
+    let isActive = exact
       ? pathname === href
       : pathname.startsWith(href) || (href === '/blog' && isBlogDomain);
+
+    if (typeof children === 'string') {
+      isActive = children === '_hello' && !isBlogDomain;
+    }
 
     let finalHref = href;
     if (isBlogDomain) {
@@ -48,4 +54,3 @@ const NavLink = forwardRef<HTMLAnchorElement, Props>(
 NavLink.displayName = 'NavLink';
 
 export { NavLink };
-
