@@ -1,24 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Only apply in production
-  if (process.env.NODE_ENV !== 'production') {
-    return NextResponse.next();
-  }
-
   const hostname = request.headers.get('host') || '';
   const { pathname } = request.nextUrl;
 
   const isBlogDomain = hostname === 'blog.g1mishra.dev';
 
-  // Handle root path and blog posts for blog subdomain
+  // Handle blog subdomain
   if (isBlogDomain) {
+    // Rewrite root path to /blog
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/blog', request.url));
     }
-    if (!pathname.startsWith('/blog')) {
-      return NextResponse.rewrite(new URL(`/blog${pathname}`, request.url));
-    }
+    // For other paths, keep them as is (don't add /blog prefix)
+    return NextResponse.next();
   }
 
   // Redirect from main domain /blog to blog subdomain

@@ -10,8 +10,6 @@ export const navlinks = [
 ];
 
 const Navbar = () => {
-  const isBlogDomain = typeof window !== 'undefined' && window.location.hostname.startsWith('blog.');
-
   return (
     <header className="hidden sm:flex w-full items-center justify-between border-light border-b">
       <div className="h-full px-4 flex items-center py-2.5 border-light border-r w-[calc(18rem_+_4rem)]">
@@ -22,12 +20,11 @@ const Navbar = () => {
       <div className="flex flex-1 justify-start w-full items-center">
         {navlinks.map((linkItem) => (
           <NavLink
-            exact={linkItem.link !== '/about-me'}
+            exact={linkItem.link === '/'}
             href={linkItem.link}
             key={linkItem.text}
             activeClassName="border-b-[#FEA55F]"
             className="px-6 h-full py-2.5 border-light border-r border-y-2 border-y-transparent text-center min-w-[120px]"
-            isBlogActive={isBlogDomain && linkItem.link === '/blog'}
           >
             {linkItem.text}
           </NavLink>
