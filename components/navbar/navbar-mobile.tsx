@@ -2,14 +2,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { NavLink } from './navlink';
+import { navlinks } from './navbar';
 
-const navlinks = [
-  { link: '/', text: ' _hello' },
-  { link: '/about-me', text: '_about-me' },
-  { link: '/projects', text: '_projects' },
-  { link: '/blog', text: '_blog' },
-  { link: '/contact-me', text: '_contact-me' },
-];
+const __navlinks = [...navlinks, { link: '/contact-me', text: '_contact-me' }];
 
 const NavbarMobile = () => {
   const [open, setOpen] = useState(false);
@@ -55,7 +50,7 @@ const NavbarMobile = () => {
       {open ? (
         <div className="z-20 w-full absolute h-full bg-secondaryBG overflow-hidden inset-x-0 header-transition">
           <div className="h-[57px]" />
-          {navlinks.map((linkItem) => (
+          {__navlinks.map((linkItem) => (
             <NavLink
               exact
               href={linkItem.link}

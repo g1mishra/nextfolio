@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NavLink } from './navlink';
 
-const navlinks = [
+export const navlinks = [
   { link: '/', text: ' _hello' },
   { link: '/about-me', text: '_about-me' },
   { link: '/projects', text: '_projects' },

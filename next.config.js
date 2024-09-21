@@ -30,18 +30,21 @@ const nextConfig = {
   },
   headers,
   async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: '/blog/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'blog.g1mishra.dev',
-          },
-        ],
-      },
-    ]
+    if (process.env.NODE_ENV === 'production') {
+      return [
+        {
+          source: '/:path*',
+          destination: '/blog/:path*',
+          has: [
+            {
+              type: 'host',
+              value: 'blog.g1mishra.dev',
+            },
+          ],
+        },
+      ];
+    }
+    return [];
   },
 };
 
