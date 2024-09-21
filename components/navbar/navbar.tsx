@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { NavLink } from './navlink';
 
 export const navlinks = [
-  { link: '/', text: ' _hello' },
+  { link: '/', text: '_hello' },
   { link: '/about-me', text: '_about-me' },
   { link: '/projects', text: '_projects' },
   { link: '/blog', text: '_blog' },
@@ -10,6 +13,12 @@ export const navlinks = [
 ];
 
 const Navbar = () => {
+  const [isBlogDomain, setIsBlogDomain] = useState(false);
+
+  useEffect(() => {
+    setIsBlogDomain(window.location.hostname === 'blog.g1mishra.dev');
+  }, []);
+
   return (
     <header className="hidden sm:flex w-full items-center justify-between border-light border-b">
       <div className="h-full px-4 flex items-center py-2.5 border-light border-r w-[calc(18rem_+_4rem)]">
@@ -20,7 +29,8 @@ const Navbar = () => {
       <div className="flex flex-1 justify-start w-full items-center">
         {navlinks.map((linkItem) => (
           <NavLink
-            exact={linkItem.link === '/'}
+            exact={isBlogDomain ? false : linkItem.link === '/'}
+            isBlogDomain={isBlogDomain}
             href={linkItem.link}
             key={linkItem.text}
             activeClassName="border-b-[#FEA55F]"
@@ -31,6 +41,7 @@ const Navbar = () => {
         ))}
       </div>
       <NavLink
+        isBlogDomain={isBlogDomain}
         exact
         href="/contact-me"
         activeClassName="border-b-[#FEA55F]"
