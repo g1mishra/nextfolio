@@ -8,12 +8,20 @@ export function middleware(request: NextRequest) {
 
   // Handle blog subdomain
   if (isBlogDomain) {
-    // Rewrite root path to /blog
+    // Redirect non-blog pages to main domain
+    if (!pathname.startsWith('/blog') && pathname !== '/') {
+      return NextResponse.redirect(`https://g1mishra.dev${pathname}`);
+    }
+    
+    // Rewrite /blog paths to remove /blog prefix
+    if (pathname.startsWith('/blog')) {
+      return NextResponse.rewrite(new URL(pathname.replace('/blog', ''), request.url));
+    }
+    
+    // Rewrite root to /blog
     if (pathname === '/') {
       return NextResponse.rewrite(new URL('/blog', request.url));
     }
-    // For other paths, keep them as is (don't add /blog prefix)
-    return NextResponse.next();
   }
 
   // Redirect from main domain /blog to blog subdomain

@@ -17,7 +17,7 @@ const NavLink = forwardRef<HTMLAnchorElement, Props>(
     const [isBlogDomain, setIsBlogDomain] = useState(false);
 
     useEffect(() => {
-      setIsBlogDomain(window.location.hostname.startsWith('blog.'));
+      setIsBlogDomain(window.location.hostname === 'blog.g1mishra.dev');
     }, []);
 
     const isActive = exact
@@ -25,10 +25,14 @@ const NavLink = forwardRef<HTMLAnchorElement, Props>(
       : pathname.startsWith(href) || (href === '/blog' && isBlogDomain);
 
     let finalHref = href;
-    if (isBlogDomain && href === '/') {
-      finalHref = 'https://g1mishra.dev/';
-    } else if (isBlogDomain && href === '/blog') {
-      finalHref = '/';
+    if (isBlogDomain) {
+      if (href === '/') {
+        finalHref = 'https://g1mishra.dev/';
+      } else if (href === '/blog') {
+        finalHref = '/';
+      } else if (href.startsWith('/blog/')) {
+        finalHref = href.replace('/blog', '');
+      }
     }
 
     return (
