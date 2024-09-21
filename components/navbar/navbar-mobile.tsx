@@ -14,6 +14,12 @@ const NavbarMobile = () => {
     setOpen(false);
   }, [pathname]);
 
+  const [isBlogDomain, setIsBlogDomain] = useState(false);
+
+  useEffect(() => {
+    setIsBlogDomain(window.location.hostname === 'blog.g1mishra.dev');
+  }, []);
+
   return (
     <header className="z-20 w-full flex flex-col">
       <div className="z-[21] border-b border-light p-4 flex justify-between">
@@ -52,7 +58,8 @@ const NavbarMobile = () => {
           <div className="h-[57px]" />
           {__navlinks.map((linkItem) => (
             <NavLink
-              exact
+              isBlogDomain={isBlogDomain}
+              exact={isBlogDomain ? false : linkItem.link === '/'}
               href={linkItem.link}
               key={linkItem.text}
               className="w-full p-4 border-b border-light flex items-center"
