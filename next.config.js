@@ -29,4 +29,23 @@ module.exports = {
     domains: ['avatars.githubusercontent.com', 'drive.google.com', 'g1mishra.dev'],
   },
   headers,
+  async rewrites() {
+    if (process.env.NODE_ENV === 'production') {
+      return [
+        {
+          source: '/:path*',
+          destination: '/blog/:path*',
+          has: [
+            {
+              type: 'host',
+              value: 'blog.g1mishra.dev',
+            },
+          ],
+        },
+      ];
+    }
+    return [];
+  },
 };
+
+module.exports = nextConfig
