@@ -5,6 +5,7 @@ const navlinks = [
   { link: '/', text: ' _hello' },
   { link: '/about-me', text: '_about-me' },
   { link: '/projects', text: '_projects' },
+  { link: '/blog', text: '_blog' },
   // { link: '/contact-me', text: '_contact-me' },
 ];
 

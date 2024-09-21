@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "yarn prettier --write ."
+    "format": "yarn prettier --write .",
+    "prebuild": "mkdir -p posts"
   },
   "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
     "axios": "^1.5.1",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.10.0",
     "jotai": "^1.13.1",
     "mongodb": "^4.17.1",
     "next": "13.5.4",
@@ -18,7 +22,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.47.0",
+    "react-markdown": "^9.0.1",
     "react-syntax-highlighter": "^15.5.0",
+    "rehype-highlight": "^7.0.0",
     "sharp": "^0.31.3",
     "tailwind": "^4.0.0",
     "usehooks-ts": "^2.9.1"
@@ -35,7 +41,27 @@
     "eslint-config-prettier": "^8.10.0",
     "postcss": "^8.4.31",
     "prettier": "2.7.1",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.4.3",
     "typescript": "5.2.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "lodash@<4.17.11": ">=4.17.11",
+      "ajv@<6.12.3": ">=6.12.3",
+      "jsonwebtoken@<=8.5.1": ">=9.0.0",
+      "ws@>=6.0.0 <6.2.2": ">=6.2.2",
+      "jsonwebtoken@<9.0.0": ">=9.0.0",
+      "lodash@<4.17.12": ">=4.17.12",
+      "lodash@<4.17.21": ">=4.17.21",
+      "sharp@<0.32.6": ">=0.32.6",
+      "moment@>=2.18.0 <2.29.4": ">=2.29.4",
+      "moment@<2.29.2": ">=2.29.2",
+      "lodash@>=3.7.0 <4.17.19": ">=4.17.19",
+      "follow-redirects@<1.15.4": ">=1.15.4",
+      "nodemailer@<=6.9.8": ">=6.9.9",
+      "qs@>=6.5.0 <6.5.3": ">=6.5.3",
+      "axios@>=1.0.0 <1.6.0": ">=1.6.0",
+      "ip@=2.0.0": ">=2.0.1"
+    }
   }
 }
