@@ -9,13 +9,14 @@ type Props = {
   exact?: boolean;
   activeClassName?: string;
   children: string | ReactElement;
+  isBlogActive?: boolean;
 } & JSX.IntrinsicElements['a'];
 
 const NavLink = forwardRef<HTMLAnchorElement, Props>(
-  ({ href, exact = false, children, className, activeClassName = '', ...props }, ref) => {
+  ({ href, exact = false, children, className, activeClassName = '', isBlogActive = false, ...props }, ref) => {
     const pathname = usePathname();
 
-    const isActive = exact ? pathname === href : pathname.startsWith(href);
+    const isActive = exact ? pathname === href : pathname.startsWith(href) || isBlogActive;
 
     return (
       <Link
