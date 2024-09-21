@@ -11,6 +11,11 @@ export function middleware(request: NextRequest) {
 
   const isBlogDomain = hostname === 'blog.g1mishra.dev';
 
+  // Handle root path for blog subdomain
+  if (isBlogDomain && pathname === '/') {
+    return NextResponse.rewrite(new URL('/blog', request.url));
+  }
+
   // Redirect from blog subdomain to main domain for non-blog pages
   if (isBlogDomain && !pathname.startsWith('/blog') && pathname !== '/') {
     return NextResponse.redirect(new URL(`https://g1mishra.dev${pathname}`, request.url));

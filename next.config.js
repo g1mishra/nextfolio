@@ -42,6 +42,16 @@ const nextConfig = {
             },
           ],
         },
+        {
+          source: '/',
+          destination: '/blog',
+          has: [
+            {
+              type: 'host',
+              value: 'blog.g1mishra.dev',
+            },
+          ],
+        },
       ];
     }
     return [];
