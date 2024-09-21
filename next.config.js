@@ -22,11 +22,27 @@ const headers = async () => {
   ];
 };
 
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['avatars.githubusercontent.com', 'drive.google.com', 'g1mishra.dev'],
+    domains: ['avatars.githubusercontent.com', 'drive.google.com', 'g1mishra.dev', 'blog.g1mishra.dev', 'byteeat.in'],
   },
   headers,
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/blog/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'blog.g1mishra.dev',
+          },
+        ],
+      },
+    ]
+  },
 };
+
+module.exports = nextConfig
