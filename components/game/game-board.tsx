@@ -7,7 +7,7 @@ const CrossSvg = dynamic(() => import('@components/cross-svg'), { ssr: false });
 const GameBoard = () => (
   <div
     id="gameBoard"
-    className="w-full min-h-[375px] mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox rounded-lg"
+    className="w-full mb-2 relative sm:w-[475px] px-3 sm:px-6 py-8 bg-gameBox rounded-lg"
   >
     <div className="overflow-hidden absolute inset-0 -z-[1]">
       <HighlightBoxBG1 className="scale-125" />

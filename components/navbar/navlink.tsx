@@ -24,7 +24,7 @@ const NavLink = forwardRef<HTMLAnchorElement, Props>(
       : pathname.startsWith(href) || (href === '/blog' && isBlogDomain);
 
     if (typeof children === 'string') {
-      isActive = children === '_hello' && !isBlogDomain;
+      isActive = children === '_hello' ? !isBlogDomain && isActive : isActive;
     }
 
     let finalHref = href;

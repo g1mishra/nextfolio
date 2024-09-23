@@ -26,7 +26,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['avatars.githubusercontent.com', 'drive.google.com', 'g1mishra.dev', 'blog.g1mishra.dev', 'byteeat.in'],
+    domains: [
+      'avatars.githubusercontent.com',
+      'drive.google.com',
+      'g1mishra.dev',
+      'blog.g1mishra.dev',
+      'byteeat.in',
+    ],
   },
   headers,
   async rewrites() {
@@ -45,4 +51,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

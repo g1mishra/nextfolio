@@ -19,7 +19,7 @@ const Navbar = () => {
           jeevan-kumar
         </Link>
       </div>
-      <div className="flex flex-1 justify-start w-full items-center">
+      <div className="flex flex-1 justify-start w-full items-center whitespace-nowrap">
         {navlinks.map((linkItem) => (
           <NavLink
             exact={linkItem.link === '/'}

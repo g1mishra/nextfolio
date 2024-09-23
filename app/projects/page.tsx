@@ -1,5 +1,5 @@
 import { generateMetadata } from '@components/next-head';
-import clientPromise from '@lib/mongodb';
+import { getProjects } from '@lib/projects';
 import { Metadata } from 'next';
 import { IProject } from 'types/project';
 import ProjectsPage from './ProjectsPage';
@@ -16,7 +16,7 @@ export const metadata: Metadata = generateMetadata({
 });
 
 const Projects = async () => {
-  const { projects, tags } = await getData();
+  const { projects, tags } = await getProjects();
 
   return (
     <main className="flex flex-col sm:flex-row">
@@ -27,20 +27,5 @@ const Projects = async () => {
 };
 
 export default Projects;
-
-async function getData(): Promise<IProjectPageProps> {
-  try {
-    const client = await clientPromise;
-    const db = client.db('portfolio');
-    const response = await db.collection('projects').find({}).toArray();
-    const projects: IProject[] = JSON.parse(JSON.stringify(response));
-    let tags = projects.map((item) => item.tags);
-    tags = Array.from(new Set(tags.join(';').split(';')));
-    projects.sort((a, b) => a.sno - b.sno);
-    return { projects, tags };
-  } catch (e) {
-    return { projects: [], tags: [] };
-  }
-}
 
 export const revalidate = 3600; // revalidate at most every hour

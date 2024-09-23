@@ -83,7 +83,7 @@ const MemoryGame = () => {
   }, [shuffleEmojis.length, state.matchedCards]);
 
   return (
-    <div className="flex flex-col items-center w-full rounded-md gap-6">
+    <div className="flex flex-col items-center w-full rounded-md gap-6 py-1">
       <div className="min-h-[40px] w-full flex justify-center">
         <GameStatus
           won={won}
@@ -92,23 +92,24 @@ const MemoryGame = () => {
           setTimer={(time) => dispatch({ type: ACTIONS.UPDATE_TIMER, payload: time })}
         />
       </div>
-      <div className={`grid grid-cols-4 gap-4 sm:gap-6 mb-2 ${won ? 'blur-md' : ''}`}>
+      <div className={`grid grid-cols-4 gap-2 sm:gap-6 mb-2 w-full px-2 ${won ? 'blur-md' : ''}`}>
         {shuffleEmojis.map((item, index) => (
-          <div
-            key={index}
-            className="w-[50px] h-[50px] sm:w-[80px] sm:h-[80px] cursor-pointer relative"
-            onClick={() => {
-              if (state.matchedCards.indexOf(index) > -1) return;
-              if (state.flippedCards.indexOf(index) > -1) return;
-              flipCard(index, state, dispatch, shuffleEmojis);
-            }}
-          >
-            <div className={`front-card`}></div>
-            {state.matchedCards.indexOf(index) > -1 || state.flippedCards.indexOf(index) > -1 ? (
-              <div className={`back-card`}>{item}</div>
-            ) : (
-              <div className={`!transform-none `} />
-            )}
+          <div key={index} className="w-full h-full flex justify-center items-center">
+            <div
+              className="h-[50px] aspect-square sm:h-[70px] cursor-pointer relative"
+              onClick={() => {
+                if (state.matchedCards.indexOf(index) > -1) return;
+                if (state.flippedCards.indexOf(index) > -1) return;
+                flipCard(index, state, dispatch, shuffleEmojis);
+              }}
+            >
+              <div className={`front-card`}></div>
+              {state.matchedCards.indexOf(index) > -1 || state.flippedCards.indexOf(index) > -1 ? (
+                <div className={`back-card`}>{item}</div>
+              ) : (
+                <div className={`!transform-none `} />
+              )}
+            </div>
           </div>
         ))}
       </div>

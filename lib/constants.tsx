@@ -1,59 +1,51 @@
 export const experience = [
   {
-    jobTitle: 'Next.js developer',
+    jobTitle: 'Next.js Developer',
     companyName: 'EXPIA',
-    period: `Sep 2022 - Present`,
-    description: '',
+    period: '2022 - Present',
+    description:
+      'Developed a horse-racing dashboard, ATA technology website, and an AI chatbot solution dashboard. Utilized technologies: CMS, React, JavaScript, Next.js, Tailwind.',
   },
   {
     jobTitle: 'Frontend Developer',
-    companyName: 'Intellemo',
+    companyName: 'Intellemo.AI',
     period: 'Mar 2022 - Sep 2022',
-    description: `At Intellemo, I worked as a next.js developer, where I implemented various features 
-    such as enabling SSR (for better SEO), One-Click Launch ("an advanced feature for the company's product"), 
-    building the web-form builder from the ground up, and much more. 
-    I received the "Hero of the Month" award.`,
+    description:
+      'Implemented SSR, One-Click Launch feature, and built a webform builder from scratch. Awarded "Hero of the Month" for outstanding contributions. Utilized technologies: Canvas, TypeScript, React, GraphQL, Next.js.',
   },
-
   {
     jobTitle: 'Web Developer',
-    companyName: 'Mobilicis, Inc.',
+    companyName: 'Mobilicis',
     period: 'Feb 2021 - Feb 2022',
-    description: ``,
+    description:
+      'Developed the frontend of a trade-in application for refurbished smartphones. Utilized technologies: Python, Django, Web Scraping, Material UI, GraphQL, Next.js, Tailwind, React Js.',
   },
   {
-    jobTitle: 'Full-Stack Developer - Intern',
+    jobTitle: 'Full Stack Engineer',
     companyName: 'Mobiru India',
     period: 'Aug 2020 - Feb 2021',
-    description: `Worked as django and react developer. Created many webpages, web-scraping scripts, improved seo, etc.`,
+    description:
+      'Built a second-hand mobile phone price comparison website from scratch. Utilized technologies: Python, Django, Web Scraping, React Js.',
   },
 ];
 
 export const skills = [
-  { iconClassName: 'devicon-javascript-plain', name: 'Javascript' },
-  { iconClassName: 'devicon-typescript-plain', name: 'Typescript' },
+  { iconClassName: 'devicon-javascript-plain', name: 'JavaScript' },
+  { iconClassName: 'devicon-typescript-plain', name: 'TypeScript' },
   { iconClassName: 'devicon-react-plain', name: 'React' },
   { iconClassName: 'devicon-nextjs-plain', name: 'Next.js' },
-  { iconClassName: 'devicon-nodejs-plain', name: 'Node' },
-  { iconClassName: 'devicon-express-original', name: 'express' },
-  { iconClassName: 'devicon-redux-plain', name: 'Redux' },
-  {
-    icon: (
-      <svg height="4.268" viewBox="0 0 18 4.268" fill="none" width="18">
-        <path
-          d="M0 2.26c0.004 1.089 0.891 1.98 1.98 1.98a1.982 1.982 0 0 0 1.98 -1.979V1.979a0.816 0.816 0 0 1 1.447 -0.514h1.28A1.984 1.984 0 0 0 4.775 0a1.982 1.982 0 0 0 -1.979 1.98v0.28A0.816 0.816 0 0 1 1.979 3.075a0.816 0.816 0 0 1 -0.815 -0.815 0.233 0.233 0 0 0 -0.233 -0.233H0.233A0.233 0.233 0 0 0 0 2.26zm7.577 1.98a1.988 1.988 0 0 1 -1.911 -1.466h1.279a0.814 0.814 0 0 0 1.447 -0.513V1.979a1.982 1.982 0 0 1 1.98 -1.979c1.078 0 1.957 0.866 1.979 1.938l0.006 0.322a0.816 0.816 0 0 0 1.447 0.514h1.28a1.984 1.984 0 0 1 -1.912 1.466c-1.089 0 -1.976 -0.892 -1.98 -1.979l-0.006 -0.291v-0.012a0.816 0.816 0 0 0 -0.815 -0.792 0.816 0.816 0 0 0 -0.815 0.815v0.28a1.982 1.982 0 0 1 -1.98 1.98zM15.336 1.466a0.814 0.814 0 0 1 1.447 0.514 0.233 0.233 0 0 0 0.233 0.233h0.699a0.233 0.233 0 0 0 0.233 -0.233A1.982 1.982 0 0 0 15.969 0a1.984 1.984 0 0 0 -1.913 1.466h1.28z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
-    name: 'SWR',
-  },
+  { iconClassName: 'devicon-nodejs-plain', name: 'Node.js' },
+  { iconClassName: 'devicon-express-original', name: 'Express.js' },
   { iconClassName: 'devicon-python-plain', name: 'Python' },
   { iconClassName: 'devicon-django-plain', name: 'Django' },
-  { iconClassName: 'devicon-tailwindcss-plain', name: 'TailwindCss' },
-  { iconClassName: 'devicon-sass-plain', name: 'SASS' },
-  { iconClassName: 'devicon-selenium-plain', name: 'selenium' },
-  // { iconClassName: 'devicon-scraping-plain', name: 'Web-scraping' },
+  { iconClassName: 'devicon-mongodb-plain', name: 'MongoDB' },
+  { iconClassName: 'devicon-graphql-plain', name: 'GraphQL' },
+  { iconClassName: 'devicon-tailwindcss-plain', name: 'Tailwind CSS' },
+  { iconClassName: 'devicon-materialui-plain', name: 'Material UI' },
+  { iconClassName: 'devicon-git-plain', name: 'Git' },
+  { iconClassName: 'devicon-github-original', name: 'GitHub' },
+  { iconClassName: 'devicon-docker-plain', name: 'Docker' },
+  { iconClassName: 'devicon-amazonwebservices-original', name: 'AWS' },
 ];
 
 export const education = [
@@ -61,12 +53,12 @@ export const education = [
     degree: 'Diploma',
     university: 'Mehr Chand Polytechnic College Jalandhar',
     period: '2017 - 2020',
-    description: `I was a part of the Computer Science and Engineering department, where I learned various programming languages and frameworks.
-    I also learned about various algorithms and data structures.`,
+    description:
+      'Part of the Computer Science and Engineering department, where I learned various programming languages, frameworks, algorithms, and data structures.',
   },
 ];
 
-export const BIO_TEXT = `Hello! My name is Jeevan Kumar, and I am a full-stack web developer based in India with over 3 years of experience. I have a strong skillset in technologies such as JavaScript, React.js, Next.js, Node.js, and Python, and I am always eager to learn and grow as a developer. In my spare time, I enjoy sharing my love for technology, coding, and development through my YouTube channel. I am passionate about working on projects that allow me to utilize my skills and knowledge to create innovative solutions.`;
+export const BIO_TEXT = `Hello! I'm Jeevan Kumar, a seasoned front-end-heavy full-stack developer with over 4 years of extensive experience in both front-end and back-end technologies. Based in India, I specialize in building modern and user-friendly web applications using technologies like JavaScript, React.js, Next.js, Node.js, and Python. I'm always eager to learn new technologies and best practices to improve my skills and projects. As a dedicated educator and content creator, I share my knowledge and insights on web development through my YouTube channel. I'm also the founder of ByteEat.in, a side project aimed at revolutionizing restaurant experiences with digital menus and QR-based ordering. I'm passionate about working on innovative projects that challenge me to grow as a developer and contribute to the tech community.`;
 
 export function siteLinks() {
   return {
