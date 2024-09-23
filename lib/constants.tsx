@@ -29,7 +29,7 @@ export const experience = [
   },
 ];
 
-export const skills = [
+export const skills: { iconClassName: string; name: string; icon?: React.ReactNode }[] = [
   { iconClassName: 'devicon-javascript-plain', name: 'JavaScript' },
   { iconClassName: 'devicon-typescript-plain', name: 'TypeScript' },
   { iconClassName: 'devicon-react-plain', name: 'React' },
