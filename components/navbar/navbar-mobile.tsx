@@ -3,8 +3,9 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { NavLink } from './navlink';
 import { navlinks } from './navbar';
+import { getBasePath } from '@lib/common';
 
-const __navlinks = [...navlinks, { link: '/contact-me', text: '_contact-me' }];
+const __navlinks = [...navlinks, { link: getBasePath('/contact-me'), text: '_contact-me' }];
 
 const NavbarMobile = () => {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ const NavbarMobile = () => {
   return (
     <header className="z-20 w-full flex flex-col">
       <div className="z-[21] border-b border-light p-4 flex justify-between">
-        <Link href="/" className="text-primaryText">
+        <Link href={getBasePath()} className="text-primaryText">
           jeevan-kumar
         </Link>
         <button className="text-[24px] w-6 h-6 " onClick={() => setOpen((prev) => !prev)}>

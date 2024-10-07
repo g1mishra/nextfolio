@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { skills } from '@lib/constants';
 import { getBlogPosts } from '@lib/blog';
 import { getProjects } from '@lib/projects';
+import { getBlogBasePath } from '@lib/common';
 
 const Highlights = async () => {
   const featuredSkills = skills.slice(0, 6);
@@ -61,12 +62,12 @@ const Highlights = async () => {
           <p className="text-sm text-[#607B96] mb-2">{latestPost.excerpt.slice(0, 150)}...</p>
           <div className="flex justify-between items-center">
             <Link
-              href={`/blog/${latestPost.slug}`}
+              href={getBlogBasePath(`/${latestPost.slug}`)}
               className="text-[#43D9AD] text-sm hover:underline"
             >
               Read full post →
             </Link>
-            <Link href="/blog" className="text-[#43D9AD] text-sm hover:underline">
+            <Link href={getBlogBasePath()} className="text-[#43D9AD] text-sm hover:underline">
               All posts →
             </Link>
           </div>

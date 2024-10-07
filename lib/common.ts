@@ -62,3 +62,19 @@ const absolutePath: { [index: string]: any } = {
   experience: ['professional-info', 'experience'],
   skills: ['professional-info', 'skills'],
 };
+
+export const getBlogBasePath = (slug = '') => {
+  if (process.env.NODE_ENV === 'development') {
+    return `http://blog.localhost:3001${slug}`;
+  } else {
+    return `https://blog.g1mishra.dev${slug}`;
+  }
+};
+
+export const getBasePath = (slug = '') => {
+  if (process.env.NODE_ENV === 'development') {
+    return `http://localhost:3001${slug}`;
+  } else {
+    return `https://g1mishra.dev${slug}`;
+  }
+};

@@ -35,20 +35,6 @@ const nextConfig = {
     ],
   },
   headers,
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: '/blog/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'blog.g1mishra.dev',
-          },
-        ],
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;

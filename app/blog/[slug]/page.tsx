@@ -1,4 +1,5 @@
 import { getBlogPostBySlug, getRelatedPosts } from '@lib/blog';
+import { getBlogBasePath } from '@lib/common';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
@@ -17,7 +18,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     <main className="flex flex-col sm:flex-row bg-secondaryBG text-primaryText">
       <div className="flex-grow p-3 sm:p-6">
         <article className="max-w-2xl mx-auto">
-          <Link href="/blog" className="text-[#FEA55F] hover:underline mb-2 inline-block text-sm">
+          <Link
+            href={getBlogBasePath()}
+            className="text-[#FEA55F] hover:underline mb-2 inline-block text-sm"
+          >
             ← Back to all posts
           </Link>
           <header className="mb-4">
@@ -48,7 +52,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               <h2 className="text-xl font-bold text-[#E5E9F0] mb-3">Related Posts</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedPosts.map((relatedPost) => (
-                  <Link href={`/blog/${relatedPost.slug}`} key={relatedPost.slug} className="block">
+                  <Link
+                    href={getBlogBasePath(`/${relatedPost.slug}`)}
+                    key={relatedPost.slug}
+                    className="block"
+                  >
                     <div className="bg-[#011221] border border-light rounded p-3 hover:bg-[#011627] transition-colors h-full flex flex-col">
                       <h3 className="text-lg font-semibold text-[#E5E9F0] mb-1">
                         {relatedPost.title}
@@ -62,7 +70,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
           )}
           <div className="mt-10">
-            <Link href="/blog" className="text-[#FEA55F] hover:underline mb-4 inline-block">
+            <Link
+              href={getBlogBasePath()}
+              className="text-[#FEA55F] hover:underline mb-4 inline-block"
+            >
               ← Back to all posts
             </Link>
           </div>

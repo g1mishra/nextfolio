@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { BlogPost } from '@lib/blog';
 import { useState } from 'react';
+import { getBlogBasePath } from '@lib/common';
 
 interface BlogPostsProps {
   posts: BlogPost[];
@@ -49,7 +50,7 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredPosts.map((post, index) => (
-          <Link href={`/blog/${post.slug}`} key={post.slug} className="block">
+          <Link href={getBlogBasePath(`/${post.slug}`)} key={post.slug} className="block">
             <div className="bg-[#011221] border border-light rounded-lg p-6 hover:bg-[#011627] transition-colors h-full flex flex-col">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-[#4D5BCE] text-sm">
