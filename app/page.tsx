@@ -19,15 +19,15 @@ const Home: NextPage = () => {
         <p className="text-white text-[62px] leading-[100%] mt-2 -ml-1">Jeevan Kumar</p>
         <TypedEffect
           strings={[
-            '> Full-stack developer',
-            '> Youtuber & mentor',
-            '> React enthusiast',
-            '> Next.js expert',
+            '> Full-stack Developer',
+            '> Next.js Expert',
+            '> Building AI Products',
+            '> Dev Content Creator',
           ]}
           typeSpeed={40}
           backSpeed={50}
           loop
-          className="text-[#43D9AD] text-xl sm:text-2xl mt-2"
+          className="text-[#43D9AD] text-lg\= sm:text-2xl mt-2"
         />
       </div>
       <div className="flex flex-col justify-center min-h-max sm:mt-[5vh]">
@@ -37,8 +37,8 @@ const Home: NextPage = () => {
         <p className="mt-2 break-all">
           <span className="text-keyword">const </span> <span className="text-var">githubLink </span>
           <span className="text-white"> = </span>
-          <a className="text-string" href="https://github.com/g1mishra/nextfolio">
-            `https://github.com/g1mishra/nextfolio`
+          <a className="text-string" target="_blank" href="https://github.com/g1mishra/nextfolio">
+            `github.com/g1mishra/nextfolio`
           </a>
         </p>
       </div>

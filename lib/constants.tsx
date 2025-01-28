@@ -33,6 +33,7 @@ export const skills: { iconClassName: string; name: string; icon?: React.ReactNo
   { iconClassName: 'devicon-javascript-plain', name: 'JavaScript' },
   { iconClassName: 'devicon-typescript-plain', name: 'TypeScript' },
   { iconClassName: 'devicon-react-plain', name: 'React' },
+  { iconClassName: 'devicon-react-plain', name: 'React-Native' },
   { iconClassName: 'devicon-nextjs-plain', name: 'Next.js' },
   { iconClassName: 'devicon-nodejs-plain', name: 'Node.js' },
   { iconClassName: 'devicon-express-original', name: 'Express.js' },

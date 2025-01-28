@@ -5,8 +5,8 @@ import { getProjects } from '@lib/projects';
 import { getBlogBasePath } from '@lib/common';
 
 const Highlights = async () => {
-  const featuredSkills = skills.slice(0, 6);
-  const latestPost = getBlogPosts()[0];
+  const featuredSkills = skills.slice(0, 8);
+  const [firstPost, secondPost] = getBlogPosts().slice(0, 2);
   const featuredProject = await getProjects();
 
   return (
@@ -38,7 +38,7 @@ const Highlights = async () => {
       {featuredProject.projects.length > 0 && (
         <div className="mb-6">
           <h3 className="text-[#FEA55F] text-lg mb-2">Featured Project</h3>
-          <p className="text-[#607B96] mb-1">{featuredProject.projects[0].name}</p>
+          <p className="text-[#607B96] mb-1 font-semibold">{featuredProject.projects[0].name}</p>
           <p className="text-sm text-[#607B96] mb-2">{featuredProject.projects[0].description}</p>
           <div className="flex justify-between items-center">
             <a
@@ -54,22 +54,39 @@ const Highlights = async () => {
         </div>
       )}
 
-      {/* Latest Blog Post section */}
-      {latestPost && (
+      {/* Latest Blog Posts section */}
+      {firstPost && (
         <div>
-          <h3 className="text-[#FEA55F] text-lg mb-2">Latest Blog Post</h3>
-          <p className="text-[#607B96] mb-1">{latestPost.title}</p>
-          <p className="text-sm text-[#607B96] mb-2">{latestPost.excerpt.slice(0, 150)}...</p>
-          <div className="flex justify-between items-center">
-            <Link
-              href={getBlogBasePath(`/${latestPost.slug}`)}
-              className="text-[#43D9AD] text-sm hover:underline"
-            >
-              Read full post →
-            </Link>
-            <Link href={getBlogBasePath()} className="text-[#43D9AD] text-sm hover:underline">
-              All posts →
-            </Link>
+          <h3 className="text-[#FEA55F] text-lg mb-2">Latest Blog Posts</h3>
+          <div className="space-y-4">
+            <div>
+              <p className="text-[#607B96] mb-1 font-semibold">{firstPost.title}</p>
+              <p className="text-sm text-[#607B96] mb-2">{firstPost.excerpt.slice(0, 150)}...</p>
+              <Link
+                href={getBlogBasePath(`/${firstPost.slug}`)}
+                className="text-[#43D9AD] text-sm hover:underline"
+              >
+                Read full post →
+              </Link>
+            </div>
+
+            {secondPost && (
+              <div>
+                <p className="text-[#607B96] mb-1 font-semibold">{secondPost.title}</p>
+                <p className="text-sm text-[#607B96] mb-2">{secondPost.excerpt.slice(0, 150)}...</p>
+                <div className="flex justify-between items-center">
+                  <Link
+                    href={getBlogBasePath(`/${secondPost.slug}`)}
+                    className="text-[#43D9AD] text-sm hover:underline"
+                  >
+                    Read full post →
+                  </Link>
+                  <Link href={getBlogBasePath()} className="text-[#43D9AD] text-sm hover:underline">
+                    All posts →
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

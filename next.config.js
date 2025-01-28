@@ -32,6 +32,7 @@ const nextConfig = {
       'g1mishra.dev',
       'blog.g1mishra.dev',
       'byteeat.in',
+      'quire.in',
     ],
   },
   headers,
