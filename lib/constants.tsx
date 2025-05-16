@@ -1,8 +1,15 @@
 export const experience = [
   {
+    jobTitle: 'Software Engineer',
+    companyName: 'Buildship',
+    period: 'Apr 2025 - Present',
+    description: 'Building AI-powered tools and workflows for the Buildship no-code platform.',
+  },
+
+  {
     jobTitle: 'Next.js Developer',
     companyName: 'EXPIA',
-    period: '2022 - Present',
+    period: 'Sep 2022 - Nov 2024',
     description:
       'Developed a horse-racing dashboard, ATA technology website, and an AI chatbot solution dashboard. Utilized technologies: CMS, React, JavaScript, Next.js, Tailwind.',
   },
@@ -59,7 +66,7 @@ export const education = [
   },
 ];
 
-export const BIO_TEXT = `Hello! I'm Jeevan Kumar, a seasoned front-end-heavy full-stack developer with over 4 years of extensive experience in both front-end and back-end technologies. Based in India, I specialize in building modern and user-friendly web applications using technologies like JavaScript, React.js, Next.js, Node.js, and Python. I'm always eager to learn new technologies and best practices to improve my skills and projects. As a dedicated educator and content creator, I share my knowledge and insights on web development through my YouTube channel. I'm also the founder of ByteEat.in, a side project aimed at revolutionizing restaurant experiences with digital menus and QR-based ordering. I'm passionate about working on innovative projects that challenge me to grow as a developer and contribute to the tech community.`;
+export const BIO_TEXT = `Software Engineer with 5 years of experience in applied AI, full-stack development, and building scalable web and mobile applications. Skilled in modern front-end frameworks like React and Next.js, back-end technologies such as Node.js and Python, and integrating AI models to create intelligent tools. Currently working at Buildship, focused on developing AI-powered no-code workflows and innovative solutions. Passionate about building user-friendly apps that solve real problems while continuously learning and growing as a developer.`;
 
 export function siteLinks() {
   return {

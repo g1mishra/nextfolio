@@ -59,8 +59,8 @@ export const getAbsolutePath = (page: string) => {
 const absolutePath: { [index: string]: any } = {
   bio: ['personal-info', 'bio'],
   education: ['personal-info', 'education'],
-  experience: ['professional-info', 'experience'],
-  skills: ['professional-info', 'skills'],
+  experience: ['personal-info', 'experience'],
+  skills: ['personal-info', 'skills'],
 };
 
 export const getBlogBasePath = (slug = '') => {

@@ -2,9 +2,8 @@
 
 import { ArrowIcon, BIO_ICON, EMAIL_ICON, FILE_ICON } from '@components/icons';
 import { useParams, useRouter } from 'next/navigation';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { AboutSubRoutesT } from 'types/common';
-import LeftSidebar from './left-sidebar';
 
 interface IFileLink {
   text: AboutSubRoutesT;
@@ -39,14 +38,12 @@ const handleOpenAndClose = (e: any) => {
 };
 
 export default function AboutSidebar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const params = useParams();
   const currentPage = (params.slug as AboutSubRoutesT) ?? 'bio';
 
   return (
     <>
-      <LeftSidebar currentPage={currentPage} setIsSidebarOpen={setIsSidebarOpen} />
-      {isSidebarOpen ? <LeftSidebarFileLinks currentPage={currentPage} /> : null}
+      <LeftSidebarFileLinks currentPage={currentPage} />
     </>
   );
 }
@@ -77,6 +74,20 @@ const LeftSidebarFileLinks = ({ currentPage }: { currentPage: string }) => {
             className="px-4"
           />
           <FileLink
+            icon={FILE_ICON}
+            className="px-4"
+            isActive={currentPage === 'experience'}
+            text="experience"
+            link="/about-me/experience"
+          />
+          <FileLink
+            icon={FILE_ICON}
+            className="px-4"
+            isActive={currentPage === 'skills'}
+            text="skills"
+            link="/about-me/skills"
+          />
+          <FileLink
             className="px-4"
             icon={FILE_ICON}
             isActive={currentPage === 'education'}
@@ -92,49 +103,24 @@ const LeftSidebarFileLinks = ({ currentPage }: { currentPage: string }) => {
             onClick={handleOpenAndClose}
           >
             <ArrowIcon className="-rotate-90 group-open/professional-info:rotate-0" />
-            <p className="text-white font-normal ml-2.5 flex items-center ">professional-info</p>
+            <p className="text-white font-normal ml-2.5 flex items-center ">contact-info</p>
           </div>
         </summary>
         <div className="px-4">
           <div className="-mx-4 mb-2 border-t border-secondaryBG sm:border-light" />
-          <FileLink
-            icon={FILE_ICON}
-            className="px-4"
-            isActive={currentPage === 'experience'}
-            text="experience"
-            link="/about-me/experience"
-          />
-          <FileLink
-            icon={FILE_ICON}
-            className="px-4"
-            isActive={currentPage === 'skills'}
-            text="skills"
-            link="/about-me/skills"
-          />
+          <div className="px-4">
+            <a
+              className="flex items-center my-2 ml-0.5"
+              href="mailto:g1mishra.dev@gmail.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {EMAIL_ICON}
+              <p className="ml-2">g1mishra.dev@gmail.com</p>
+            </a>
+          </div>
         </div>
       </details>
-      <ContactSection />
     </div>
   );
 };
-
-const ContactSection = () => (
-  <div className="hidden sm:flex flex-col whitespace-nowrap ">
-    <div className="flex items-center px-4 py-2">
-      <ArrowIcon />
-      <p className="text-white font-normal ml-2.5">contact</p>
-    </div>
-    <div className="mb-2 border-t border-light" />
-    <div className="px-4">
-      <a
-        className="flex items-center mt-2"
-        href="mailto:g1mishra.dev@gmail.com"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        {EMAIL_ICON}
-        <p className="ml-2">g1mishra.dev@gmail.com</p>
-      </a>
-    </div>
-  </div>
-);
