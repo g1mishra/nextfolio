@@ -33,6 +33,7 @@ const nextConfig = {
       'blog.g1mishra.dev',
       'byteeat.in',
       'quire.in',
+      'byteeat.vercel.app',
     ],
   },
   headers,
