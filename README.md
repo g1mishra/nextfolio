@@ -1,22 +1,18 @@
-# 🚀 Nextfolio - Customizable Developer Portfolio# Jeevan Kumar's Portfolio
-
-
+# 🚀 Nextfolio - Customizable Developer Portfolio
 
 A modern, fully customizable developer portfolio built with Next.js 13, TypeScript, and Tailwind CSS. Features a unique VS Code-inspired design with an interactive snake game, blog integration, and complete project showcase.Welcome to my portfolio repository! This website showcases some of my projects and skills as a full-stack web developer. It was built using Next.js, TailwindCss, and MongoDB, which are modern and popular technologies in the web development world.
 
-
-
-[![Next.js](https://img.shields.io/badge/Next.js-13-black)](https://nextjs.org/)## About Me
-
+[![Next.js](https://img.shields.io/badge/Next.js-13-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8)](https://tailwindcss.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-5.0-green)](https://www.mongodb.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8)](https://tailwindcss.com/)My name is Jeevan Kumar, and I am a full-stack web developer based in India with over 3 years of experience. I have a strong skillset in technologies such as JavaScript, React.js, Next.js, Node.js, and Python, and I am always eager to learn and grow as a developer. In my spare time, I enjoy sharing my love for technology, coding, and development through my YouTube channel. I am passionate about working on projects that allow me to utilize my skills and knowledge to create innovative solutions.
+## About Me
 
+My name is Jeevan Kumar, and I am a full-stack web developer based in India with over 3 years of experience. I have a strong skillset in technologies such as JavaScript, React.js, Next.js, Node.js, and Python, and I am always eager to learn and grow as a developer. In my spare time, I enjoy sharing my love for technology, coding, and development through my YouTube channel. I am passionate about working on projects that allow me to utilize my skills and knowledge to create innovative solutions.
 
-
-## ✨ Features## Features
-
-
+## ✨ Features
 
 - 🎨 **VS Code-Inspired Design** - Clean, modern developer-friendly interfaceHere are some of the features of this portfolio website:
 
@@ -38,38 +34,23 @@ A modern, fully customizable developer portfolio built with Next.js 13, TypeScri
 
 To run this website locally on your machine, you will need to follow these steps:
 
-## 🎯 Quick Start
+### 🎯 Quick Start
 
-1.  Clone this repository to your local machine.
+Clone this repository to your local machine.
 
-### 1. Clone the Repository2.  Install the required dependencies using `npm install`.
+```bash
+git clone https://github.com/g1mishra/nextfolio.git
+```
 
-3.  Configure your MongoDB connection string in the `.env.local` file.
+### 2. Install Dependencies
 
-```bash4.  Run the development server using `npm run dev`.
+If you have any feedback or suggestions for improvement, feel free to open an issue or pull request on this repository. I welcome any contributions or collaborations from the community, and I am always looking for ways to improve my skills and projects.
 
-git clone https://github.com/g1mishra/nextfolio.git5.  Open your web browser and go to `http://localhost:3000`.
-
-cd nextfolio
-
-```## Contribution
-
-
-
-### 2. Install DependenciesIf you have any feedback or suggestions for improvement, feel free to open an issue or pull request on this repository. I welcome any contributions or collaborations from the community, and I am always looking for ways to improve my skills and projects.
-
-
-
-```bash## License
-
+```bash
 pnpm install
-
-# orThis project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use this code or adapt it for your own purposes, but please attribute the original source if you do so.
-
+# or
 npm install
-
-# orThank you for visiting my portfolio repository!
-
+# or
 yarn install
 ```
 
@@ -145,11 +126,7 @@ All portfolio content is configured through the `portfolio.json` file. Here's a 
 {
   "homePage": {
     "greeting": "Hi there 👋 I am",
-    "typedStrings": [
-      "> Full-stack Developer",
-      "> Your Specialty",
-      "> Your Passion"
-    ],
+    "typedStrings": ["> Full-stack Developer", "> Your Specialty", "> Your Passion"],
     "gameComment": "// have fun with the game 😍",
     "gameCommentMobile": "// play the game below 😍",
     "githubComment": "// find it on my github page.",
@@ -233,6 +210,7 @@ All portfolio content is configured through the `portfolio.json` file. Here's a 
 
 **Finding Icon Class Names:**
 Skills use [Devicon](https://devicon.dev/) for icons. To find the right class name:
+
 1. Visit [devicon.dev](https://devicon.dev/)
 2. Search for your technology
 3. Copy the class name (e.g., `devicon-javascript-plain`)
@@ -279,10 +257,10 @@ Create Markdown files in the `posts/` directory:
 
 ```markdown
 ---
-title: "Your Awesome Blog Post"
-date: "2024-01-15"
-excerpt: "A brief description of your post"
-author: "Your Name"
+title: 'Your Awesome Blog Post'
+date: '2024-01-15'
+excerpt: 'A brief description of your post'
+author: 'Your Name'
 ---
 
 Your blog content here with **Markdown** support!
@@ -308,10 +286,10 @@ module.exports = {
         primary: '#your-color',
         secondary: '#your-color',
         // Add your custom colors
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};
 ```
 
 ## 📧 Setting Up the Contact Form
@@ -319,15 +297,18 @@ module.exports = {
 The contact form uses Gmail SMTP. Here's how to set it up:
 
 ### Step 1: Enable 2-Step Verification
+
 1. Go to your Google Account settings
 2. Enable [2-Step Verification](https://myaccount.google.com/security)
 
 ### Step 2: Generate App Password
+
 1. Visit [App Passwords](https://myaccount.google.com/apppasswords)
 2. Select "Mail" and "Other (Custom name)"
 3. Copy the 16-digit password
 
 ### Step 3: Add to Environment Variables
+
 ```env
 GMAIL_USER=your-email@gmail.com
 GMAIL_PASSWORD=your-16-digit-app-password
@@ -342,6 +323,7 @@ The easiest way to deploy:
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/g1mishra/nextfolio)
 
 **Manual deployment:**
+
 1. Push your code to GitHub
 2. Import repository in [Vercel](https://vercel.com)
 3. Add environment variables in Vercel dashboard
@@ -358,6 +340,7 @@ The easiest way to deploy:
 ### Other Platforms
 
 Compatible with any Next.js hosting:
+
 - **AWS Amplify**
 - **Railway**
 - **DigitalOcean App Platform**
@@ -366,33 +349,42 @@ Compatible with any Next.js hosting:
 ## 🎯 Customization Tips
 
 ### Changing Colors
+
 Edit `styles/globals.css` or `tailwind.config.js` to change the color scheme.
 
 ### Adding New Pages
+
 Create new routes in the `app/` directory following Next.js 13 conventions.
 
 ### Modifying Components
+
 All components are in the `components/` directory. They're well-organized by feature.
 
 ### Adding Projects
+
 Projects can be added through:
+
 1. MongoDB (configure in `.env.local`)
 2. Directly in code (modify `lib/projects.ts`)
 
 ## 🐛 Troubleshooting
 
 ### Port Already in Use
+
 The default port is 3001. If it's in use, change it in `package.json`:
+
 ```json
 "dev": "next dev -p 3002"
 ```
 
 ### Email Not Sending
+
 - Verify Gmail credentials in `.env.local`
 - Check if 2-Step Verification is enabled
 - Ensure App Password is correct (not your regular password)
 
 ### Icons Not Showing
+
 - Verify internet connection (Devicon loads from CDN)
 - Check icon class names at [devicon.dev](https://devicon.dev/)
 
@@ -429,6 +421,7 @@ Need help or have questions?
 ## ⭐ Show Your Support
 
 If you found this project helpful, please consider:
+
 - Giving it a ⭐️ on GitHub
 - Sharing it with others
 - Contributing to make it better
