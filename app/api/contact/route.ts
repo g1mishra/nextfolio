@@ -1,4 +1,5 @@
 const nodeMail = require('nodemailer');
+import { getContact } from '@lib/config';
 
 // interface ExtendedNextApiRequest extends NextApiRequest {
 //   body: ContatcFormData;
@@ -6,6 +7,7 @@ const nodeMail = require('nodemailer');
 
 export async function POST(req: Request) {
   const body = await req.json();
+  const contact = getContact();
 
   const transporter = await nodeMail.createTransport({
     service: 'gmail',
@@ -16,7 +18,7 @@ export async function POST(req: Request) {
   });
   const mailOption = {
     from: process.env.GMAIL_USER,
-    to: 'g1mishra.dev@gmail.com',
+    to: contact.email,
     subject: `${body.name} want to talk`,
     html: `You got a message from  <br/>
     Email : ${body.email} <br/>

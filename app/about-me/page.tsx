@@ -11,9 +11,9 @@ export interface IAboutProps {
 }
 
 export const metadata: Metadata = generateMetadata({
-  canonical: 'https://g1mishra.dev/about-me',
-  title: 'About Jeevan Kumar - Past Development Experience, Interrests, Bio etc.',
-  desc: "In a nutshell, over the last 3 years, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow.",
+  canonical: '/about-me',
+  title: 'About Me - Past Development Experience, Interests, Bio etc.',
+  desc: "In a nutshell, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow.",
 });
 
 const About = () => {

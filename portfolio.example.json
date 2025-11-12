@@ -1,0 +1,102 @@
+{
+  "name": "Your Name",
+  "username": "yourusername",
+  "tagline": "Full stack web developer, content creator & mentor",
+  "bio": "Software Engineer with X years of experience in full-stack development, building scalable web and mobile applications. Skilled in modern frameworks and technologies. Passionate about building user-friendly applications that solve real problems.",
+  "location": "Your Country",
+  "yearsOfExperience": "5",
+  
+  "seo": {
+    "title": "Your Name - Full stack web developer",
+    "description": "Full-Stack Web Developer with X years of experience.",
+    "canonicalUrl": "https://yoursite.com",
+    "keywords": ["full-stack developer", "web developer", "your", "keywords"]
+  },
+
+  "homePage": {
+    "greeting": "Hi there 👋 I am",
+    "typedStrings": [
+      "> Full-stack Developer",
+      "> Your Title",
+      "> Your Specialty",
+      "> Your Passion"
+    ],
+    "gameComment": "// have fun with the game 😍",
+    "gameCommentMobile": "// play the game below 😍",
+    "githubComment": "// find it on my github page.",
+    "githubLink": "https://github.com/yourusername/portfolio"
+  },
+
+  "contact": {
+    "email": "your.email@example.com",
+    "phone": "+1234567890",
+    "availability": "Available for freelance work"
+  },
+
+  "socialLinks": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername",
+    "youtube": "https://www.youtube.com/@yourchannel",
+    "instagram": "https://instagram.com/yourusername"
+  },
+
+  "experience": [
+    {
+      "jobTitle": "Your Job Title",
+      "companyName": "Company Name",
+      "period": "Month Year - Present",
+      "description": "Description of your role and accomplishments. Technologies used: Tech1, Tech2, Tech3."
+    },
+    {
+      "jobTitle": "Previous Job Title",
+      "companyName": "Previous Company",
+      "period": "Month Year - Month Year",
+      "description": "Description of your previous role."
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "university": "Your University Name",
+      "period": "Year - Year",
+      "description": "Brief description of your education and what you learned."
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "JavaScript",
+      "iconClassName": "devicon-javascript-plain"
+    },
+    {
+      "name": "TypeScript",
+      "iconClassName": "devicon-typescript-plain"
+    },
+    {
+      "name": "React",
+      "iconClassName": "devicon-react-plain"
+    },
+    {
+      "name": "Next.js",
+      "iconClassName": "devicon-nextjs-plain"
+    },
+    {
+      "name": "Node.js",
+      "iconClassName": "devicon-nodejs-plain"
+    },
+    {
+      "name": "Python",
+      "iconClassName": "devicon-python-plain"
+    },
+    {
+      "name": "Docker",
+      "iconClassName": "devicon-docker-plain"
+    }
+  ],
+
+  "gist": {
+    "username": "yourgithubusername"
+  }
+}

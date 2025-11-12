@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { NavLink } from './navlink';
 import { getBasePath, getBlogBasePath } from '@lib/common';
+import { getProfile } from '@lib/config';
 
 export const navlinks = [
   { link: getBasePath(), text: '_hello', exact: true },
@@ -12,11 +13,13 @@ export const navlinks = [
 ];
 
 const Navbar = () => {
+  const profile = getProfile();
+  
   return (
     <header className="hidden sm:flex w-full items-center justify-between border-light border-b">
       <div className="h-full px-4 flex items-center py-2.5 border-light border-r w-[calc(18rem_+_4rem)]">
         <Link href={getBasePath()} className="text-primaryText">
-          jeevan-kumar
+          {profile.username}
         </Link>
       </div>
       <div className="flex flex-1 justify-start w-full items-center whitespace-nowrap">

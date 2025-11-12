@@ -1,32 +1,36 @@
 
 import { Metadata } from 'next';
-
-// export const metadata: Metadata = {
-//   title: 'Next.js',
-// }
+import { getSEO, getProfile } from '@lib/config';
 
 type Props = {
-  title: string;
-  desc: string;
-  canonical: `https://g1mishra.dev${string}`;
+  title?: string;
+  desc?: string;
+  canonical?: string;
 };
 
-export const generateMetadata = ({ title, desc, canonical = 'https://g1mishra.dev' }: Props): Metadata => {
+export const generateMetadata = ({ title, desc, canonical }: Props = {}): Metadata => {
+  const seo = getSEO();
+  const profile = getProfile();
+  
+  const metaTitle = title || seo.title;
+  const metaDesc = desc || seo.description;
+  const metaCanonical = canonical || seo.canonicalUrl;
+  
   return {
-    title,
-    description: desc,
+    title: metaTitle,
+    description: metaDesc,
     alternates: {
-      canonical: canonical,
+      canonical: metaCanonical,
     },
     openGraph: {
       type: 'website',
-      url: 'https://g1mishra.dev',
-      siteName: 'Full-Stack Developer, India - Jeevan Kumar',
-      title,
-      description: desc,
+      url: seo.canonicalUrl,
+      siteName: `Full-Stack Developer, ${profile.location} - ${profile.name}`,
+      title: metaTitle,
+      description: metaDesc,
       images: [
         {
-          url: 'https://g1mishra.dev/og.png',
+          url: `${seo.canonicalUrl}/og.png`,
           type: 'image/png',
           width: 1200,
           height: 630,
@@ -35,11 +39,11 @@ export const generateMetadata = ({ title, desc, canonical = 'https://g1mishra.de
     },
     twitter: {
       card: 'summary_large_image',
-      site: 'https://g1mishra.dev',
-      creator: 'g1mishra',
-      images: ['https://g1mishra.dev/og-small.png'],
-      title,
-      description: desc,
+      site: seo.canonicalUrl,
+      creator: profile.username,
+      images: [`${seo.canonicalUrl}/og-small.png`],
+      title: metaTitle,
+      description: metaDesc,
     },
   };
 };

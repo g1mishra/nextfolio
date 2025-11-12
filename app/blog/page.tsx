@@ -2,12 +2,14 @@
 import BlogPosts from '@components/BlogPosts';
 import { CROSS_ICON } from '@components/icons';
 import { getBlogPosts } from '@lib/blog';
+import { generateMetadata } from '@components/next-head';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: "Jeevan Mishra's Blog",
-  description: 'Read my latest blog posts on technology, programming, and more.',
-};
+export const metadata: Metadata = generateMetadata({
+  canonical: '/blog',
+  title: 'Blog - Latest Posts on Technology & Development',
+  desc: 'Read my latest blog posts on technology, programming, web development, and more.',
+});
 
 export default function BlogPage() {
   const allPosts = getBlogPosts();

@@ -4,6 +4,7 @@ import { ArrowIcon, BIO_ICON, EMAIL_ICON, FILE_ICON } from '@components/icons';
 import { useParams, useRouter } from 'next/navigation';
 import { ReactElement } from 'react';
 import { AboutSubRoutesT } from 'types/common';
+import { getContact } from '@lib/config';
 
 interface IFileLink {
   text: AboutSubRoutesT;
@@ -111,12 +112,12 @@ const LeftSidebarFileLinks = ({ currentPage }: { currentPage: string }) => {
           <div className="px-4">
             <a
               className="flex items-center my-2 ml-0.5"
-              href="mailto:g1mishra.dev@gmail.com"
+              href={`mailto:${getContact().email}`}
               rel="noopener noreferrer"
               target="_blank"
             >
               {EMAIL_ICON}
-              <p className="ml-2">g1mishra.dev@gmail.com</p>
+              <p className="ml-2">{getContact().email}</p>
             </a>
           </div>
         </div>

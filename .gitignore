@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# portfolio configuration (optional - uncomment to keep your config private)
+# portfolio.json
+
 # vercel
 .vercel
 

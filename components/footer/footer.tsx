@@ -1,7 +1,11 @@
 import { siteLinks } from '@lib/constants';
+import { getProfile } from '@lib/config';
+
 const socialLinks = siteLinks();
 
 const Footer = () => {
+  const profile = getProfile();
+  
   return (
     <footer className="absolute z-50 bottom-0 inset-x-0 flex justify-between items-center overflow-hidden bg-secondaryBG border-t border-light">
       <div className="flex w-full sm:max-w-max sm:items-center gap-4">
@@ -48,7 +52,7 @@ const Footer = () => {
           className="opacity-60 hover:opacity-100 flex items-center justify-center"
           rel="noreferrer"
         >
-          <p className="px-4 py-2">@g1mishra </p>
+          <p className="px-4 py-2">@{profile.username} </p>
           {socialLinks.github.icon}
         </a>
       </div>

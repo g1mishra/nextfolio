@@ -1,78 +1,20 @@
-export const experience = [
-  {
-    jobTitle: 'Software Engineer',
-    companyName: 'Buildship',
-    period: 'Apr 2025 - Present',
-    description: 'Building AI-powered tools and workflows for the Buildship no-code platform.',
-  },
+import { getExperience, getSkills, getEducation, getProfile, getSocialLinks } from './config';
 
-  {
-    jobTitle: 'Next.js Developer',
-    companyName: 'EXPIA',
-    period: 'Sep 2022 - Nov 2024',
-    description:
-      'Developed a horse-racing dashboard, ATA technology website, and an AI chatbot solution dashboard. Utilized technologies: CMS, React, JavaScript, Next.js, Tailwind.',
-  },
-  {
-    jobTitle: 'Frontend Developer',
-    companyName: 'Intellemo.AI',
-    period: 'Mar 2022 - Sep 2022',
-    description:
-      'Implemented SSR, One-Click Launch feature, and built a webform builder from scratch. Awarded "Hero of the Month" for outstanding contributions. Utilized technologies: Canvas, TypeScript, React, GraphQL, Next.js.',
-  },
-  {
-    jobTitle: 'Web Developer',
-    companyName: 'Mobilicis',
-    period: 'Feb 2021 - Feb 2022',
-    description:
-      'Developed the frontend of a trade-in application for refurbished smartphones. Utilized technologies: Python, Django, Web Scraping, Material UI, GraphQL, Next.js, Tailwind, React Js.',
-  },
-  {
-    jobTitle: 'Full Stack Engineer',
-    companyName: 'Mobiru India',
-    period: 'Aug 2020 - Feb 2021',
-    description:
-      'Built a second-hand mobile phone price comparison website from scratch. Utilized technologies: Python, Django, Web Scraping, React Js.',
-  },
-];
+export const experience = getExperience();
 
-export const skills: { iconClassName: string; name: string; icon?: React.ReactNode }[] = [
-  { iconClassName: 'devicon-javascript-plain', name: 'JavaScript' },
-  { iconClassName: 'devicon-typescript-plain', name: 'TypeScript' },
-  { iconClassName: 'devicon-react-plain', name: 'React' },
-  { iconClassName: 'devicon-react-plain', name: 'React-Native' },
-  { iconClassName: 'devicon-nextjs-plain', name: 'Next.js' },
-  { iconClassName: 'devicon-nodejs-plain', name: 'Node.js' },
-  { iconClassName: 'devicon-express-original', name: 'Express.js' },
-  { iconClassName: 'devicon-python-plain', name: 'Python' },
-  { iconClassName: 'devicon-django-plain', name: 'Django' },
-  { iconClassName: 'devicon-mongodb-plain', name: 'MongoDB' },
-  { iconClassName: 'devicon-graphql-plain', name: 'GraphQL' },
-  { iconClassName: 'devicon-tailwindcss-plain', name: 'Tailwind CSS' },
-  { iconClassName: 'devicon-materialui-plain', name: 'Material UI' },
-  { iconClassName: 'devicon-git-plain', name: 'Git' },
-  { iconClassName: 'devicon-github-original', name: 'GitHub' },
-  { iconClassName: 'devicon-docker-plain', name: 'Docker' },
-  { iconClassName: 'devicon-amazonwebservices-original', name: 'AWS' },
-];
+export const skills = getSkills();
 
-export const education = [
-  {
-    degree: 'Diploma',
-    university: 'Mehr Chand Polytechnic College Jalandhar',
-    period: '2017 - 2020',
-    description:
-      'Part of the Computer Science and Engineering department, where I learned various programming languages, frameworks, algorithms, and data structures.',
-  },
-];
+export const education = getEducation();
 
-export const BIO_TEXT = `Software Engineer with 5 years of experience in applied AI, full-stack development, and building scalable web and mobile applications. Skilled in modern front-end frameworks like React and Next.js, back-end technologies such as Node.js and Python, and integrating AI models to create intelligent tools. Currently working at Buildship, focused on developing AI-powered no-code workflows and innovative solutions. Passionate about building user-friendly apps that solve real problems while continuously learning and growing as a developer.`;
+export const BIO_TEXT = getProfile().bio;
 
 export function siteLinks() {
+  const socialLinks = getSocialLinks();
+  
   return {
     youtube: {
       name: 'YouTube channel',
-      href: 'https://www.youtube.com/@codingwithjeevan',
+      href: socialLinks.youtube,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +33,7 @@ export function siteLinks() {
     },
     github: {
       name: 'Github profile',
-      href: 'https://github.com/g1mishra',
+      href: socialLinks.github,
       icon: (
         <svg
           width="24"
@@ -109,7 +51,7 @@ export function siteLinks() {
     },
     linkedin: {
       name: 'Linkedin profile',
-      href: 'https://linkedin.com/in/g1mishra',
+      href: socialLinks.linkedin,
       icon: (
         <svg
           width="24"
@@ -127,7 +69,7 @@ export function siteLinks() {
     },
     instagram: {
       name: 'Instagram account',
-      href: 'https://instagram.com/g1mishra.dev',
+      href: socialLinks.instagram,
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +97,7 @@ export function siteLinks() {
     },
     twitter: {
       name: 'Twitter account',
-      href: 'https://twitter.com/g1mishra',
+      href: socialLinks.twitter,
       icon: (
         <svg
           width="24"

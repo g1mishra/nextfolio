@@ -10,9 +10,9 @@ export interface IProjectPageProps {
 }
 
 export const metadata: Metadata = generateMetadata({
-  canonical: 'https://g1mishra.dev/projects',
-  title: 'Portfolio of full-stack web developer - Jeevan Kumar',
-  desc: "I'm a Full-stack developer based in India with 3+ years of experience. Check out some of the latest projects I've worked on.",
+  canonical: '/projects',
+  title: 'Portfolio Projects - Full-stack Web Developer',
+  desc: "Check out some of the latest projects I've worked on. From web applications to mobile apps, explore my development portfolio.",
 });
 
 const Projects = async () => {

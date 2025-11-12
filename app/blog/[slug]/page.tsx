@@ -1,9 +1,32 @@
-import { getBlogPostBySlug, getRelatedPosts } from '@lib/blog';
+import { getBlogPostBySlug, getRelatedPosts, getBlogPosts } from '@lib/blog';
 import { getBlogBasePath } from '@lib/common';
+import { generateMetadata as generateMeta } from '@components/next-head';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = getBlogPostBySlug(params.slug);
+  
+  if (!post) {
+    return generateMeta();
+  }
+
+  return generateMeta({
+    title: `${post.title} - Blog`,
+    desc: post.excerpt || post.title,
+    canonical: `/blog/${params.slug}`,
+  });
+}
+
+export async function generateStaticParams() {
+  const posts = getBlogPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const post = getBlogPostBySlug(params.slug);

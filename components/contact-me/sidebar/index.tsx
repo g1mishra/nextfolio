@@ -2,6 +2,7 @@
 
 import { ArrowIcon, EMAIL_ICON } from '@components/icons';
 import { siteLinks } from '@lib/constants';
+import { getContact } from '@lib/config';
 
 const handleOpenAndClose = (e: any) => {
   document.querySelectorAll('details').forEach((d) => {
@@ -14,6 +15,8 @@ const handleOpenAndClose = (e: any) => {
 const links = siteLinks();
 
 export default function ContactMeSidebar() {
+  const contact = getContact();
+  
   return (
     <div className="flex flex-col min-w-[22rem] max-w-full sm:max-w-max bg-secondaryBG sm:border-r border-light sm:overflow-y-auto ">
       <details
@@ -33,12 +36,12 @@ export default function ContactMeSidebar() {
         <div className="px-4 pb-2">
           <a
             className="flex items-center py-2"
-            href="mailto:g1mishra.dev@gmail.com"
+            href={`mailto:${contact.email}`}
             rel="noopener noreferrer"
             target="_blank"
           >
             {EMAIL_ICON}
-            <p className="ml-2">g1mishra.dev@gmail.com</p>
+            <p className="ml-2">{contact.email}</p>
           </a>
         </div>
       </details>
