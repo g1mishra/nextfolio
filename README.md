@@ -10,7 +10,7 @@ A modern, fully customizable developer portfolio built with Next.js 13, TypeScri
 
 ## About Me
 
-My name is Jeevan Kumar, and I am a full-stack web developer based in India with over 3 years of experience. I have a strong skillset in technologies such as JavaScript, React.js, Next.js, Node.js, and Python, and I am always eager to learn and grow as a developer. In my spare time, I enjoy sharing my love for technology, coding, and development through my YouTube channel. I am passionate about working on projects that allow me to utilize my skills and knowledge to create innovative solutions.
+My name is Jeevan Kumar, and I am a full-stack web developer based in India with over 5 years of experience. I have a strong skillset in technologies such as JavaScript, React.js, Next.js, Node.js, and Python, and I am always eager to learn and grow as a developer. In my spare time, I enjoy sharing my love for technology, coding, and development through my YouTube channel. I am passionate about working on projects that allow me to utilize my skills and knowledge to create innovative solutions.
 
 ## ✨ Features
 
