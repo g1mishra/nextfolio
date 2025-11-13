@@ -1,6 +1,6 @@
 # 🚀 Nextfolio - Customizable Developer Portfolio
 
-A modern, fully customizable developer portfolio built with Next.js 13, TypeScript, and Tailwind CSS. Features a unique VS Code-inspired design with an interactive snake game, blog integration, and complete project showcase.Welcome to my portfolio repository! This website showcases some of my projects and skills as a full-stack web developer. It was built using Next.js, TailwindCss, and MongoDB, which are modern and popular technologies in the web development world.
+A modern, fully customizable developer portfolio built with Next.js 13, TypeScript, and Tailwind CSS. Features a unique VS Code-inspired design with an interactive code showcase, blog integration, and complete project showcase. Welcome to my portfolio repository! This website showcases some of my projects and skills as a full-stack web developer. It was built using Next.js, TailwindCss, and MongoDB, which are modern and popular technologies in the web development world.
 
 [![Next.js](https://img.shields.io/badge/Next.js-13-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
@@ -16,7 +16,7 @@ My name is Jeevan Kumar, and I am a full-stack web developer based in India with
 
 - 🎨 **VS Code-Inspired Design** - Clean, modern developer-friendly interfaceHere are some of the features of this portfolio website:
 
-- 🎮 **Interactive Snake Game** - Built-in game on the homepage
+- 💻 **Interactive Code Showcase** - Syntax-highlighted code samples on the homepage
 
 - 📝 **Integrated Blog** - Write posts in Markdown with syntax highlighting- Home page with a brief introduction and links to my social media profiles.
 
@@ -127,8 +127,6 @@ All portfolio content is configured through the `portfolio.json` file. Here's a 
   "homePage": {
     "greeting": "Hi there 👋 I am",
     "typedStrings": ["> Full-stack Developer", "> Your Specialty", "> Your Passion"],
-    "gameComment": "// have fun with the game 😍",
-    "gameCommentMobile": "// play the game below 😍",
     "githubComment": "// find it on my github page.",
     "githubLink": "https://github.com/yourusername/portfolio"
   }

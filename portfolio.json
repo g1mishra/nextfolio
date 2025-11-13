@@ -5,14 +5,20 @@
   "bio": "Software Engineer with 5 years of experience in applied AI, full-stack development, and building scalable web and mobile applications. Skilled in modern front-end frameworks like React and Next.js, back-end technologies such as Node.js and Python, and integrating AI models to create intelligent tools. Currently working at Buildship, focused on developing AI-powered no-code workflows and innovative solutions. Passionate about building user-friendly apps that solve real problems while continuously learning and growing as a developer.",
   "location": "India",
   "yearsOfExperience": "5",
-  
   "seo": {
     "title": "Jeevan Kumar - Full stack web developer, youtuber & mentor",
     "description": "Full-Stack Web Developer based in India with more than 3 years of experience and worked for 3+ early-stage companies.",
     "canonicalUrl": "https://g1mishra.dev",
-    "keywords": ["full-stack developer", "web developer", "next.js", "react", "typescript", "youtuber", "mentor"]
+    "keywords": [
+      "full-stack developer",
+      "web developer",
+      "next.js",
+      "react",
+      "typescript",
+      "youtuber",
+      "mentor"
+    ]
   },
-
   "homePage": {
     "greeting": "Hi there 👋 I am",
     "typedStrings": [
@@ -21,18 +27,14 @@
       "> Building AI Products",
       "> Dev Content Creator"
     ],
-    "gameComment": "// have fun with the game 😍",
-    "gameCommentMobile": "// play the game below 😍",
-    "githubComment": "// find it on my github page.",
+    "githubComment": "// find the code of this portfolio at ",
     "githubLink": "https://github.com/g1mishra/nextfolio"
   },
-
   "contact": {
     "email": "g1mishra.dev@gmail.com",
     "phone": "",
     "availability": "Available for freelance work"
   },
-
   "socialLinks": {
     "github": "https://github.com/g1mishra",
     "linkedin": "https://linkedin.com/in/g1mishra",
@@ -40,7 +42,6 @@
     "youtube": "https://www.youtube.com/@codingwithjeevan",
     "instagram": "https://instagram.com/g1mishra.dev"
   },
-
   "experience": [
     {
       "jobTitle": "Software Engineer",
@@ -73,7 +74,6 @@
       "description": "Built a second-hand mobile phone price comparison website from scratch. Utilized technologies: Python, Django, Web Scraping, React Js."
     }
   ],
-
   "education": [
     {
       "degree": "Diploma",
@@ -82,7 +82,6 @@
       "description": "Part of the Computer Science and Engineering department, where I learned various programming languages, frameworks, algorithms, and data structures."
     }
   ],
-
   "skills": [
     {
       "name": "JavaScript",
@@ -153,7 +152,19 @@
       "iconClassName": "devicon-amazonwebservices-original"
     }
   ],
-
+  "topSkills": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "FastAPI",
+    "GraphQL",
+    "LLM",
+    "RAG",
+    "Applied AI",
+    "Tailwind CSS"
+  ],
   "gist": {
     "username": "g1mishra"
   }

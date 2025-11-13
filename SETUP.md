@@ -104,8 +104,6 @@ Personalize your landing page:
       "> Open Source Contributor",
       "> Tech Blogger"
     ],
-    "gameComment": "// have fun with the snake game!",
-    "gameCommentMobile": "// try the game below",
     "githubComment": "// check out my code",
     "githubLink": "https://github.com/yourusername/yourrepo"
   }

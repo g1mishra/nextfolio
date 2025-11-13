@@ -5,7 +5,7 @@ export interface PortfolioConfig {
   bio: string;
   location: string;
   yearsOfExperience: string;
-  
+
   seo: {
     title: string;
     description: string;
@@ -16,8 +16,6 @@ export interface PortfolioConfig {
   homePage: {
     greeting: string;
     typedStrings: string[];
-    gameComment: string;
-    gameCommentMobile: string;
     githubComment: string;
     githubLink: string;
   };
@@ -39,7 +37,8 @@ export interface PortfolioConfig {
   experience: Experience[];
   education: Education[];
   skills: Skill[];
-  
+  topSkills: string[];
+
   gist: {
     username: string;
   };

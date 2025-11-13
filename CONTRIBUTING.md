@@ -185,7 +185,7 @@ nextfolio/
 │   ├── about-me/         # About page components
 │   ├── contact-me/       # Contact components
 │   ├── footer/           # Footer component
-│   ├── game/             # Snake game
+│   ├── code-showcase/    # Interactive code viewer component
 │   └── navbar/           # Navigation
 │
 ├── lib/                   # Utilities & helpers

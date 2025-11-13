@@ -37,4 +37,6 @@ export const getEducation = () => config.education;
 
 export const getSkills = () => config.skills;
 
+export const getTopSkills = (count?: number) => config.topSkills.slice(0, count);
+
 export const getGistConfig = () => config.gist;
