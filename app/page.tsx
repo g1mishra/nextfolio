@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     <main className="p-4 space-y-4">
       <HomePageContainer>
         <h1 className="sr-only">{BIO_TEXT}</h1>
-        <div className="flex flex-col justify-center min-h-max mt-[5vh] sm:mt-0">
+        <div className="flex flex-col justify-center min-h-max mt-[3vh] sm:mt-0">
           <p className="text-white">{homePage.greeting}</p>
           <p className="text-white text-[62px] leading-[100%] mt-2 -ml-1">{profile.name}</p>
           <TypedEffect
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
             className="text-[#43D9AD] text-lg\= sm:text-2xl mt-2"
           />
         </div>
-        <div className="flex flex-col justify-center min-h-max sm:mt-[5vh]">
+        <div className="flex flex-col justify-center min-h-max sm:mt-[3vh]">
           <p className="mt-4">{homePage.githubComment}</p>
           <p className="mt-0.5 break-all">
             <span className="text-keyword">const </span>{' '}
