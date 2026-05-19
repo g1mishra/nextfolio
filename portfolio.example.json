@@ -5,14 +5,17 @@
   "bio": "Software Engineer with X years of experience in full-stack development, building scalable web and mobile applications. Skilled in modern frameworks and technologies. Passionate about building user-friendly applications that solve real problems.",
   "location": "Your Country",
   "yearsOfExperience": "5",
-  
   "seo": {
     "title": "Your Name - Full stack web developer",
     "description": "Full-Stack Web Developer with X years of experience.",
-    "canonicalUrl": "https://yoursite.com",
-    "keywords": ["full-stack developer", "web developer", "your", "keywords"]
+    "canonicalUrl": "https://nextfolio.vercel.app",
+    "keywords": [
+      "full-stack developer",
+      "web developer",
+      "your",
+      "keywords"
+    ]
   },
-
   "homePage": {
     "greeting": "Hi there 👋 I am",
     "typedStrings": [
@@ -24,13 +27,11 @@
     "githubComment": "// check out my code on github",
     "githubLink": "https://github.com/yourusername/portfolio"
   },
-
   "contact": {
     "email": "your.email@example.com",
     "phone": "+1234567890",
     "availability": "Available for freelance work"
   },
-
   "socialLinks": {
     "github": "https://github.com/yourusername",
     "linkedin": "https://linkedin.com/in/yourusername",
@@ -38,7 +39,6 @@
     "youtube": "https://www.youtube.com/@yourchannel",
     "instagram": "https://instagram.com/yourusername"
   },
-
   "experience": [
     {
       "jobTitle": "Your Job Title",
@@ -53,7 +53,6 @@
       "description": "Description of your previous role."
     }
   ],
-
   "education": [
     {
       "degree": "Bachelor of Science in Computer Science",
@@ -62,7 +61,6 @@
       "description": "Brief description of your education and what you learned."
     }
   ],
-
   "skills": [
     {
       "name": "JavaScript",
@@ -93,7 +91,36 @@
       "iconClassName": "devicon-docker-plain"
     }
   ],
-
+  "topSkills": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "Docker"
+  ],
+  "projects": [
+    {
+      "_id": "project-1",
+      "name": "Project Name 1",
+      "description": "Description of your first project. Explain what it does and the tech stack you used.",
+      "imgSrc": "",
+      "liveURL": "https://example.com",
+      "repoURL": "https://github.com/yourusername/project-1",
+      "tags": "react;next.js;typescript",
+      "sno": 1
+    },
+    {
+      "_id": "project-2",
+      "name": "Project Name 2",
+      "description": "Description of your second project. Explain what it does and the tech stack you used.",
+      "imgSrc": "",
+      "liveURL": "",
+      "repoURL": "https://github.com/yourusername/project-2",
+      "tags": "react;tailwind",
+      "sno": 2
+    }
+  ],
   "gist": {
     "username": "yourgithubusername"
   }

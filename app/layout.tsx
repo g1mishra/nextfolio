@@ -1,5 +1,6 @@
 import RootLayout from '@layout/rootlayout';
 import { GTM_ID } from '@lib/gtm';
+import { getProfile, getSEO } from '@lib/config';
 import '@styles/globals.css';
 
 import { Fira_Code, Source_Code_Pro } from 'next/font/google';
@@ -16,6 +17,12 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
+  const profile = getProfile();
+  const seo = getSEO();
+  const keywords = seo.keywords && seo.keywords.length > 0
+    ? seo.keywords.join(', ')
+    : 'HTML, CSS, JavaScript, React, Next.js, developer, portfolio';
+
   return (
     <html lang="en" className={`${firaCode.className} ${sourceCodePro.className}`}>
       <head>
@@ -27,10 +34,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
-        <meta name="author" content="Jeevan Kumar" />
+        <meta name="author" content={profile.name} />
         <meta
           name="keywords"
-          content="HTML, CSS, JavaScript, React, Next.js, express.js, python, developer, portfolio, g1mishra, CodeWithJeevan"
+          content={keywords}
         />
         <meta name="theme-color" content="#011627" />
 

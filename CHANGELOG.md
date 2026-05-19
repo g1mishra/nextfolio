@@ -1,6 +1,20 @@
-# 🎉 Portfolio Customization Complete!
+# 📓 Changelog & Release Notes
 
-Your portfolio has been successfully revamped to be **100% customizable** for anyone!
+## [1.1.0] - 2026-05-19
+### 🚀 Added
+- **Dynamic Domain Resolution**: Added environment variables `NEXT_PUBLIC_APP_URL` and `NEXT_PUBLIC_BLOG_URL` to easily run the project under any custom domain (e.g., `nextfolio.vercel.app`) without codebase modifications.
+- **Dynamic Sitemap**: Shifted sitemap generation from a static XML to a dynamic API route (`app/sitemap.ts`) to dynamically calculate links based on the active domain configuration.
+- **Dynamic Gist Snippets Fallback**: Implemented an automatic local snippet generator. If `GIST_ID` is omitted, it creates a custom code file displaying details dynamically loaded from `portfolio.json`.
+
+### 🛠️ Fixed & Refactored
+- **MongoDB Removal**: Completely purged MongoDB connections, configuration, and dependencies (`lib/mongodb.ts`, `types/mongodb.d.ts`, and npm package `mongodb`), converting project storage to local synchronous JSON.
+- **Generifying Personal Identifiers**: Removed all hardcoded names and usernames from PWA manifests (`public/manifest.json`), metadata headers in `app/layout.tsx`, and client components. They are now loaded dynamically from `portfolio.json`.
+- **Optional Email SMTP Service**: Refactored `app/api/contact/route.ts` to log contact submissions locally if Gmail SMTP secrets are omitted, preventing network errors for offline users.
+
+---
+
+# 🎉 Version 1.0.0 - Customization Revamp
+
 
 ## ✅ What Was Done
 
@@ -249,6 +263,6 @@ Your portfolio is now a true **open-source template** that anyone can use to cre
 - 📖 Read [README.md](./README.md)
 - 📝 Check [SETUP.md](./SETUP.md)
 - 🤝 See [CONTRIBUTING.md](./CONTRIBUTING.md)
-- 📧 Email: g1mishra.dev@gmail.com
+- 📧 Email: your.email@example.com
 
 **Made with ❤️ for the developer community!**

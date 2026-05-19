@@ -40,7 +40,7 @@ const GistView = function GistComponent({ data }: Props) {
                       src={data?.owner.avatar_url ?? ''}
                       height={36}
                       width={36}
-                      alt="g1mishra-profile"
+                      alt={`${data?.owner.login ?? 'user'}-profile`}
                     />
                     <div className="flex flex-col gap-0.5 text-sm">
                       <p className="text-blueToken font-semibold">@{data?.owner.login}</p>

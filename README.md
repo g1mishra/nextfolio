@@ -1,16 +1,16 @@
 # 🚀 Nextfolio - Customizable Developer Portfolio
 
-A modern, fully customizable developer portfolio built with Next.js 13, TypeScript, and Tailwind CSS. Features a unique VS Code-inspired design with an interactive code showcase, blog integration, and complete project showcase. Welcome to my portfolio repository! This website showcases some of my projects and skills as a full-stack web developer. It was built using Next.js, TailwindCss, and MongoDB, which are modern and popular technologies in the web development world.
+A modern, fully customizable developer portfolio built with Next.js 13, TypeScript, and Tailwind CSS. Features a unique VS Code-inspired design with an interactive code showcase, blog integration, and complete project showcase. This website showcases projects and skills in a modern, lightweight setup, built entirely using Next.js, Tailwind CSS, and local configuration.
 
 [![Next.js](https://img.shields.io/badge/Next.js-13-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38bdf8)](https://tailwindcss.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-5.0-green)](https://www.mongodb.com/)
+[![JSON Config](https://img.shields.io/badge/Configuration-JSON-blue)](https://www.json.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## About Me
+## About
 
-My name is Jeevan Kumar, and I am a full-stack web developer based in India with over 5 years of experience. I have a strong skillset in technologies such as JavaScript, React.js, Next.js, Node.js, and Python, and I am always eager to learn and grow as a developer. In my spare time, I enjoy sharing my love for technology, coding, and development through my YouTube channel. I am passionate about working on projects that allow me to utilize my skills and knowledge to create innovative solutions.
+This repository is a fully customizable developer portfolio template designed for open source use. It allows developers to showcase their skills, experience, and projects in a sleek, VS Code-themed interface without needing a complex backend or database setup.
 
 ## ✨ Features
 
@@ -69,15 +69,16 @@ Edit `portfolio.json` with your information. This single file controls all the c
 Create a `.env.local` file in the root directory:
 
 ```env
-# Email Configuration (for contact form)
+# App URL (optional - defaults to nextfolio.vercel.app)
+NEXT_PUBLIC_APP_URL=https://yourdomain.com
+NEXT_PUBLIC_BLOG_URL=https://blog.yourdomain.com
+
+# Email Configuration (optional - for Gmail SMTP contact form)
 GMAIL_USER=your-email@gmail.com
 GMAIL_PASSWORD=your-app-specific-password
 
-# GitHub Gist ID (optional - for code snippets display)
+# GitHub Gist ID (optional - falls back to local dynamic snippet)
 GIST_ID=your-gist-id
-
-# MongoDB (optional - for projects from database)
-MONGODB_URI=your-mongodb-connection-string
 ```
 
 ### 5. Run Development Server
@@ -360,10 +361,11 @@ All components are in the `components/` directory. They're well-organized by fea
 
 ### Adding Projects
 
-Projects can be added through:
+Projects are managed directly inside your configuration file under the `projects` key:
 
-1. MongoDB (configure in `.env.local`)
-2. Directly in code (modify `lib/projects.ts`)
+1. Open `portfolio.json`
+2. Add your project to the `projects` array following the structure in `portfolio.example.json`
+3. Save the file, and changes will be updated automatically!
 
 ## 🐛 Troubleshooting
 
@@ -411,10 +413,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Need help or have questions?
 
-- 📧 Email: [g1mishra.dev@gmail.com](mailto:g1mishra.dev@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/g1mishra/nextfolio/issues)
-- 💼 LinkedIn: [linkedin.com/in/g1mishra](https://linkedin.com/in/g1mishra)
-- 🐦 Twitter: [@g1mishra](https://twitter.com/g1mishra)
+- 📧 Email: [your.email@example.com](mailto:your.email@example.com)
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/nextfolio/issues)
+- 💼 LinkedIn: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
+- 🐦 Twitter: [@yourusername](https://twitter.com/yourusername)
 
 ## ⭐ Show Your Support
 
@@ -426,6 +428,6 @@ If you found this project helpful, please consider:
 
 ---
 
-**Made with ❤️ by [Jeevan Kumar](https://g1mishra.dev)**
+**Made with ❤️ for the developer community**
 
 Happy coding! 🚀

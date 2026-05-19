@@ -373,8 +373,8 @@ Make sure you created `portfolio.json` from `portfolio.example.json`
 
 ## 🆘 Need Help?
 
-- 📧 Email: g1mishra.dev@gmail.com
-- 💬 GitHub Issues: [Report a problem](https://github.com/g1mishra/nextfolio/issues)
+- 📧 Email: your.email@example.com
+- 💬 GitHub Issues: [Report a problem](https://github.com/yourusername/nextfolio/issues)
 - 📖 Full README: [README.md](./README.md)
 
 ---

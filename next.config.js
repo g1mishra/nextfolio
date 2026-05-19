@@ -22,21 +22,48 @@ const headers = async () => {
   ];
 };
 
+const domains = [
+  'avatars.githubusercontent.com',
+  'drive.google.com',
+  'byteeat.in',
+  'quire.in',
+  'byteeat.vercel.app',
+];
+
+if (process.env.NEXT_PUBLIC_APP_URL) {
+  try {
+    const appHostname = new URL(process.env.NEXT_PUBLIC_APP_URL).hostname;
+    if (appHostname && !domains.includes(appHostname)) {
+      domains.push(appHostname);
+    }
+  } catch (e) {
+    // Ignore invalid URL
+  }
+} else {
+  domains.push('nextfolio.vercel.app');
+}
+
+if (process.env.NEXT_PUBLIC_BLOG_URL) {
+  try {
+    const blogHostname = new URL(process.env.NEXT_PUBLIC_BLOG_URL).hostname;
+    if (blogHostname && !domains.includes(blogHostname)) {
+      domains.push(blogHostname);
+    }
+  } catch (e) {
+    // Ignore invalid URL
+  }
+} else {
+  domains.push('blog.nextfolio.vercel.app');
+}
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      'avatars.githubusercontent.com',
-      'drive.google.com',
-      'g1mishra.dev',
-      'blog.g1mishra.dev',
-      'byteeat.in',
-      'quire.in',
-      'byteeat.vercel.app',
-    ],
+    domains,
   },
   headers,
 };
 
 module.exports = nextConfig;
+

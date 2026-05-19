@@ -23,7 +23,13 @@ export const getProfile = () => ({
   yearsOfExperience: config.yearsOfExperience,
 });
 
-export const getSEO = () => config.seo;
+export const getSEO = () => {
+  const seo = { ...config.seo };
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    seo.canonicalUrl = process.env.NEXT_PUBLIC_APP_URL;
+  }
+  return seo;
+};
 
 export const getHomePage = () => config.homePage;
 
@@ -38,5 +44,7 @@ export const getEducation = () => config.education;
 export const getSkills = () => config.skills;
 
 export const getTopSkills = (count?: number) => config.topSkills.slice(0, count);
+
+export const getProjectsFromConfig = () => config.projects || [];
 
 export const getGistConfig = () => config.gist;

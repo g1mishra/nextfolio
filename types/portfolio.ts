@@ -1,3 +1,5 @@
+import { IProject } from './project';
+
 export interface PortfolioConfig {
   name: string;
   username: string;
@@ -38,6 +40,7 @@ export interface PortfolioConfig {
   education: Education[];
   skills: Skill[];
   topSkills: string[];
+  projects: IProject[];
 
   gist: {
     username: string;

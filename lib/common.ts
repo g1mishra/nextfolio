@@ -64,17 +64,30 @@ const absolutePath: { [index: string]: any } = {
 };
 
 export const getBlogBasePath = (slug = '') => {
+  if (process.env.NEXT_PUBLIC_BLOG_URL) {
+    const base = process.env.NEXT_PUBLIC_BLOG_URL.endsWith('/')
+      ? process.env.NEXT_PUBLIC_BLOG_URL.slice(0, -1)
+      : process.env.NEXT_PUBLIC_BLOG_URL;
+    return `${base}${slug}`;
+  }
   if (process.env.NODE_ENV === 'development') {
     return `http://blog.localhost:3001${slug}`;
   } else {
-    return `https://blog.g1mishra.dev${slug}`;
+    return `https://blog.nextfolio.vercel.app${slug}`;
   }
 };
 
 export const getBasePath = (slug = '') => {
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    const base = process.env.NEXT_PUBLIC_APP_URL.endsWith('/')
+      ? process.env.NEXT_PUBLIC_APP_URL.slice(0, -1)
+      : process.env.NEXT_PUBLIC_APP_URL;
+    return `${base}${slug}`;
+  }
   if (process.env.NODE_ENV === 'development') {
     return `http://localhost:3001${slug}`;
   } else {
-    return `https://g1mishra.dev${slug}`;
+    return `https://nextfolio.vercel.app${slug}`;
   }
 };
+

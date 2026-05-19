@@ -9,15 +9,23 @@ export async function POST(req: Request) {
   const body = await req.json();
   const contact = getContact();
 
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_PASSWORD;
+
+  if (!user || !pass) {
+    console.log('Contact form submitted locally (GMAIL credentials not set):', body);
+    return Response.json({ error: '' });
+  }
+
   const transporter = await nodeMail.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASSWORD,
+      user: user,
+      pass: pass,
     },
   });
   const mailOption = {
-    from: process.env.GMAIL_USER,
+    from: user,
     to: contact.email,
     subject: `${body.name} want to talk`,
     html: `You got a message from  <br/>
