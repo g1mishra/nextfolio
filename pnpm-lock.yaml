@@ -4,6 +4,24 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  lodash@<4.17.11: '>=4.17.11'
+  ajv@<6.12.3: '>=6.12.3'
+  jsonwebtoken@<=8.5.1: '>=9.0.0'
+  ws@>=6.0.0 <6.2.2: '>=6.2.2'
+  jsonwebtoken@<9.0.0: '>=9.0.0'
+  lodash@<4.17.12: '>=4.17.12'
+  lodash@<4.17.21: '>=4.17.21'
+  sharp@<0.32.6: '>=0.32.6'
+  moment@>=2.18.0 <2.29.4: '>=2.29.4'
+  moment@<2.29.2: '>=2.29.2'
+  lodash@>=3.7.0 <4.17.19: '>=4.17.19'
+  follow-redirects@<1.15.4: '>=1.15.4'
+  nodemailer@<=6.9.8: '>=6.9.9'
+  qs@>=6.5.0 <6.5.3: '>=6.5.3'
+  axios@>=1.0.0 <1.6.0: '>=1.6.0'
+  ip@=2.0.0: '>=2.0.1'
+
 importers:
 
   .:
@@ -12,7 +30,7 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(tailwindcss@3.4.19)
       axios:
-        specifier: ^1.5.1
+        specifier: '>=1.6.0'
         version: 1.18.1
       gray-matter:
         specifier: ^4.0.3
@@ -27,7 +45,7 @@ importers:
         specifier: 15.5.20
         version: 15.5.20(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       nodemailer:
-        specifier: ^6.9.6
+        specifier: '>=6.9.9'
         version: 6.10.1
       react:
         specifier: 19.2.7
