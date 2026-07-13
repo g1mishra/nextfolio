@@ -12,6 +12,7 @@ export async function getProjects(): Promise<IProjectPageProps> {
     projects.sort((a, b) => a.sno - b.sno);
     return { projects, tags };
   } catch (e) {
+    console.error('Error fetching projects:', e);
     return { projects: [], tags: [] };
   }
 }

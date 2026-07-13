@@ -1,10 +1,10 @@
 import AboutSidebar from '@components/about-me/sidebar';
 import { fetchGist } from '@lib/gist';
-import { FC, ReactElement } from 'react';
+import { FC, ReactNode } from 'react';
 import GistView from './gist-view';
 
 interface IAboutLayoutProps {
-  children: ReactElement;
+  children: ReactNode;
 }
 
 const AboutLayout: FC<IAboutLayoutProps> = async ({ children }) => {

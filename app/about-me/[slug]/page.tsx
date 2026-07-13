@@ -16,8 +16,8 @@ export const metadata: Metadata = generateMetadata({
   desc: "In a nutshell, I've gained development experience for over three early-stage companies. Some failed, some succeeded, and others continued to grow.",
 });
 
-export default function Page({ params }: { params: { slug: AboutSubRoutesT } }) {
-  const currentPage = params.slug;
+export default async function Page({ params }: { params: Promise<{ slug: AboutSubRoutesT }> }) {
+  const { slug: currentPage } = await params;
   return (
     <>
       <div className="hidden sm:block border-b border-light">

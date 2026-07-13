@@ -58,9 +58,11 @@ if (process.env.NEXT_PUBLIC_BLOG_URL) {
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains,
+    remotePatterns: domains.map((hostname) => ({
+      protocol: 'https',
+      hostname,
+    })),
   },
   headers,
 };

@@ -1,10 +1,10 @@
 'use client';
 
 import { ArrowIcon, BIO_ICON, EMAIL_ICON, FILE_ICON } from '@components/icons';
+import { getContact } from '@lib/config';
 import { useParams, useRouter } from 'next/navigation';
 import { ReactElement } from 'react';
 import { AboutSubRoutesT } from 'types/common';
-import { getContact } from '@lib/config';
 
 interface IFileLink {
   text: AboutSubRoutesT;

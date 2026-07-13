@@ -7,9 +7,14 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = getBlogPostBySlug(params.slug);
-  
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
   if (!post) {
     return generateMeta();
   }
@@ -17,7 +22,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return generateMeta({
     title: `${post.title} - Blog`,
     desc: post.excerpt || post.title,
-    canonical: `/blog/${params.slug}`,
+    canonical: `/blog/${slug}`,
   });
 }
 
@@ -28,8 +33,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getBlogPostBySlug(params.slug);
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

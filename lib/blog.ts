@@ -15,10 +15,12 @@ export type BlogPost = {
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 export function getBlogPosts(): BlogPost[] {
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map(fileName => {
+  if (!fs.existsSync(postsDirectory)) return []
+  const fileNames = fs.readdirSync(postsDirectory).filter(fileName => fileName.endsWith('.md'))
+  const allPostsData = fileNames.flatMap(fileName => {
     const slug = fileName.replace(/\.md$/, '')
-    return getBlogPostBySlug(slug)
+    const post = getBlogPostBySlug(slug)
+    return post ? [post] : []
   })
 
   return allPostsData.sort((a, b) => {
@@ -30,8 +32,9 @@ export function getBlogPosts(): BlogPost[] {
   })
 }
 
-export function getBlogPostBySlug(slug: string): BlogPost {
+export function getBlogPostBySlug(slug: string): BlogPost | null {
   const fullPath = path.join(postsDirectory, `${slug}.md`)
+  if (!fs.existsSync(fullPath)) return null
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const matterResult = matter(fileContents)

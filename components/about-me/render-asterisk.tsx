@@ -2,7 +2,7 @@ import useMediaQuery from 'hooks/useMediaQuery';
 import { FC, RefObject, useEffect, useState } from 'react';
 
 interface IRenderStarProps {
-  rightDivRef: RefObject<HTMLDivElement>;
+  rightDivRef: RefObject<HTMLDivElement | null>;
   lineHeight: string;
 }
 
